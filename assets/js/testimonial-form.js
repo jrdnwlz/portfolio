@@ -337,4 +337,45 @@
     }
   });
 
+  // Copy link to clipboard functionality
+  const copyLinkBtn = document.getElementById('copy-link-btn');
+  const copySuccess = document.getElementById('copy-success');
+
+  if (copyLinkBtn) {
+    copyLinkBtn.addEventListener('click', async () => {
+      const url = window.location.href;
+
+      try {
+        // Try modern Clipboard API first
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(url);
+          showCopySuccess();
+        } else {
+          // Fallback for older browsers
+          const textarea = document.createElement('textarea');
+          textarea.value = url;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+          showCopySuccess();
+        }
+      } catch (error) {
+        console.error('Copy failed:', error);
+        alert('Could not copy link. Please copy manually: ' + url);
+      }
+    });
+  }
+
+  function showCopySuccess() {
+    if (copySuccess) {
+      copySuccess.style.display = 'block';
+      setTimeout(() => {
+        copySuccess.style.display = 'none';
+      }, 3000);
+    }
+  }
+
 })();

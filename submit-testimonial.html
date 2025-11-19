@@ -217,7 +217,12 @@
         <div class="success-icon">🎊</div>
         <h2>Thank You!</h2>
         <p>Your testimonial has been received! I really appreciate you taking the time to share your thoughts.</p>
-        <button class="btn primary" onclick="window.location.href='index.html'">Back to Home</button>
+        <p class="muted" style="font-size: 15px; margin-top: 8px;">Know someone else I've worked with? Share this page with them!</p>
+        <div style="display: flex; gap: 12px; justify-content: center; margin-top: 24px;">
+          <button class="btn primary" id="copy-link-btn">Copy Link to Share 📋</button>
+          <button class="btn" onclick="window.location.href='index.html'">Close</button>
+        </div>
+        <div id="copy-success" style="display: none; margin-top: 12px; color: var(--ok); font-weight: 600; font-size: 14px;">✓ Link copied to clipboard!</div>
       </div>
     </div>
 
