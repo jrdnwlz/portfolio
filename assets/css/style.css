@@ -450,6 +450,10 @@ main {
   gap: 16px;
 }
 
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .grid-3 {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -461,6 +465,7 @@ main {
 }
 
 @media (max-width: 640px) {
+  .grid-2,
   .grid-3 {
     grid-template-columns: 1fr;
   }
@@ -603,22 +608,32 @@ main {
 }
 
 .figure {
-  margin: 16px 0;
+  margin: 20px 0;
+  position: relative;
 }
 
 .figure img {
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
   width: 100%;
   height: auto;
   background: var(--surface-2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.figure img:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-colored);
+  border-color: var(--border-bright);
 }
 
 .figure .caption {
   font-size: 14px;
   color: var(--muted);
-  margin-top: 8px;
-  font-style: italic;
+  margin-top: 12px;
+  line-height: 1.5;
+  padding-left: 4px;
 }
 
 /* ============================================
