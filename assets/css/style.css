@@ -433,6 +433,14 @@ main {
   padding: 48px 0;
 }
 
+.section-divider {
+  max-width: 120px;
+  margin: 0 auto;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-bright), transparent);
+}
+
 .section h2 {
   font-size: clamp(20px, 3vw, 28px);
   margin-bottom: 16px;
