@@ -323,8 +323,9 @@ main {
 
 .hero h1 {
   font-size: clamp(24px, 4.5vw, 48px);
-  line-height: 1.1;
+  line-height: 1.2;
   font-weight: 700;
+  max-width:70vw;
   background: linear-gradient(135deg, var(--text) 0%, var(--text) 40%, var(--accent-purple) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -335,7 +336,7 @@ main {
   margin-top: 16px;
   font-size: 18px;
   color: var(--muted);
-  max-width: 60ch;
+  max-width: 70ch;
   line-height: 1.6;
 }
 
@@ -709,6 +710,157 @@ main {
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
+}
+
+/* ============================================
+   Principles Section (Homepage)
+   ============================================ */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+  margin: 48px 0;
+  text-align: center;
+}
+
+.principle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.principle-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--surface), var(--surface-2));
+  border: 3px solid var(--border);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.principle-icon::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.principle:hover .principle-icon {
+  border-color: var(--accent-purple);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-colored);
+}
+
+.principle:hover .principle-icon::after {
+  opacity: 1;
+}
+
+.principle-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.principle-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ai-focus-box {
+  margin-top: 48px;
+  padding: 48px;
+  background: var(--surface-2);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.ai-focus-box h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--text), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ai-focus-box p {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 32px;
+  font-size: 16px;
+}
+
+.ai-focus-links {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 32px;
+}
+
+.ai-focus-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--border-bright);
+  transition: all 0.3s ease;
+}
+
+.ai-focus-links a:hover {
+  border-bottom-color: var(--accent-purple);
+  color: var(--accent-purple);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .principles {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .principle-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .ai-focus-box {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .principles {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .principle-icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .ai-focus-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ai-focus-box {
+    padding: 24px 20px;
+  }
 }
 
 /* ============================================
