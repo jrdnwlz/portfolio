@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Submit a Testimonial — Jordan Walz</title>
+  <meta name="description" content="Share your experience working with Jordan Walz"/>
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Submit a Testimonial — Jordan Walz"/>
+  <meta property="og:description" content="Share your experience working with Jordan Walz"/>
+  <meta property="og:type" content="website"/>
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Jordan Walz</a>
+      <nav class="nav" aria-label="Main">
+        <a href="case-study-sonatype-guide.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-centered">
+      <div class="container">
+        <h1>Help Me Look Good! 🎉</h1>
+        <p class="lead">If we've worked together and you enjoyed the experience, I'd love to hear about it! Your testimonial helps me share our collaboration story with future teams.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 900px; margin: 0 auto;">
+
+        <!-- Mode Switcher -->
+        <div class="testimonial-mode-switcher">
+          <button class="mode-btn active" data-mode="freeform">
+            ✍️ Write Your Own
+          </button>
+          <button class="mode-btn" data-mode="madlibs">
+            🎲 Mad Libs Style
+          </button>
+        </div>
+
+        <!-- Free Form Mode -->
+        <div class="testimonial-form-mode" id="freeform-mode">
+          <form id="testimonial-form" class="testimonial-form">
+            <div class="form-group">
+              <label for="testimonial-text">Your Testimonial</label>
+              <textarea
+                id="testimonial-text"
+                name="testimonial"
+                rows="6"
+                placeholder="Tell me what you really think... (No really, be honest! But also nice. But mostly honest.)"
+                required
+              ></textarea>
+              <div class="char-counter">
+                <span id="char-count">0</span> characters
+                <span class="char-encouragement" id="char-encouragement"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Jane Smith"/>
+              </div>
+
+              <div class="form-group">
+                <label for="title">Your Title *</label>
+                <input type="text" id="title" name="title" required placeholder="Lead Designer"/>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company">Company (Optional)</label>
+                <input type="text" id="company" name="company" placeholder="Acme Corp"/>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email (Optional)</label>
+                <input type="email" id="email" name="email" placeholder="jane@example.com"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="permission" name="permission" required/>
+                <span>Yes, Jordan can use this testimonial on his portfolio and feel free to edit for clarity (but don't make me sound TOO cool 😎)</span>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn primary">Send Testimonial ✨</button>
+              <button type="button" class="btn" id="preview-btn">Preview</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Mad Libs Mode -->
+        <div class="testimonial-form-mode" id="madlibs-mode" style="display: none;">
+          <form id="madlibs-form" class="testimonial-form">
+            <div class="madlibs-intro">
+              <p>Fill in the blanks to create your testimonial! Pick a template below:</p>
+            </div>
+
+            <div class="madlibs-templates">
+              <label class="template-radio">
+                <input type="radio" name="template" value="template1" checked/>
+                <span class="template-preview">Working with Jordan was [adjective]. He helped us [achievement] in record time.</span>
+              </label>
+
+              <label class="template-radio">
+                <input type="radio" name="template" value="template2"/>
+                <span class="template-preview">Jordan's superpower is [skill]. He turned our [problem] into [solution].</span>
+              </label>
+
+              <label class="template-radio">
+                <input type="radio" name="template" value="template3"/>
+                <span class="template-preview">I'd describe Jordan's work in three words: [word], [word], and [word].</span>
+              </label>
+
+              <label class="template-radio">
+                <input type="radio" name="template" value="template4"/>
+                <span class="template-preview">Jordan doesn't just [verb]—he [better verb]. His [quality] sets a new standard.</span>
+              </label>
+            </div>
+
+            <div class="madlibs-fields" id="madlibs-fields">
+              <!-- Template 1 fields (default) -->
+              <div class="form-group">
+                <label>Working with Jordan was</label>
+                <input type="text" class="madlib-input" data-field="adjective" placeholder="amazing, transformative, game-changing..." required/>
+              </div>
+
+              <div class="form-group">
+                <label>He helped us</label>
+                <input type="text" class="madlib-input" data-field="achievement" placeholder="ship a design system, validate our MVP..." required/>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="madlibs-name">Your Name *</label>
+                <input type="text" id="madlibs-name" name="name" required placeholder="Jane Smith"/>
+              </div>
+
+              <div class="form-group">
+                <label for="madlibs-title">Your Title *</label>
+                <input type="text" id="madlibs-title" name="title" required placeholder="Lead Designer"/>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="madlibs-company">Company (Optional)</label>
+                <input type="text" id="madlibs-company" name="company" placeholder="Acme Corp"/>
+              </div>
+
+              <div class="form-group">
+                <label for="madlibs-email">Email (Optional)</label>
+                <input type="email" id="madlibs-email" name="email" placeholder="jane@example.com"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="madlibs-permission" name="permission" required/>
+                <span>Jordan can use this mad lib masterpiece on his portfolio 🎨</span>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn primary">Send Testimonial 🎉</button>
+              <button type="button" class="btn" id="madlibs-preview-btn">Preview</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Preview Card -->
+        <div class="testimonial-preview" id="preview-card" style="display: none;">
+          <h3>Preview</h3>
+          <div class="testimonial">
+            <blockquote>
+              <p id="preview-text"></p>
+            </blockquote>
+            <div class="testimonial-author">
+              <strong id="preview-name"></strong>
+              <span class="muted" id="preview-role"></span>
+            </div>
+          </div>
+          <button class="btn" id="close-preview">Close Preview</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Success Message -->
+    <div class="success-overlay" id="success-overlay" style="display: none;">
+      <div class="success-modal">
+        <div class="success-icon">🎊</div>
+        <h2>Thank You!</h2>
+        <p>Your testimonial has been received! I really appreciate you taking the time to share your thoughts.</p>
+        <button class="btn primary" onclick="window.location.href='index.html'">Back to Home</button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Jordan Walz • <a href="index.html">Back to Portfolio</a></div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="assets/js/interactions.js"></script>
+  <script src="assets/js/testimonial-form.js"></script>
+</body>
+</html>
