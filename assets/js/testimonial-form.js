@@ -207,13 +207,13 @@
     }
   }
 
-  function handleFormSubmit(e, isMadLibs = false) {
+  async function handleFormSubmit(e, isMadLibs = false) {
     e.preventDefault();
 
     const form = e.target;
     const formData = new FormData(form);
 
-    // If mad libs, generate the testimonial text
+    // If mad libs, generate the testimonial text and add to form
     if (isMadLibs) {
       const selectedTemplate = document.querySelector('input[name="template"]:checked').value;
       const inputs = document.querySelectorAll('.madlib-input');
@@ -236,22 +236,52 @@
       }
 
       formData.set('testimonial', generatedText);
+
+      // Add mode indicator
+      formData.set('submission_mode', 'Mad Libs');
+    } else {
+      formData.set('submission_mode', 'Free Form');
     }
 
     // Save to localStorage as backup
-    localStorage.setItem('lastTestimonial', JSON.stringify({
+    const testimonialData = {
       testimonial: formData.get('testimonial'),
       name: formData.get('name'),
       title: formData.get('title'),
-      company: formData.get('company'),
-      email: formData.get('email'),
+      company: formData.get('company') || '',
+      email: formData.get('email') || '',
+      mode: formData.get('submission_mode'),
       timestamp: new Date().toISOString()
-    }));
+    };
 
-    // For now, just show success (would integrate with Formspree or backend later)
-    console.log('Testimonial submitted:', Object.fromEntries(formData));
+    localStorage.setItem('lastTestimonial', JSON.stringify(testimonialData));
 
-    showSuccess();
+    // Submit to Formspree
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        // Clear draft on successful submission
+        localStorage.removeItem('testimonialDraft');
+        showSuccess();
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          alert('Oops! There were some errors: ' + data.errors.map(e => e.message).join(', '));
+        } else {
+          alert('Oops! There was a problem submitting your testimonial. Please try again.');
+        }
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Oops! There was a problem submitting your testimonial. Please check your internet connection and try again.');
+    }
   }
 
   if (testimonialForm) {
