@@ -37,7 +37,7 @@
   </header>
 
   <main>
-    <section class="hero hero-centered">
+    <section class="hero hero-centered" style="padding-bottom: 20px;">
       <div class="container">
         <h1>Help Me Look Good! 🎉</h1>
         <p class="lead">If we've worked together and you enjoyed the experience, I'd love to hear about it! Your testimonial helps me share our collaboration story with future teams.</p>
@@ -50,10 +50,10 @@
         <!-- Mode Switcher -->
         <div class="testimonial-mode-switcher">
           <button class="mode-btn active" data-mode="freeform">
-            ✍️ Write Your Own
+            Write Your Own
           </button>
           <button class="mode-btn" data-mode="madlibs">
-            🎲 Mad Libs Style
+            Mad Libs Style
           </button>
         </div>
 
@@ -182,12 +182,12 @@
             <div class="form-group">
               <label class="checkbox-label">
                 <input type="checkbox" id="madlibs-permission" name="permission" required/>
-                <span>Jordan can use this mad lib masterpiece on her portfolio 🎨</span>
+                <span>Yes, Jordan can use this on her portfolio</span>
               </label>
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn primary">Send Testimonial 🎉</button>
+              <button type="submit" class="btn primary">Send Testimonial</button>
               <button type="button" class="btn" id="madlibs-preview-btn">Preview</button>
             </div>
           </form>
@@ -219,7 +219,7 @@
         <p>Your testimonial has been received! I really appreciate you taking the time to share your thoughts.</p>
         <p class="muted" style="font-size: 15px; margin-top: 8px;">Know someone else I've worked with? Share this page with them!</p>
         <div style="display: flex; gap: 12px; justify-content: center; margin-top: 24px;">
-          <button class="btn primary" id="copy-link-btn">Copy Link to Share 📋</button>
+          <button class="btn primary" id="copy-link-btn">Copy Link to Share</button>
           <button class="btn" onclick="window.location.href='index.html'">Close</button>
         </div>
         <div id="copy-success" style="display: none; margin-top: 12px; color: var(--ok); font-weight: 600; font-size: 14px;">✓ Link copied to clipboard!</div>
@@ -229,7 +229,7 @@
   </main>
 
   <footer class="footer" style="display: none;">
-    <div class="container">© <span id="y"></span> Jordan Walz • <a href="index.html">Back to Portfolio</a></div>
+    <div class="container">© <span id="y"></span> Jordan Walz</div>
   </footer>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
