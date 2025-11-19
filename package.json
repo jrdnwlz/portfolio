@@ -1,0 +1,16 @@
+{
+  "name": "jordan-walz-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Jordan Walz, Senior Product Designer",
+  "scripts": {
+    "add-testimonial": "node scripts/add-testimonial-local.js",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "portfolio",
+    "design",
+    "testimonials"
+  ],
+  "author": "Jordan Walz",
+  "license": "MIT"
+}

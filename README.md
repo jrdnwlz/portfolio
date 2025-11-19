@@ -41,24 +41,66 @@ This portfolio demonstrates expertise in:
 - **Print styles** included
 - **SEO optimized** with proper meta tags
 
+## 🎉 Testimonials System
+
+This portfolio includes a **dynamic testimonials system** with automated workflows:
+
+- **Submission form** with dual modes (Free Form & Mad Libs)
+- **Dynamic loading** from JSON data file
+- **Admin interface** for management
+- **GitHub Actions** automation
+- **Local CLI tool** for quick additions
+
+### Quick Start
+```bash
+# Add a new testimonial in 60 seconds
+npm run add-testimonial
+```
+
+📚 **Documentation:**
+- [Quick Start Guide](QUICKSTART_TESTIMONIALS.md) - Fastest way to add testimonials
+- [Automation Setup](AUTOMATION_SETUP.md) - Full automation options
+- [Workflow Details](TESTIMONIALS_WORKFLOW.md) - How it all works
+
 ## 📁 Project Structure
 
 ```
 portfolio/
-├── index.html                  # Homepage
-├── about.html                  # About page
-├── resume.html                 # Resume page
-├── contact.html                # Contact page
-├── case-study-sonatype-guide.html  # Flagship case study
+├── index.html                       # Homepage with dynamic testimonials
+├── submit-testimonial.html          # Testimonial submission form
+├── admin-testimonials.html          # Admin interface for testimonials
+├── about.html                       # About page
+├── resume.html                      # Resume page
+├── contact.html                     # Contact page
+├── case-study-sonatype-guide.html   # Flagship case study
 ├── assets/
 │   ├── css/
-│   │   └── style.css          # Main stylesheet (~8KB)
+│   │   └── style.css               # Main stylesheet with vibrant design
 │   ├── js/
-│   │   └── interactions.js    # Interactive features (~5KB)
+│   │   ├── interactions.js         # Interactive features
+│   │   ├── testimonial-form.js     # Form handling & submission
+│   │   └── testimonials.js         # Dynamic testimonial loader
 │   └── img/
-│       └── guide/             # Case study images
-├── TESTING.md                  # Comprehensive testing checklist
-└── README.md                   # This file
+│       └── guide/                  # Case study images (14 webp files)
+├── data/
+│   └── testimonials.json           # Testimonial data store
+├── api/
+│   └── formspree-webhook.js        # Vercel serverless function (optional)
+├── scripts/
+│   └── add-testimonial-local.js    # CLI tool for adding testimonials
+├── .github/
+│   ├── workflows/
+│   │   ├── add-testimonial.yml     # Automated testimonial addition
+│   │   └── email-to-testimonial.yml # Manual workflow trigger
+│   └── scripts/
+│       └── add-testimonial.js      # GitHub Actions script
+├── QUICKSTART_TESTIMONIALS.md      # Quick start guide
+├── AUTOMATION_SETUP.md             # Full automation guide
+├── TESTIMONIALS_WORKFLOW.md        # Workflow documentation
+├── TESTIMONIAL_TEST_REPORT.md      # Testing documentation
+├── FORMSPREE_SETUP.md              # Formspree integration guide
+├── package.json                    # NPM scripts
+└── README.md                        # This file
 ```
 
 ## 🛠️ Technologies Used

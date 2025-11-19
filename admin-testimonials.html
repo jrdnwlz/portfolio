@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Testimonials Admin — Jordan Walz</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
+  <style>
+    .admin-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .admin-header {
+      margin-bottom: 48px;
+    }
+
+    .admin-header h1 {
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .testimonial-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-card.pending {
+      border-left: 4px solid var(--accent-orange);
+    }
+
+    .testimonial-card.approved {
+      border-left: 4px solid var(--ok);
+    }
+
+    .testimonial-card.featured {
+      border: 2px solid var(--accent-purple);
+    }
+
+    .testimonial-meta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .badge-pending {
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--accent-orange);
+    }
+
+    .badge-approved {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--ok);
+    }
+
+    .badge-featured {
+      background: rgba(168, 85, 247, 0.2);
+      color: var(--accent-purple);
+    }
+
+    .badge-mode {
+      background: rgba(59, 130, 246, 0.2);
+      color: var(--accent-blue);
+    }
+
+    .testimonial-quote {
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      padding: 16px;
+      background: rgba(168, 85, 247, 0.05);
+      border-radius: var(--radius-sm);
+    }
+
+    .testimonial-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .json-editor {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-top: 32px;
+    }
+
+    .json-editor textarea {
+      width: 100%;
+      min-height: 400px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .instructions {
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 4px solid var(--accent-blue);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 32px;
+    }
+
+    .instructions h3 {
+      margin-bottom: 8px;
+      color: var(--accent-blue);
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <div class="admin-header">
+      <h1>Testimonials Admin</h1>
+      <p class="muted">Review and manage testimonials from Formspree submissions</p>
+    </div>
+
+    <div class="instructions">
+      <h3>📋 How to Add New Testimonials</h3>
+      <ol style="margin-left: 20px; line-height: 1.8;">
+        <li>Check your <a href="https://formspree.io/forms/xdkbdgae/submissions" target="_blank" style="color: var(--accent-blue);">Formspree dashboard</a> for new submissions</li>
+        <li>Copy the testimonial details from the submission</li>
+        <li>Add a new entry to the JSON editor below with a unique ID</li>
+        <li>Set <code>approved: true</code> to show on site</li>
+        <li>Set <code>featured: true</code> to display on homepage</li>
+        <li>Copy the updated JSON and save it to <code>data/testimonials.json</code></li>
+        <li>Commit and push to deploy</li>
+      </ol>
+    </div>
+
+    <div class="json-editor">
+      <h3 style="margin-bottom: 16px;">Testimonials JSON Editor</h3>
+      <p class="muted" style="margin-bottom: 16px;">Edit the JSON below and save to <code>data/testimonials.json</code></p>
+      <textarea id="json-editor" spellcheck="false"></textarea>
+      <div style="margin-top: 16px; display: flex; gap: 12px;">
+        <button class="btn primary" id="validate-json">Validate JSON</button>
+        <button class="btn" id="copy-json">Copy to Clipboard</button>
+        <button class="btn" id="download-json">Download File</button>
+      </div>
+      <div id="validation-message" style="margin-top: 12px;"></div>
+    </div>
+
+    <div style="margin-top: 48px;">
+      <h3 style="margin-bottom: 16px;">JSON Template for New Testimonial</h3>
+      <pre style="background: var(--surface-2); padding: 16px; border-radius: var(--radius-sm); overflow-x: auto;"><code>{
+  "id": 4,
+  "quote": "Paste testimonial text here",
+  "author": "First Last",
+  "role": "Title, Company",
+  "featured": true,
+  "approved": true,
+  "timestamp": "2024-11-19T12:00:00Z"
+}</code></pre>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      'use strict';
+
+      const jsonEditor = document.getElementById('json-editor');
+      const validateBtn = document.getElementById('validate-json');
+      const copyBtn = document.getElementById('copy-json');
+      const downloadBtn = document.getElementById('download-json');
+      const validationMessage = document.getElementById('validation-message');
+
+      // Load current testimonials
+      async function loadTestimonials() {
+        try {
+          const response = await fetch('data/testimonials.json');
+          const data = await response.json();
+          jsonEditor.value = JSON.stringify(data, null, 2);
+        } catch (error) {
+          console.error('Error loading testimonials:', error);
+          validationMessage.innerHTML = '<span style="color: var(--danger);">⚠️ Could not load testimonials.json</span>';
+        }
+      }
+
+      // Validate JSON
+      validateBtn.addEventListener('click', () => {
+        try {
+          const parsed = JSON.parse(jsonEditor.value);
+
+          // Check structure
+          if (!Array.isArray(parsed)) {
+            throw new Error('JSON must be an array');
+          }
+
+          // Validate each testimonial
+          parsed.forEach((t, index) => {
+            if (!t.id || !t.quote || !t.author || !t.role) {
+              throw new Error(`Testimonial at index ${index} is missing required fields`);
+            }
+            if (typeof t.approved !== 'boolean' || typeof t.featured !== 'boolean') {
+              throw new Error(`Testimonial at index ${index} has invalid boolean fields`);
+            }
+          });
+
+          validationMessage.innerHTML = '<span style="color: var(--ok); font-weight: 600;">✓ JSON is valid! Ready to save.</span>';
+        } catch (error) {
+          validationMessage.innerHTML = `<span style="color: var(--danger);">⚠️ Invalid JSON: ${error.message}</span>`;
+        }
+      });
+
+      // Copy to clipboard
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(jsonEditor.value);
+          validationMessage.innerHTML = '<span style="color: var(--ok); font-weight: 600;">✓ Copied to clipboard!</span>';
+          setTimeout(() => {
+            validationMessage.innerHTML = '';
+          }, 3000);
+        } catch (error) {
+          validationMessage.innerHTML = '<span style="color: var(--danger);">⚠️ Could not copy to clipboard</span>';
+        }
+      });
+
+      // Download as file
+      downloadBtn.addEventListener('click', () => {
+        const blob = new Blob([jsonEditor.value], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'testimonials.json';
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      // Load on page load
+      loadTestimonials();
+    })();
+  </script>
+</body>
+</html>

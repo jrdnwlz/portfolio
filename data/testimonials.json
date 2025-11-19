@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "quote": "Jordan's ability to bridge design and development is exceptional. She delivered a comprehensive design system that accelerated our entire product organization.",
+    "author": "Sarah Chen",
+    "role": "VP of Product, Sonatype",
+    "featured": true,
+    "approved": true,
+    "timestamp": "2024-01-15T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "quote": "Working with Jordan transformed how we think about prototyping. Her AI-assisted workflow allowed us to validate ideas in days instead of weeks.",
+    "author": "Michael Rodriguez",
+    "role": "Engineering Manager",
+    "featured": true,
+    "approved": true,
+    "timestamp": "2024-01-20T14:15:00Z"
+  },
+  {
+    "id": 3,
+    "quote": "Jordan doesn't just design interfaces—she designs systems. Her attention to accessibility and developer experience sets a new standard for our team.",
+    "author": "Emily Watson",
+    "role": "Lead Designer, Platform Team",
+    "featured": true,
+    "approved": true,
+    "timestamp": "2024-02-01T09:45:00Z"
+  }
+]
