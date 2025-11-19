@@ -762,6 +762,18 @@ main {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.principle-icon svg {
+  width: 48px;
+  height: 48px;
+  color: var(--text);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
 }
 
 .principle-icon::after {
@@ -780,6 +792,11 @@ main {
   border-color: var(--accent-purple);
   transform: scale(1.05);
   box-shadow: var(--shadow-colored);
+}
+
+.principle:hover .principle-icon svg {
+  color: var(--accent-purple);
+  transform: scale(1.1);
 }
 
 .principle:hover .principle-icon::after {
