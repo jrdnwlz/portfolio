@@ -60,11 +60,11 @@
   const templates = {
     template1: [
       { label: 'Working with Jordan was', field: 'adjective', placeholder: 'amazing, transformative, game-changing...' },
-      { label: 'He helped us', field: 'achievement', placeholder: 'ship a design system, validate our MVP...' }
+      { label: 'She helped us', field: 'achievement', placeholder: 'ship a design system, validate our MVP...' }
     ],
     template2: [
       { label: "Jordan's superpower is", field: 'skill', placeholder: 'rapid prototyping, systems thinking...' },
-      { label: 'He turned our', field: 'problem', placeholder: 'messy component library, confusing UX...' },
+      { label: 'She turned our', field: 'problem', placeholder: 'messy component library, confusing UX...' },
       { label: 'into', field: 'solution', placeholder: 'a cohesive design system, delightful experience...' }
     ],
     template3: [
@@ -74,8 +74,8 @@
     ],
     template4: [
       { label: "Jordan doesn't just", field: 'verb', placeholder: 'design interfaces' },
-      { label: '—he', field: 'betterVerb', placeholder: 'designs systems' },
-      { label: 'His', field: 'quality', placeholder: 'attention to accessibility' }
+      { label: '—she', field: 'betterVerb', placeholder: 'designs systems' },
+      { label: 'Her', field: 'quality', placeholder: 'attention to accessibility' }
     ]
   };
 
@@ -153,13 +153,13 @@
       let generatedText = '';
 
       if (selectedTemplate === 'template1') {
-        generatedText = `Working with Jordan was ${values.adjective}. He helped us ${values.achievement} in record time.`;
+        generatedText = `Working with Jordan was ${values.adjective}. She helped us ${values.achievement} in record time.`;
       } else if (selectedTemplate === 'template2') {
-        generatedText = `Jordan's superpower is ${values.skill}. He turned our ${values.problem} into ${values.solution}.`;
+        generatedText = `Jordan's superpower is ${values.skill}. She turned our ${values.problem} into ${values.solution}.`;
       } else if (selectedTemplate === 'template3') {
         generatedText = `I'd describe Jordan's work in three words: ${values.word1}, ${values.word2}, and ${values.word3}.`;
       } else if (selectedTemplate === 'template4') {
-        generatedText = `Jordan doesn't just ${values.verb}—he ${values.betterVerb}. His ${values.quality} sets a new standard.`;
+        generatedText = `Jordan doesn't just ${values.verb}—she ${values.betterVerb}. Her ${values.quality} sets a new standard.`;
       }
 
       const form = document.getElementById('madlibs-form');
@@ -226,13 +226,13 @@
       let generatedText = '';
 
       if (selectedTemplate === 'template1') {
-        generatedText = `Working with Jordan was ${values.adjective}. He helped us ${values.achievement} in record time.`;
+        generatedText = `Working with Jordan was ${values.adjective}. She helped us ${values.achievement} in record time.`;
       } else if (selectedTemplate === 'template2') {
-        generatedText = `Jordan's superpower is ${values.skill}. He turned our ${values.problem} into ${values.solution}.`;
+        generatedText = `Jordan's superpower is ${values.skill}. She turned our ${values.problem} into ${values.solution}.`;
       } else if (selectedTemplate === 'template3') {
         generatedText = `I'd describe Jordan's work in three words: ${values.word1}, ${values.word2}, and ${values.word3}.`;
       } else if (selectedTemplate === 'template4') {
-        generatedText = `Jordan doesn't just ${values.verb}—he ${values.betterVerb}. His ${values.quality} sets a new standard.`;
+        generatedText = `Jordan doesn't just ${values.verb}—she ${values.betterVerb}. Her ${values.quality} sets a new standard.`;
       }
 
       formData.set('testimonial', generatedText);
