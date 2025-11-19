@@ -754,26 +754,26 @@ main {
 }
 
 .principle-icon {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--surface), var(--surface-2));
-  border: 3px solid var(--border);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .principle-icon svg {
-  width: 48px;
-  height: 48px;
-  color: var(--text);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 32px;
+  height: 32px;
+  color: var(--muted);
+  transition: all 0.3s ease;
   position: relative;
   z-index: 2;
+  opacity: 0.8;
 }
 
 .principle-icon::after {
@@ -783,20 +783,19 @@ main {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.15), transparent 60%);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.06), transparent 60%);
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
 }
 
 .principle:hover .principle-icon {
-  border-color: var(--accent-purple);
-  transform: scale(1.05);
-  box-shadow: var(--shadow-colored);
+  border-color: var(--border-bright);
+  transform: translateY(-2px);
 }
 
 .principle:hover .principle-icon svg {
-  color: var(--accent-purple);
-  transform: scale(1.1);
+  color: var(--text);
+  opacity: 1;
 }
 
 .principle:hover .principle-icon::after {
