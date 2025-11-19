@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Sonatype Guide — Case Study • Jordan Walz</title>
+  <meta name="description" content="Designing explainable automation for secure dependency choices. Role: Senior Product Designer (lead), 2024–2025."/>
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Sonatype Guide Case Study"/>
+  <meta property="og:description" content="Designing explainable automation for secure dependency choices"/>
+  <meta property="og:type" content="article"/>
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Jordan Walz</a>
+      <nav class="nav" aria-label="Main">
+        <a href="case-study-sonatype-guide.html" aria-current="page">Work</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container stack">
+        <div class="kicker">Flagship Case Study</div>
+        <h1>Sonatype Guide — Reliable automation for secure dependency choices</h1>
+        <p class="lead">I led discovery, interaction design, and prototyping for a multi‑phase rollout focused on <strong>explainable automation</strong> and <strong>low‑friction developer workflows</strong>.</p>
+        <div class="row">
+          <a class="btn" href="https://github.com/">View repo</a>
+          <a class="btn" href="#demo">Watch demo</a>
+        </div>
+        <div class="stats" role="list">
+          <div class="stat" role="listitem"><div class="kpi">&lt; 5 min</div><div class="muted">Time‑to‑value</div></div>
+          <div class="stat" role="listitem"><div class="kpi">12</div><div class="muted">Pilot teams</div></div>
+          <div class="stat" role="listitem"><div class="kpi">+38%</div><div class="muted">Adoption lift</div></div>
+          <div class="stat" role="listitem"><div class="kpi">+42</div><div class="muted">NPS (pilot)</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="container stack">
+        <h2>Overview</h2>
+        <p>Sonatype Guide helps teams automate secure dependency choices and policy adoption. The product reduces decision time from days to hours while improving trust via transparent evidence and easy rollback.</p>
+      </div>
+    </section>
+
+    <section class="section" id="problem">
+      <div class="container stack">
+        <h2>Problem & Goals</h2>
+        <ul class="stack">
+          <li>Developers struggle to operationalize component policies inside everyday tools.</li>
+          <li>Security teams need <em>explainable</em> automation that earns trust.</li>
+          <li>Business goal: accelerate policy adoption and reduce mean time to remediation.</li>
+        </ul>
+        <div class="figure">
+          <img src="assets/img/guide/01-problem.webp" alt="Where guidance appeared late in PR review leading to guesswork" loading="lazy" width="1200" height="800"/>
+          <div class="caption">Before: policy guidance surfaced late; engineers guessed at fixes.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="container stack">
+        <h2>Research & Insights</h2>
+        <ul class="stack">
+          <li>Field studies with 18 engineers across 5 orgs (IDE + PR review sessions).</li>
+          <li>Preference for inline guidance with a path to depth (progressive disclosure).</li>
+          <li>Automation must be revertible and human‑overridable.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="design">
+      <div class="container stack">
+        <h2>Design System & Key Flows</h2>
+        <p>Wireframes for onboarding, repo scan, recommendation review, and policy change approval. Each recommendation includes confidence and rationale.</p>
+        <div class="grid grid-3">
+          <div class="figure"><img src="assets/img/guide/02-onboarding.webp" alt="Onboarding flow showing quick setup" loading="lazy" width="800" height="600"/><div class="caption">First‑run setup reaches a trustworthy recommendation under 5 minutes.</div></div>
+          <div class="figure"><img src="assets/img/guide/03-recommendation.webp" alt="Recommendation detail with confidence and rationale" loading="lazy" width="800" height="600"/><div class="caption">Recommendation detail with confidence + rationale and one‑click apply.</div></div>
+          <div class="figure"><img src="assets/img/guide/04-rollback.webp" alt="Rollback control" loading="lazy" width="800" height="600"/><div class="caption">Reversible by default with clear audit trail.</div></div>
+        </div>
+        <div class="sep"></div>
+        <a id="demo"></a>
+        <div class="figure">
+          <img src="assets/img/guide/hero-video-poster.webp" alt="Cover image for Guide demo video" loading="lazy" width="1200" height="675"/>
+          <div class="caption">Demo clip (60–90s) walking first‑run → scan → recommendation → approve → rollback.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="impact">
+      <div class="container stack">
+        <h2>Impact</h2>
+        <ul class="stack">
+          <li>Decision time for dependency upgrades reduced from days to hours.</li>
+          <li>Increased trust via transparent evidence and rollback.</li>
+          <li>Shipped in two milestones using a modular design spec.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="appendix">
+      <div class="container stack">
+        <h2>Appendix</h2>
+        <p>Artifacts: journey map, service blueprint, policy model, PR/IDE prototypes, moderated test plan, metrics plan, rollout comms.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Jordan Walz • Built without frameworks • Case study: Sonatype Guide</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="assets/js/interactions.js"></script>
+</body>
+</html>

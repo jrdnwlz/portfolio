@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Jordan Walz — Senior Product Designer</title>
+  <meta name="description" content="Senior Product Designer specializing in reliable automation for developers. Flagship case study: Sonatype Guide."/>
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Jordan Walz — Senior Product Designer"/>
+  <meta property="og:description" content="Reliable automation for developers. Flagship case study: Sonatype Guide."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://jordanwalz.com"/>
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico"/>
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Jordan Walz</a>
+      <nav class="nav" aria-label="Main">
+        <a href="case-study-sonatype-guide.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Senior Product Designer for developer experience & reliable automation</h1>
+        <p>I design trustworthy, explainable systems that help engineers move faster with confidence.</p>
+        <div class="actions">
+          <a class="btn primary" href="case-study-sonatype-guide.html">View flagship case study</a>
+          <a class="btn" href="resume.html">Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="kicker">Selected</p>
+        <h2>Work</h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Sonatype Guide</h3>
+            <p class="muted">Explainable automation for secure dependency choices.</p>
+            <div class="tags"><span class="tag">Design lead</span><span class="tag">Research</span><span class="tag">Prototype</span></div>
+            <div class="actions" style="margin-top:12px"><a class="btn" href="case-study-sonatype-guide.html">Read case study</a></div>
+          </article>
+          <article class="card">
+            <h3>Policy in PR</h3>
+            <p class="muted">Inline policy guidance in code review (GitHub/GitLab).</p>
+            <div class="tags"><span class="tag">UX</span><span class="tag">DX</span></div>
+          </article>
+          <article class="card">
+            <h3>IDE Companion</h3>
+            <p class="muted">Contextual nudges + safe automation in IDE.</p>
+            <div class="tags"><span class="tag">Exploration</span><span class="tag">Prototype</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Jordan Walz • Case study: Sonatype Guide</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="assets/js/interactions.js"></script>
+</body>
+</html>

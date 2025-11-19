@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>About • Jordan Walz</title>
+  <meta name="description" content="Senior Product Designer focused on developer experience, systems thinking, and explainable automation."/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Jordan Walz</a>
+      <nav class="nav" aria-label="Main">
+        <a href="case-study-sonatype-guide.html">Work</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container stack">
+        <h1>About</h1>
+        <p>I specialize in complex systems where trust, safety, and velocity must coexist. My strengths: clarifying ambiguous problems, aligning stakeholders, and shipping pragmatic designs that scale.</p>
+        <ul class="stack">
+          <li><strong>Strengths:</strong> narrative & structure, prototyping, research synthesis, cross‑functional facilitation.</li>
+          <li><strong>Tooling:</strong> Figma, GitHub, VS Code, accessibility, analytics.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container">© <span id="y"></span> Jordan Walz</div></footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="assets/js/interactions.js"></script>
+</body>
+</html>
