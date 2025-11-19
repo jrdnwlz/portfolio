@@ -340,6 +340,20 @@ main {
   line-height: 1.6;
 }
 
+.hero-centered {
+  text-align: center;
+}
+
+.hero-centered h1,
+.hero-centered p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-centered .actions {
+  justify-content: center;
+}
+
 /* ============================================
    Buttons & Actions
    ============================================ */
@@ -436,6 +450,15 @@ main {
   height: 3px;
   background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
   border-radius: 2px;
+}
+
+.section-centered {
+  text-align: center;
+}
+
+.section-centered h2::after {
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .section h3 {
@@ -860,6 +883,94 @@ main {
 
   .ai-focus-box {
     padding: 24px 20px;
+  }
+}
+
+/* ============================================
+   Testimonials Section
+   ============================================ */
+.testimonials-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 64px 0;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.testimonial {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  text-align: left;
+}
+
+.testimonial::before {
+  content: '"';
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--border-bright);
+  line-height: 1;
+  opacity: 0.3;
+}
+
+.testimonial:hover {
+  border-color: var(--accent-purple);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-colored);
+}
+
+.testimonial blockquote {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial blockquote p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0 0 24px 0;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.testimonial-author strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.testimonial-author .muted {
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .testimonials {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .testimonials-section {
+    padding: 48px 0;
   }
 }
 
