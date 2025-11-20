@@ -1757,7 +1757,7 @@ main {
 
 /* Skills Categories */
 .skills-category {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .skills-category:last-child {
@@ -1765,36 +1765,50 @@ main {
 }
 
 .skills-category h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--accent-blue);
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--accent-blue);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.skills-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 8px 16px;
+/* Skills Badges */
+.skills-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.skills-list li {
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--text);
-  font-size: 15px;
-  padding-left: 20px;
-  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
 }
 
-.skills-list li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: var(--accent-purple);
-  font-weight: 700;
-  font-size: 18px;
+.skill-badge svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.skill-badge:hover {
+  transform: translateY(-2px) scale(1.02);
+  border-color: var(--accent-purple);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill-badge:hover svg {
+  opacity: 1;
 }
 
 /* Resume Entry Enhancements */
@@ -1998,8 +2012,14 @@ main {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .skills-list {
-    grid-template-columns: 1fr;
+  .skill-badge {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+
+  .skill-badge svg {
+    width: 12px;
+    height: 12px;
   }
 
   .career-timeline {
