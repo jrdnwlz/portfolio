@@ -162,6 +162,71 @@
   }
 
   /**
+   * Career Timeline
+   * Handles node click interactions for expanding/collapsing details
+   */
+  function initCareerTimeline() {
+    const timeline = document.querySelector('.career-timeline');
+    if (!timeline) return;
+
+    const timelineLine = timeline.querySelector('.timeline-line');
+    const timelineItems = Array.from(timeline.querySelectorAll('.timeline-item'));
+
+    if (!timelineLine || !timelineItems.length) return;
+
+    // Animate timeline line on load
+    timelineLine.classList.add('animate');
+
+    // Expand the first item by default
+    timelineItems[0].classList.add('expanded');
+    const firstNode = timelineItems[0].querySelector('.timeline-node');
+    if (firstNode) {
+      firstNode.setAttribute('aria-expanded', 'true');
+    }
+
+    // Setup node click handlers
+    timelineItems.forEach((item) => {
+      const node = item.querySelector('.timeline-node');
+      if (!node) return;
+
+      const title = item.querySelector('h3');
+
+      // Configure accessibility
+      node.setAttribute('role', 'button');
+      node.setAttribute('tabindex', '0');
+      node.setAttribute('aria-label', `Show details for ${title ? title.textContent : 'position'}`);
+
+      // Click handler
+      node.addEventListener('click', function() {
+        const isExpanded = item.classList.contains('expanded');
+
+        // Collapse all other items
+        timelineItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('expanded');
+            const otherNode = otherItem.querySelector('.timeline-node');
+            if (otherNode) {
+              otherNode.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+
+        // Toggle current item
+        item.classList.toggle('expanded');
+        node.setAttribute('aria-expanded', !isExpanded);
+      });
+
+      // Keyboard support
+      node.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          node.click();
+        }
+      });
+    });
+  }
+
+  /**
    * Initialize all interactions
    */
   function init() {
@@ -170,6 +235,9 @@
 
     // Tab functionality
     initTabs();
+
+    // Career timeline animations
+    initCareerTimeline();
 
     // Mobile menu enhancements
     document.addEventListener('click', handleOutsideClick);

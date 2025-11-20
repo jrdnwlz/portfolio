@@ -1812,6 +1812,158 @@ main {
   color: var(--accent-blue);
 }
 
+/* Career Timeline */
+.career-timeline {
+  position: relative;
+  padding-left: 48px;
+  margin-top: 32px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  width: 2px;
+  height: 0;
+  background: linear-gradient(180deg,
+    var(--accent-blue) 0%,
+    var(--accent-purple) 50%,
+    var(--accent-pink) 100%);
+  transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-line.animate {
+  height: calc(100% - 24px);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 48px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-node {
+  position: absolute;
+  left: -42px;
+  top: 8px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--accent-blue);
+  transition: transform 0.3s ease, border-width 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+  cursor: pointer;
+  will-change: transform;
+}
+
+/* Graduated node sizes based on seniority */
+.timeline-item[data-seniority="entry"] .timeline-node {
+  width: 12px;
+  height: 12px;
+  border-color: var(--accent-blue);
+}
+
+.timeline-item[data-seniority="junior"] .timeline-node {
+  width: 16px;
+  height: 16px;
+  border-color: var(--accent-blue);
+}
+
+.timeline-item[data-seniority="mid"] .timeline-node {
+  width: 20px;
+  height: 20px;
+  border-color: var(--accent-purple);
+}
+
+.timeline-item[data-seniority="senior"] .timeline-node {
+  width: 24px;
+  height: 24px;
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.4);
+}
+
+/* Node hover effects - enhanced for clickability */
+.timeline-node:hover {
+  transform: scale(1.3);
+}
+
+.timeline-item[data-seniority="entry"] .timeline-node:hover {
+  box-shadow: 0 0 16px rgba(0, 123, 255, 0.6);
+}
+
+.timeline-item[data-seniority="junior"] .timeline-node:hover {
+  box-shadow: 0 0 18px rgba(0, 123, 255, 0.6);
+}
+
+.timeline-item[data-seniority="mid"] .timeline-node:hover {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+}
+
+.timeline-item[data-seniority="senior"] .timeline-node:hover {
+  box-shadow: 0 0 24px rgba(255, 105, 180, 0.7);
+}
+
+/* Active/expanded state for nodes */
+.timeline-item.expanded .timeline-node {
+  transform: scale(1.4);
+  border-width: 4px;
+}
+
+/* Pulse animation for senior node */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 105, 180, 0);
+  }
+}
+
+.timeline-item[data-seniority="senior"] .timeline-node {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.timeline-content {
+  position: relative;
+}
+
+.timeline-summary {
+  margin-top: 12px;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.timeline-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease,
+              margin-top 0.3s ease;
+  opacity: 0;
+}
+
+.timeline-item.expanded .timeline-details {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.timeline-details ul {
+  list-style: disc;
+  padding-left: 24px;
+  margin: 0;
+}
+
+.timeline-details ul li {
+  margin-bottom: 8px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .resume-title-row {
@@ -1848,5 +2000,17 @@ main {
 
   .skills-list {
     grid-template-columns: 1fr;
+  }
+
+  .career-timeline {
+    padding-left: 32px;
+  }
+
+  .timeline-node {
+    left: -28px;
+  }
+
+  .timeline-line {
+    left: 10px;
   }
 }
