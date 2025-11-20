@@ -1075,6 +1075,7 @@ main {
   color: white;
   border-color: transparent;
   box-shadow: var(--shadow-colored);
+  background-origin: border-box;
 }
 
 .testimonial-form {

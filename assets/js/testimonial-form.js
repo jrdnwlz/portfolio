@@ -333,6 +333,9 @@
             }
           }
         });
+      } else {
+        // User clicked Cancel - clear the draft so they're not asked again
+        localStorage.removeItem('testimonialDraft');
       }
     }
   });
