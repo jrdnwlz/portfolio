@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Work — Jordan Walz</title>
+  <meta name="description" content="Case studies and portfolio work by Jordan Walz, Senior Product Designer"/>
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Work — Jordan Walz"/>
+  <meta property="og:description" content="Case studies and portfolio work by Jordan Walz"/>
+  <meta property="og:type" content="website"/>
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Jordan Walz</a>
+      <nav class="nav" aria-label="Main">
+        <a href="work.html" aria-current="page">Work</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Featured Case Study Hero -->
+    <section class="hero hero-work">
+      <div class="container">
+        <div class="kicker">Featured</div>
+        <h1>Guide UX Lab: A fully functional prototype</h1>
+        <p class="lead">End-to-end design and development of a working prototype, providing a usable reference for engineering teams.</p>
+
+        <div class="actions" style="margin-top: 32px;">
+          <a class="btn primary" href="case-study-sonatype-guide.html">Read full case study</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies Grid -->
+    <section class="section">
+      <div class="container">
+        <h2 style="margin-bottom: 32px;">All Case Studies</h2>
+
+        <div class="case-studies-grid">
+          <!-- Featured Case Study Card -->
+          <article class="case-study-card featured">
+            <div class="case-study-meta">
+              <span class="tag">Featured</span>
+              <span class="tag">2025</span>
+            </div>
+            <h3 class="case-study-title">
+              <a href="case-study-sonatype-guide.html">Guide UX Lab</a>
+            </h3>
+            <p class="case-study-description">Fully functional prototype developed using VS Code and Claude Code</p>
+            <div class="case-study-highlights">
+              <span class="highlight">Dev Handoff</span>
+              <span class="highlight">Vibe</span>
+              <span class="highlight">VS Code</span>
+            </div>
+            <a href="case-study-sonatype-guide.html" class="case-study-link">View case study →</a>
+          </article>
+
+          <!-- Placeholder for additional case studies -->
+          <article class="case-study-card">
+            <div class="case-study-meta">
+              <span class="tag">Coming Soon</span>
+            </div>
+            <h3 class="case-study-title">
+              Additional Case Study
+            </h3>
+            <p class="case-study-description">More portfolio work and case studies coming soon. Check back for updates on recent projects and design work.</p>
+            <div class="case-study-highlights">
+              <span class="highlight">In Progress</span>
+            </div>
+          </article>
+
+          <article class="case-study-card">
+            <div class="case-study-meta">
+              <span class="tag">Coming Soon</span>
+            </div>
+            <h3 class="case-study-title">
+              Additional Case Study
+            </h3>
+            <p class="case-study-description">More portfolio work and case studies coming soon. Check back for updates on recent projects and design work.</p>
+            <div class="case-study-highlights">
+              <span class="highlight">In Progress</span>
+            </div>
+          </article>
+
+          <article class="case-study-card">
+            <div class="case-study-meta">
+              <span class="tag">Coming Soon</span>
+            </div>
+            <h3 class="case-study-title">
+              Additional Case Study
+            </h3>
+            <p class="case-study-description">More portfolio work and case studies coming soon. Check back for updates on recent projects and design work.</p>
+            <div class="case-study-highlights">
+              <span class="highlight">In Progress</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Jordan Walz</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="assets/js/interactions.js"></script>
+</body>
+</html>
