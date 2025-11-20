@@ -34,10 +34,10 @@
   function renderTestimonials(testimonials) {
     if (testimonials.length === 0) return;
 
-    testimonialsContainer.innerHTML = testimonials.map(t => `
-      <div class="testimonial">
+    testimonialsContainer.innerHTML = testimonials.map((t, index) => `
+      <div class="testimonial" data-index="${index}">
         <blockquote>
-          <p>"${escapeHtml(t.quote)}"</p>
+          <p class="testimonial-quote">${escapeHtml(t.quote)}</p>
         </blockquote>
         <div class="testimonial-author">
           <strong>${escapeHtml(t.author)}</strong>
@@ -45,6 +45,13 @@
         </div>
       </div>
     `).join('');
+
+    // Add click handlers for expansion
+    testimonialsContainer.querySelectorAll('.testimonial').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('expanded');
+      });
+    });
   }
 
   function escapeHtml(text) {
