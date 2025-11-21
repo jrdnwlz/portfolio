@@ -2171,3 +2171,99 @@ main {
     padding: 24px;
   }
 }
+
+/* ===================================
+   About Page
+   =================================== */
+
+/* Hero Section */
+.about-hero {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.about-headshot {
+  flex-shrink: 0;
+}
+
+.headshot-placeholder {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.about-intro {
+  flex: 1;
+  max-width: 640px;
+}
+
+/* Narrative Content */
+.narrative-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.narrative-content p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.narrative-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Beyond Work Callout */
+.currently-callout {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-purple);
+  border-radius: 12px;
+}
+
+.currently-content {
+  /* Content styles handled inline in HTML */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .headshot-placeholder {
+    width: 140px;
+    height: 140px;
+  }
+
+  .headshot-placeholder svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .about-intro {
+    max-width: 100%;
+  }
+
+  .currently-callout {
+    padding: 24px;
+  }
+
+  .narrative-content p {
+    font-size: 16px;
+  }
+}
