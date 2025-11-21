@@ -80,10 +80,15 @@
 
   function showFallbackMessage() {
     // Silently fail - keep any existing HTML testimonials
+    console.info('Using fallback testimonials from HTML');
   }
 
   function renderTestimonials(testimonials) {
-    if (testimonials.length === 0) return;
+    // Only replace if we have testimonials to show
+    if (testimonials.length === 0) {
+      console.info('No featured testimonials found, keeping fallback HTML');
+      return;
+    }
 
     // Truncate quote for card display (first 150 characters)
     const truncateQuote = (quote) => {
@@ -91,36 +96,46 @@
       return quote.substring(0, 150) + '...';
     };
 
-    testimonialsContainer.innerHTML = testimonials.map((t, index) => `
-      <div class="testimonial" data-index="${index}">
-        <blockquote>
-          <p class="testimonial-quote">${escapeHtml(truncateQuote(t.quote))}</p>
-        </blockquote>
-        <div class="testimonial-author">
-          <strong>${escapeHtml(t.author)}</strong>
-          <span class="muted">${escapeHtml(t.role)}</span>
+    // Add fade-out transition before replacing content
+    testimonialsContainer.style.opacity = '0';
+    testimonialsContainer.style.transition = 'opacity 0.2s ease-in-out';
+
+    // Wait for fade-out, then replace content
+    setTimeout(() => {
+      testimonialsContainer.innerHTML = testimonials.map((t, index) => `
+        <div class="testimonial" data-index="${index}">
+          <blockquote>
+            <p class="testimonial-quote">${escapeHtml(truncateQuote(t.quote))}</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <strong>${escapeHtml(t.author)}</strong>
+            <span class="muted">${escapeHtml(t.role)}</span>
+          </div>
         </div>
-      </div>
-    `).join('');
+      `).join('');
 
-    // Add click handlers to open dialog
-    testimonialsContainer.querySelectorAll('.testimonial').forEach((card, index) => {
-      card.addEventListener('click', () => {
-        openTestimonialDialog(testimonials[index]);
-      });
-
-      // Add keyboard support
-      card.setAttribute('role', 'button');
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('aria-label', `Read full testimonial from ${testimonials[index].author}`);
-
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
+      // Add click handlers to open dialog
+      testimonialsContainer.querySelectorAll('.testimonial').forEach((card, index) => {
+        card.addEventListener('click', () => {
           openTestimonialDialog(testimonials[index]);
-        }
+        });
+
+        // Add keyboard support
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', `Read full testimonial from ${testimonials[index].author}`);
+
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openTestimonialDialog(testimonials[index]);
+          }
+        });
       });
-    });
+
+      // Fade in the new content
+      testimonialsContainer.style.opacity = '1';
+    }, 200);
   }
 
   function openTestimonialDialog(testimonial) {
