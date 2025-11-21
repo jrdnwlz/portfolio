@@ -1937,33 +1937,23 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: space-between;
 }
 
 .skill-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
+  display: inline-block;
+  padding: 6px 14px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 12px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--text);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   cursor: default;
 }
 
 .skill-badge svg {
-  flex-shrink: 0;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-}
-
-.skill-badge:hover {
-  transform: translateY(-2px) scale(1.02);
-  border-color: var(--accent-purple);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: none;
 }
 
 .skill-badge:hover svg {
