@@ -11,10 +11,7 @@
   const SELECTORS = {
     nav: '.nav',
     body: 'body',
-    anchorLink: 'a[href^="#"]',
-    tabGroup: '[data-tabs]',
-    tabButton: '[role="tab"]',
-    tabPanel: '[role="tabpanel"]'
+    anchorLink: 'a[href^="#"]'
   };
 
   /**
@@ -65,65 +62,6 @@
     targetElement.focus({ preventScroll: true });
   }
 
-  /**
-   * Initialize accessible tab components
-   * Follows ARIA Authoring Practices Guide for tabs
-   */
-  function initTabs() {
-    const tabGroups = document.querySelectorAll(SELECTORS.tabGroup);
-    if (!tabGroups.length) return;
-
-    tabGroups.forEach(group => {
-      const buttons = Array.from(group.querySelectorAll(SELECTORS.tabButton));
-      const panels = Array.from(group.querySelectorAll(SELECTORS.tabPanel));
-
-      if (!buttons.length || !panels.length) return;
-
-      buttons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-          // Deactivate all tabs
-          buttons.forEach(btn => {
-            btn.setAttribute('aria-selected', 'false');
-            btn.setAttribute('tabindex', '-1');
-          });
-
-          // Activate clicked tab
-          button.setAttribute('aria-selected', 'true');
-          button.setAttribute('tabindex', '0');
-
-          // Show corresponding panel
-          const targetId = button.getAttribute('aria-controls');
-          panels.forEach(panel => {
-            panel.hidden = panel.id !== targetId;
-          });
-        });
-
-        // Keyboard navigation
-        button.addEventListener('keydown', (e) => {
-          let newIndex = index;
-
-          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-            newIndex = (index + 1) % buttons.length;
-            e.preventDefault();
-          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-            newIndex = (index - 1 + buttons.length) % buttons.length;
-            e.preventDefault();
-          } else if (e.key === 'Home') {
-            newIndex = 0;
-            e.preventDefault();
-          } else if (e.key === 'End') {
-            newIndex = buttons.length - 1;
-            e.preventDefault();
-          } else {
-            return;
-          }
-
-          buttons[newIndex].click();
-          buttons[newIndex].focus();
-        });
-      });
-    });
-  }
 
   /**
    * Close mobile menu when clicking outside
@@ -232,9 +170,6 @@
   function init() {
     // Smooth scrolling for anchor links
     document.body.addEventListener('click', smoothScroll);
-
-    // Tab functionality
-    initTabs();
 
     // Career timeline animations
     initCareerTimeline();

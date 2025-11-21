@@ -734,13 +734,37 @@ main {
   opacity: 0.5;
 }
 
-.visually-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
+/* Utility Classes */
+.mb-18 {
+  margin-bottom: 18px;
+}
+
+.section-bg {
+  background: var(--surface);
+}
+
+.callout-heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-purple);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.callout-text {
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.sidebar-heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* ============================================
