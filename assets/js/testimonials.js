@@ -85,10 +85,16 @@
   function renderTestimonials(testimonials) {
     if (testimonials.length === 0) return;
 
+    // Truncate quote for card display (first 150 characters)
+    const truncateQuote = (quote) => {
+      if (quote.length <= 150) return quote;
+      return quote.substring(0, 150) + '...';
+    };
+
     testimonialsContainer.innerHTML = testimonials.map((t, index) => `
       <div class="testimonial" data-index="${index}">
         <blockquote>
-          <p class="testimonial-quote">${escapeHtml(t.quote)}</p>
+          <p class="testimonial-quote">${escapeHtml(truncateQuote(t.quote))}</p>
         </blockquote>
         <div class="testimonial-author">
           <strong>${escapeHtml(t.author)}</strong>
@@ -97,12 +103,86 @@
       </div>
     `).join('');
 
-    // Add click handlers for expansion
-    testimonialsContainer.querySelectorAll('.testimonial').forEach(card => {
+    // Add click handlers to open dialog
+    testimonialsContainer.querySelectorAll('.testimonial').forEach((card, index) => {
       card.addEventListener('click', () => {
-        card.classList.toggle('expanded');
+        openTestimonialDialog(testimonials[index]);
+      });
+
+      // Add keyboard support
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', `Read full testimonial from ${testimonials[index].author}`);
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openTestimonialDialog(testimonials[index]);
+        }
       });
     });
+  }
+
+  function openTestimonialDialog(testimonial) {
+    // Create dialog element
+    const dialog = document.createElement('dialog');
+    dialog.className = 'testimonial-dialog';
+
+    // Format quote with line breaks preserved
+    const formattedQuote = escapeHtml(testimonial.quote).replace(/\n/g, '<br><br>');
+
+    dialog.innerHTML = `
+      <div class="dialog-content">
+        <button class="dialog-close" aria-label="Close dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <blockquote class="dialog-quote">
+          <p>"${formattedQuote}"</p>
+        </blockquote>
+        <div class="dialog-author">
+          <strong>${escapeHtml(testimonial.author)}</strong>
+          <span class="muted">${escapeHtml(testimonial.role)}</span>
+          ${testimonial.company ? `<span class="muted">${escapeHtml(testimonial.company)}</span>` : ''}
+        </div>
+        ${testimonial.timestamp ? `<time class="dialog-date muted">${formatDate(testimonial.timestamp)}</time>` : ''}
+      </div>
+    `;
+
+    document.body.appendChild(dialog);
+
+    // Close handlers
+    const closeBtn = dialog.querySelector('.dialog-close');
+    closeBtn.addEventListener('click', () => {
+      dialog.close();
+      dialog.remove();
+    });
+
+    // Close on backdrop click
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) {
+        dialog.close();
+        dialog.remove();
+      }
+    });
+
+    // Close on Escape key
+    dialog.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        dialog.close();
+        dialog.remove();
+      }
+    });
+
+    // Show dialog with animation
+    dialog.showModal();
+  }
+
+  function formatDate(timestamp) {
+    const date = new Date(timestamp);
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
   }
 
   function escapeHtml(text) {
