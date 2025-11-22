@@ -2018,7 +2018,6 @@ main {
 
 .timeline-node {
   position: absolute;
-  left: -42px;
   top: 8px;
   border-radius: 50%;
   background: var(--bg);
@@ -2027,30 +2026,36 @@ main {
   z-index: 2;
   cursor: pointer;
   will-change: transform;
+  /* Timeline line center is at 16px (15px left + 1px for 2px line center) */
+  /* Node left position = 16px - (node-width / 2) - padding-left */
 }
 
-/* Graduated node sizes based on seniority */
+/* Graduated node sizes based on seniority - centered on timeline line */
 .timeline-item[data-seniority="entry"] .timeline-node {
   width: 12px;
   height: 12px;
+  left: calc(16px - 48px - 6px); /* 16px line center - 48px padding - half node width */
   border-color: var(--accent-blue);
 }
 
 .timeline-item[data-seniority="junior"] .timeline-node {
   width: 16px;
   height: 16px;
+  left: calc(16px - 48px - 8px); /* 16px line center - 48px padding - half node width */
   border-color: var(--accent-blue);
 }
 
 .timeline-item[data-seniority="mid"] .timeline-node {
   width: 20px;
   height: 20px;
+  left: calc(16px - 48px - 10px); /* 16px line center - 48px padding - half node width */
   border-color: var(--accent-purple);
 }
 
 .timeline-item[data-seniority="senior"] .timeline-node {
   width: 24px;
   height: 24px;
+  left: calc(16px - 48px - 12px); /* 16px line center - 48px padding - half node width */
   border-color: var(--accent-pink);
   box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.4);
 }
