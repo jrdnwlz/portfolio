@@ -62,37 +62,44 @@ Themes are defined using data attributes on the `:root` element:
 
 ## Available Themes
 
-### 1. Blue & Purple (Default)
+### 1. Vintage Garden (Default)
+- Primary: Tomato (#ff6542)
+- Secondary: Blue Energy (#478eff)
+- Tertiary: Forest Moss (#697a21)
+- **Additional colors**: Vintage Grape (#45425a), Parchment (#f5f1ed)
+- **Best for**: Unique, earthy yet vibrant aesthetic with natural tones
+
+### 2. Blue & Purple
 - Primary: Blue (#3b82f6)
 - Secondary: Purple (#a855f7)
 - Tertiary: Pink (#ec4899)
 - **Best for**: Professional, modern look
 
-### 2. Purple & Pink
+### 3. Purple & Pink
 - Primary: Purple (#a855f7)
 - Secondary: Pink (#ec4899)
 - Tertiary: Blue (#3b82f6)
 - **Best for**: Creative, vibrant aesthetic
 
-### 3. Teal & Blue
+### 4. Teal & Blue
 - Primary: Teal (#14b8a6)
 - Secondary: Blue (#3b82f6)
 - Tertiary: Purple (#a855f7)
 - **Best for**: Calm, tech-focused feel
 
-### 4. Orange & Red (Warm)
+### 5. Orange & Red (Warm)
 - Primary: Orange (#f97316)
 - Secondary: Red (#ef4444)
 - Tertiary: Yellow (#eab308)
 - **Best for**: Energetic, attention-grabbing
 
-### 5. Green & Teal (Nature)
+### 6. Green & Teal (Nature)
 - Primary: Green (#10b981)
 - Secondary: Teal (#14b8a6)
 - Tertiary: Lime (#84cc16)
 - **Best for**: Fresh, eco-friendly vibe
 
-### 6. Monochrome (Professional)
+### 7. Monochrome (Professional)
 - Primary: Gray (#6b7280)
 - Secondary: Dark Gray (#4b5563)
 - Tertiary: Darker Gray (#374151)

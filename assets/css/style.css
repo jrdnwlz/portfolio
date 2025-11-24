@@ -93,21 +93,17 @@ p, h1, h2, h3, h4, h5, h6 {
   --accent-yellow: #eab308;
   --accent-yellow-light: #fbbf24;
 
-  /* Default Theme: Blue-Purple (Current) */
-  --primary-accent: var(--accent-blue);
-  --primary-accent-light: var(--accent-blue-light);
-  --secondary-accent: var(--accent-purple);
-  --secondary-accent-light: var(--accent-purple-light);
-  --tertiary-accent: var(--accent-pink);
-
-  /* Dynamic Gradients (automatically update with theme) */
-  --accent: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
-  --accent-hover: linear-gradient(135deg, var(--primary-accent-light), var(--secondary-accent-light));
+  /* Default Theme: Vintage Garden */
+  --primary-accent: #ff6542; /* Tomato */
+  --primary-accent-light: #ff8468;
+  --secondary-accent: #478eff; /* Blue Energy */
+  --secondary-accent-light: #6ba3ff;
+  --tertiary-accent: #697a21; /* Forest Moss */
 
   /* Dynamic RGBA values (centralized for shadows/overlays) */
-  --primary-accent-rgb: 59, 130, 246; /* blue */
-  --secondary-accent-rgb: 168, 85, 247; /* purple */
-  --tertiary-accent-rgb: 236, 72, 153; /* pink */
+  --primary-accent-rgb: 255, 101, 66; /* Tomato */
+  --secondary-accent-rgb: 71, 142, 255; /* Blue Energy */
+  --tertiary-accent-rgb: 105, 122, 33; /* Forest Moss */
 
   /* Elevation shadows using dynamic colors */
   --shadow: 0 10px 30px rgba(var(--primary-accent-rgb), 0.15), 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -187,6 +183,21 @@ p, h1, h2, h3, h4, h5, h6 {
   --primary-accent-rgb: 107, 114, 128; /* gray */
   --secondary-accent-rgb: 75, 85, 99; /* dark gray */
   --tertiary-accent-rgb: 55, 65, 81; /* darker gray */
+}
+
+/* Vintage Garden Theme (Custom) */
+:root[data-theme="vintage-garden"] {
+  --primary-accent: #ff6542; /* Tomato */
+  --primary-accent-light: #ff8468;
+  --secondary-accent: #478eff; /* Blue Energy */
+  --secondary-accent-light: #6ba3ff;
+  --tertiary-accent: #697a21; /* Forest Moss */
+  --primary-accent-rgb: 255, 101, 66; /* Tomato */
+  --secondary-accent-rgb: 71, 142, 255; /* Blue Energy */
+  --tertiary-accent-rgb: 105, 122, 33; /* Forest Moss */
+  /* Additional palette colors available for manual use */
+  --vintage-grape: #45425a;
+  --parchment: #f5f1ed;
 }
 
 @media (prefers-color-scheme: light) {
@@ -278,18 +289,12 @@ main {
   font-weight: 650;
   letter-spacing: 0.2px;
   text-decoration: none;
-  background: var(--accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-accent);
   transition: all 0.3s ease;
 }
 
 .brand:hover {
-  background: var(--accent-hover);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--secondary-accent);
   transform: translateY(-1px);
 }
 
@@ -331,7 +336,7 @@ main {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--primary-accent);
   border-radius: 2px;
 }
 
@@ -417,10 +422,7 @@ main {
   line-height: 1.2;
   font-weight: 700;
   max-width:70vw;
-  background: linear-gradient(135deg, var(--text) 0%, var(--text) 40%, var(--secondary-accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
 }
 
 .hero p {
@@ -505,7 +507,7 @@ main {
 }
 
 .btn.primary {
-  background: var(--accent);
+  background: var(--primary-accent);
   color: var(--btn-primary-text);
   border: none;
   font-weight: 600;
@@ -513,7 +515,7 @@ main {
 }
 
 .btn.primary:hover {
-  background: var(--accent-hover);
+  background: var(--primary-accent-light);
   box-shadow: 0 15px 50px rgba(var(--secondary-accent-rgb), 0.35);
 }
 
@@ -547,7 +549,7 @@ main {
   left: 0;
   width: 60px;
   height: 3px;
-  background: var(--accent);
+  background: var(--primary-accent);
   border-radius: 2px;
 }
 
@@ -611,7 +613,7 @@ main {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent), var(--tertiary-accent));
+  background: var(--primary-accent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -626,24 +628,9 @@ main {
   border-color: var(--border-bright);
 }
 
-.card:nth-child(3n+1):hover::before {
-  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
-}
-
-.card:nth-child(3n+2):hover::before {
-  background: linear-gradient(90deg, var(--secondary-accent), var(--tertiary-accent));
-}
-
-.card:nth-child(3n+3):hover::before {
-  background: linear-gradient(90deg, var(--primary-accent), var(--tertiary-accent));
-}
-
 .card h3 {
   margin-bottom: 8px;
-  background: linear-gradient(135deg, var(--text), var(--muted));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
 }
 
 .tags {
@@ -716,10 +703,7 @@ main {
 .stat .kpi {
   font-weight: 700;
   font-size: 24px;
-  background: var(--accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-accent);
   position: relative;
   z-index: 1;
 }
@@ -802,10 +786,7 @@ main {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 700;
-  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent), var(--tertiary-accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-accent);
 }
 
 .lead {
@@ -820,7 +801,7 @@ main {
 
 .sep {
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--secondary-accent), transparent);
+  background: var(--border-bright);
   margin: 32px 0;
   opacity: 0.5;
 }
@@ -1089,10 +1070,7 @@ main {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, var(--text), var(--secondary-accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
 }
 
 .ai-focus-box p {
@@ -1321,11 +1299,10 @@ main {
 }
 
 .mode-btn.active {
-  background: var(--accent);
+  background: var(--primary-accent);
   color: white;
   border-color: transparent;
   box-shadow: var(--shadow-colored);
-  background-origin: border-box;
 }
 
 .testimonial-form {
@@ -1484,10 +1461,7 @@ main {
 .testimonial-preview h3 {
   text-align: center;
   margin-bottom: 24px;
-  background: linear-gradient(135deg, var(--text), var(--secondary-accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
 }
 
 .testimonial-preview .btn {
@@ -1551,10 +1525,7 @@ main {
 .success-modal h2 {
   font-size: 32px;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent), var(--tertiary-accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-accent);
 }
 
 .success-modal p {
@@ -1762,10 +1733,7 @@ main {
 }
 
 .case-study-card.featured .case-study-title a {
-  background: var(--accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-accent);
 }
 
 /* Case Study Description */
@@ -1996,10 +1964,7 @@ main {
 .highlight-number {
   font-size: 32px;
   font-weight: 700;
-  background: var(--accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-accent);
   margin-bottom: 8px;
 }
 
@@ -2085,10 +2050,7 @@ main {
   top: 12px;
   width: 2px;
   height: 0;
-  background: linear-gradient(180deg,
-    var(--primary-accent) 0%,
-    var(--secondary-accent) 50%,
-    var(--tertiary-accent) 100%);
+  background: var(--primary-accent);
   transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
