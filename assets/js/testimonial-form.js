@@ -191,7 +191,16 @@
   }
 
   function createConfetti() {
-    const colors = ['#3b82f6', '#a855f7', '#ec4899', '#f97316', '#14b8a6', '#84cc16'];
+    // Get colors from CSS variables for theme consistency
+    const rootStyles = getComputedStyle(document.documentElement);
+    const colors = [
+      rootStyles.getPropertyValue('--primary-accent').trim() || '#3b82f6',
+      rootStyles.getPropertyValue('--secondary-accent').trim() || '#a855f7',
+      rootStyles.getPropertyValue('--tertiary-accent').trim() || '#ec4899',
+      rootStyles.getPropertyValue('--accent-orange').trim() || '#f97316',
+      rootStyles.getPropertyValue('--accent-teal').trim() || '#14b8a6',
+      rootStyles.getPropertyValue('--accent-lime').trim() || '#84cc16'
+    ];
     const confettiCount = 50;
 
     for (let i = 0; i < confettiCount; i++) {
