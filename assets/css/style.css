@@ -221,9 +221,9 @@ p, h1, h2, h3, h4, h5, h6 {
    ============================================ */
 body {
   background:
-    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(var(--tertiary-accent-rgb), 0.15), transparent 40%),
-    radial-gradient(ellipse 60% 40% at 80% -10%, rgba(var(--primary-accent-rgb), 0.15), transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(var(--tertiary-accent-rgb), 0.08), transparent 50%),
+    radial-gradient(ellipse 120% 80% at 20% -25%, rgba(var(--tertiary-accent-rgb), 0.1), transparent 65%),
+    radial-gradient(ellipse 110% 70% at 85% 5%, rgba(var(--primary-accent-rgb), 0.1), transparent 70%),
+    radial-gradient(circle at 50% 50%, rgba(var(--tertiary-accent-rgb), 0.04), transparent 80%),
     var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
@@ -231,6 +231,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   position: relative;
+  background-attachment: fixed;
 }
 
 body::before {
@@ -241,12 +242,14 @@ body::before {
   right: 0;
   bottom: 0;
   background-image:
-    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(var(--tertiary-accent-rgb), 0.03) 2px, rgba(var(--tertiary-accent-rgb), 0.03) 4px),
-    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(var(--primary-accent-rgb), 0.03) 2px, rgba(var(--primary-accent-rgb), 0.03) 4px);
-  background-size: 80px 80px;
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(var(--tertiary-accent-rgb), 0.015) 3px, rgba(var(--tertiary-accent-rgb), 0.015) 6px),
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(var(--primary-accent-rgb), 0.015) 3px, rgba(var(--primary-accent-rgb), 0.015) 6px);
+  background-size: 120px 120px;
+  background-attachment: fixed;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.4;
+  opacity: 0.25;
+  filter: blur(0.5px);
 }
 
 main {
@@ -749,8 +752,8 @@ main {
    ============================================ */
 .footer {
   border-top: 1px solid var(--border);
+  background-color: var(--surface);
   padding: 36px 0;
-  margin-top: 40px;
   color: var(--muted);
   font-size: 14px;
 }
@@ -982,7 +985,7 @@ main {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 32px;
-  margin: 48px 0;
+  margin: 3em 0 4em;
   text-align: center;
 }
 
@@ -1065,6 +1068,7 @@ main {
   background: var(--surface-2);
   border-radius: var(--radius-lg);
   text-align: center;
+  border: 2px solid var(--secondary-accent);
 }
 
 .ai-focus-box h3 {
