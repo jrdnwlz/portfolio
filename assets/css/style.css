@@ -1349,13 +1349,14 @@ main {
 
 .form-group textarea {
   resize: vertical;
-  min-height: 150px;
+  min-height: 120px;
   line-height: 1.6;
 }
 
 .char-counter {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 8px;
   margin-top: 8px;
   font-size: 13px;
   color: var(--muted);
