@@ -58,7 +58,7 @@
   - Template 1: "Working with Jordan was [adjective]. **She** helped us [achievement] in record time."
   - Template 2: "Jordan's superpower is [skill]. **She** turned our [problem] into [solution]."
   - Template 3: "I'd describe Jordan's work in three words: [word], [word], and [word]."
-  - Template 4: "Jordan doesn't just [verb]—**she** [better verb]. **Her** [quality] sets a new standard."
+   - Template 4: "Jordan doesn't just [verb]-**she** [better verb]. **Her** [quality] sets a new standard."
 
 **Dynamic Fields:**
 - ✅ Fields update when template is changed
@@ -83,7 +83,7 @@
 All instances use correct female pronouns:
 - ✅ HTML: "She helped us" (not "He helped us")
 - ✅ HTML: "She turned our" (not "He turned our")
-- ✅ HTML: "—she" (not "—he")
+- ✅ HTML: "-she" (not "-he")
 - ✅ HTML: "Her" (not "His")
 - ✅ HTML: "on her portfolio" (both permission checkboxes)
 - ✅ JavaScript: Template definitions use she/her

@@ -25,5 +25,41 @@
     "featured": true,
     "approved": true,
     "timestamp": "2025-11-20T12:51:00Z"
+  },
+  {
+  "id": 4,
+  "quote": "During her time at Sonatype, Jordan demonstrated a combination of creativity, hard work, and genuine curiosity that served her well in a highly technical environment. She embraced the challenge of learning the domain, collaborated productively with engineering teams, and was receptive to process improvements as the organization evolved. Jordan consistently contributed design work that was thoughtful and user-focused, and I'm pleased to recommend her.",
+  "author": "Mitchell J.",
+  "role": "Chief Product Development Officer",
+  "featured": true,
+  "approved": true,
+  "timestamp": "2024-11-19T12:00:00Z"
+},
+  {
+    "id": 5,
+    "quote": "I had the opportunity to work closely with Jordan across several strategic product initiatives, and I can confidently say she is an exceptional designer and collaborator. Her deep understanding of customer journeys and her ability to accurately identify user needs consistently elevated the quality of our work. Jordan communicates with clarity and professionalism across a wide range of stakeholders - including C-level executives, VPs, engineering teams, customers, and security professionals. Her contributions during working sessions were always thoughtful and precise; she consistently asked the right questions that helped clarify direction and surface important user considerations. Jordan is highly reliable, consistently meets deadlines, and shows strong ownership of her deliverables. She demonstrates outstanding anticipation skills - always one step ahead in identifying potential design challenges and proactively suggesting effective solutions. Her ability to explain complex concepts and articulate design rationale clearly is a strong asset, as is her ability to offer well-informed recommendations that balance user value with business and technical needs. In addition to her individual strengths, Jordan brings a strong strategic mindset. She has a remarkable ability to understand business priorities and align them with the design of product solutions, all while factoring in technical constraints and opportunities from engineering. This enables her to bridge product vision with implementation, driving both user satisfaction and business outcomes. She is also an excellent team player. Her collaborative mindset and user-centered approach make her a valuable asset to any design-driven organization. I strongly recommend her for any UX/UI role that demands both strategic thinking and executional excellence.",
+    "author": "Maria S.",
+    "role": "Product Manager",
+    "featured": false,
+    "approved": true,
+    "timestamp": "2024-11-24T09:30:00Z"
+  },
+  {
+    "id": 6,
+    "quote": "I had the pleasure of working closely with Jordan across multiple products at Sonatype, where she consistently demonstrated a combination of deep discovery skills and an exceptional ability to design for highly technical personas. Jordan approaches design as a strategic function, grounding her work in thoughtful research and translating complex user needs into clear and intuitive experiences, not just polished interfaces. As a Product Director, I found Jordan to be a highly effective partner throughout the product lifecycle. Her collaboration with engineering and product marketing was seamless, and she brought clarity, empathy, and rigor to every engagement. Whenever Jordan was part of an initiative, I had complete confidence that the user experience would be both intentional and execution-ready, and that the team would be supported by a designer who truly understood the intersection of user value, technical feasibility, and product strategy.",
+    "author": "Justin Y.",
+    "role": "Product Director",
+    "featured": true,
+    "approved": true,
+    "timestamp": "2025-11-24T14:20:00Z"
+  },
+  {
+    "id": 7,
+    "quote": "As an engineer I appreciate the depth of Jordan's understanding of both the technology and business domain. Jordan provides very thoroughly thought through solutions. She always welcomes any feedback and iterates on new solutions fast with an impressive creativity. She is able to step out of the box and provide innovative approach and establish best practices. It was absolute pleasure to work with Jordan.",
+    "author": "Andriy M.",
+    "role": "Principal Software Engineer",
+    "featured": false,
+    "approved": true,
+    "timestamp": "2024-11-21T11:15:00Z"
   }
 ]

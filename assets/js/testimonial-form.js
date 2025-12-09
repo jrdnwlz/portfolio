@@ -35,12 +35,12 @@
   const charEncouragement = document.getElementById('char-encouragement');
 
   const encouragementMessages = [
-    { min: 0, max: 50, msg: " — Just getting warmed up! Keep going! 💪" },
-    { min: 51, max: 100, msg: " — Nice start! Tell me more! 🌟" },
-    { min: 101, max: 200, msg: " — Now we're talking! ✨" },
-    { min: 201, max: 300, msg: " — This is great! You're on fire! 🔥" },
-    { min: 301, max: 500, msg: " — Wow, thanks for being so detailed! 🙌" },
-    { min: 501, max: 99999, msg: " — Okay you can stop now... just kidding! This is gold! 🏆" }
+    { min: 0, max: 50, msg: " - Just getting warmed up! Keep going! 💪" },
+    { min: 51, max: 100, msg: " - Nice start! Tell me more! 🌟" },
+    { min: 101, max: 200, msg: " - Now we're talking! ✨" },
+    { min: 201, max: 300, msg: " - This is great! You're on fire! 🔥" },
+    { min: 301, max: 500, msg: " - Wow, thanks for being so detailed! 🙌" },
+    { min: 501, max: 99999, msg: " - Okay you can stop now... just kidding! This is gold! 🏆" }
   ];
 
   if (testimonialText) {
@@ -74,7 +74,7 @@
     ],
     template4: [
       { label: "Jordan doesn't just", field: 'verb', placeholder: 'design interfaces' },
-      { label: '—she', field: 'betterVerb', placeholder: 'designs systems' },
+      { label: '-she', field: 'betterVerb', placeholder: 'designs systems' },
       { label: 'Her', field: 'quality', placeholder: 'attention to accessibility' }
     ]
   };
@@ -159,7 +159,7 @@
       } else if (selectedTemplate === 'template3') {
         generatedText = `I'd describe Jordan's work in three words: ${values.word1}, ${values.word2}, and ${values.word3}.`;
       } else if (selectedTemplate === 'template4') {
-        generatedText = `Jordan doesn't just ${values.verb}—she ${values.betterVerb}. Her ${values.quality} sets a new standard.`;
+        generatedText = `Jordan doesn't just ${values.verb} - she ${values.betterVerb}. Her ${values.quality} sets a new standard.`;
       }
 
       const form = document.getElementById('madlibs-form');
@@ -241,7 +241,7 @@
       } else if (selectedTemplate === 'template3') {
         generatedText = `I'd describe Jordan's work in three words: ${values.word1}, ${values.word2}, and ${values.word3}.`;
       } else if (selectedTemplate === 'template4') {
-        generatedText = `Jordan doesn't just ${values.verb}—she ${values.betterVerb}. Her ${values.quality} sets a new standard.`;
+        generatedText = `Jordan doesn't just ${values.verb} - she ${values.betterVerb}. Her ${values.quality} sets a new standard.`;
       }
 
       formData.set('testimonial', generatedText);
