@@ -25,7 +25,9 @@
 <body>
   <header class="header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">Jordan Walz</a>
+      <a class="brand" href="index.html" aria-label="Jordan Walz, Senior Product Designer portfolio">
+      Jordan Walz <span style="color: var(--surface);">Senior Product Designer</span>
+    </a>
       <nav class="nav" aria-label="Main">
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
@@ -35,312 +37,431 @@
       <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
     </div>
   </header>
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="kicker">FLAGSHIP CASE STUDY · SONATYPE</div>
+          <h1>Guide UX Lab</h1>
+          <h3 class="lead">A code-first, AI-assisted design initiative that produced a working prototype for a new Sonatype SKU, established a migratable design system, and introduced a new workflow for the design team.</h3>
 
-  <main>
-    <section class="hero">
-      <div class="container stack">
-        <div class="kicker">Flagship Case Study</div>
-        <h1>Guide UX Lab</h1>
-        <h3 class="lead">End-to-end design and development of a fully functional live prototype for use in stakeholder conversations, planning sessions, and development efforts.</h3>
-        <div class="stats" role="list">
-          <div class="stat" role="listitem"><div class="kpi">124</div><div class="muted">React components</div></div>
-          <div class="stat" role="listitem"><div class="kpi">15+</div><div class="muted">Feature areas</div></div>
-          <div class="stat" role="listitem"><div class="kpi">100%</div><div class="muted">TypeScript</div></div>
-          <div class="stat" role="listitem"><div class="kpi">WCAG AA</div><div class="muted">Accessible</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="overview">
-      <div class="container stack">
-        <h2>Overview</h2>
-        <p>The Guide UX Lab was a timeboxed, cross-functional effort producing a living prototype that enabled leadership to make scope and prioritization decisions, and helped engineering bootstrap implementation. The Lab also served as an experiment in applying AI to accelerate early-stage ideation and prototype generation.</p>
-        <div class="row" style="margin-top: 16px">
-          <span class="tag">Next.js 15</span>
-          <span class="tag">React 19</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Radix UI</span>
-          <span class="tag">Tailwind CSS</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="role">
-      <div class="container stack">
-        <h2>Contributions & Impact</h2>
-        <p class="lead">As <strong>Senior Product Designer and Lead Developer</strong>, I was responsible for the complete design system architecture, component development, and prototype implementation.</p>
-        <div class="grid grid-3" style="margin-top: 24px">
-          <div class="card">
-            <h3>Design System</h3>
-            <p class="muted">Designed foundational component library, design tokens, spacing systems, and established comprehensive pattern library used across Sonatype products.</p>
-          </div>
-          <div class="card">
-            <h3>Component Development</h3>
-            <p class="muted">Built 124 production-ready React/TypeScript components following accessibility and performance best practices with full WCAG 2.1 AA compliance.</p>
-          </div>
-          <div class="card">
-            <h3>Technical Leadership</h3>
-            <p class="muted">Made architectural decisions around Next.js 15, Radix UI integration, and established development guidelines for the entire design system.</p>
+          <div class="stats" role="list">
+            <div class="stat" role="listitem"><div class="kpi">124</div><div class="muted">Reusable UI components</div></div>
+            <div class="stat" role="listitem"><div class="kpi">15+</div><div class="muted">Functional feature areas</div></div>
+            <div class="stat" role="listitem"><div class="kpi">100%</div><div class="muted">Type-safe UI system</div></div>
+            <div class="stat" role="listitem"><div class="kpi">WCAG AA</div><div class="muted">Accessibility baseline</div></div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section" id="problem">
-      <div class="container stack">
-        <h2>The Challenge</h2>
-        <p>Sonatype needed a centralized design system and living prototype to:</p>
-        <ul class="stack">
-          <li><strong>Establish consistency</strong> - Create unified UI/UX patterns across multiple product lines</li>
-          <li><strong>Accelerate development</strong> - Provide reusable, accessible components to reduce redundant work</li>
-          <li><strong>Enable rapid prototyping</strong> - Validate new features before full engineering investment</li>
-          <li><strong>Set standards</strong> - Demonstrate best practices for modern web application design</li>
-          <li><strong>Support evolution</strong> - Create a testing ground for design system iteration</li>
-        </ul>
+        <div class="hero-visual" aria-hidden="false">
+          <img src="assets/img/placeholder-hero.svg" alt="Placeholder: hero illustration or screenshot" width="520" height="360" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="overview">
+    <div class="container stack">
+      <h2>What Changed</h2>
+      <p>
+        Before Guide UX Lab, Sonatype's design process leaned on static wireframes and Figma prototypes.
+        That approach worked for exploration, but it often created translation gaps during engineering handoff.
+        It also limited confidence when evaluating feasibility for a new product SKU.
+      </p>
+
+      <p>
+        For this project, I designed entirely in VS Code and used AI to accelerate ideation and iteration.
+        Instead of handing off a prototype for interpretation, I built a working product environment.
+        That artifact could be evaluated immediately by leadership, sales, and engineering.
+      </p>
+
+      <div class="row" style="margin-top: 16px">
+        <span class="tag">Next.js 15</span>
+        <span class="tag">React 19</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Radix UI</span>
+        <span class="tag">Tailwind CSS</span>
+        <span class="tag">Design Systems</span>
+        <span class="tag">Accessibility</span>
+        <span class="tag">AI-assisted workflow</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="problem">
+    <div class="container stack">
+      <h2>The Challenge</h2>
+      <p>
+        Sonatype needed a way to explore a new product SKU without relying on speculative design artifacts.
+        The goal was to validate workflows, edge cases, and feasibility early, while also establishing a UI foundation
+        that could be adopted across existing products.
+      </p>
+      <ul class="stack">
+        <li><strong>Establish consistency</strong>Create UI and interaction patterns that could scale beyond a single prototype and migrate to existing Sonatype products.</li>
+        <li><strong>Reduce product risk</strong> Validate workflows and edge cases in a realistic environment before committing to full engineering implementation.</li>
+        <li><strong>Accelerate delivery</strong> Reduce rework by designing directly against production constraints, including accessibility and performance.</li>
+        <li><strong>Set a new design standard</strong> Demonstrate an AI-assisted, code-first approach that reduced handoff friction and improved alignment.</li>
+        <li><strong>Support long-term evolution</strong> Build a living system that could evolve alongside the product, not a one-off prototype.</li>
+      </ul>
+
+      <div class="figure">
+        <img src="assets/img/guide/home.webp" alt="Guide UX Lab home interface" width="1200" height="800"/>
+        <div class="caption">
+          The working prototype served as a shared reference for leadership, sales, design, and engineering.
+          It reduced ambiguity by making product behavior visible early.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="role">
+    <div class="container stack">
+      <h2>My Role</h2>
+      <p class="lead">
+        As <strong>Senior Product Designer and Lead Developer</strong>, I owned the initiative end to end.
+        I designed the system architecture, built the component library, and implemented the working prototype.
+        This approach removed the traditional handoff step between design and engineering.
+      </p>
+      <div class="grid grid-3" style="margin-top: 24px">
+        <div class="card">
+          <h3>Working Product Prototype</h3>
+          <p class="muted">
+            Built a functional prototype across 15+ feature areas so teams could evaluate real workflows,
+            product behavior, and edge cases during planning and stakeholder review.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Design System (Built for Migration)</h3>
+          <p class="muted">
+            Designed a foundational component library and token system intended to be adopted by existing Sonatype products,
+            not limited to a single SKU or prototype.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Process Leadership</h3>
+          <p class="muted">
+            Established a code-first, AI-assisted workflow that improved iteration speed and reduced translation gaps.
+            The project also set a reference model for future design work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="research">
+    <div class="container stack">
+      <h2>Research & Discovery</h2>
+      <p>
+        Research focused on how to replace static artifacts with a system that could be experienced directly.
+        I looked for patterns that hold up in complex, data-heavy security products, then validated assumptions against internal needs.
+      </p>
+
+      <div class="grid grid-3" style="margin-top: 24px">
+        <div class="card">
+          <h3>Competitive Analysis</h3>
+          <p class="muted">
+            Reviewed security platforms and mature design systems to understand how large datasets remain usable,
+            how accessibility is handled by default, and how consistency is maintained across features.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Internal Audit</h3>
+          <p class="muted">
+            Audited existing Sonatype products and collaborated with product and engineering teams to identify shared patterns,
+            gaps, and practical migration opportunities.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Technical Research</h3>
+          <p class="muted">
+            Evaluated frameworks and libraries to ensure accessibility, performance, and developer experience could be addressed
+            during design, not deferred until later implementation.
+          </p>
+        </div>
+      </div>
+
+      <p style="margin-top: 24px">
+        <strong>Key insight:</strong> Teams did not need more documentation.
+        They needed a living system where components and workflows could be evaluated together in context.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="design">
+    <div class="container stack">
+      <h2>Designing a Migratable System in Code</h2>
+
+      <p>
+        I designed the system directly in code and structured it to support real product workflows, not isolated UI elements.
+        Components were organized to reflect how features would be built and used, with an explicit goal of future adoption across products.
+      </p>
+
+      <h3 style="margin-top: 32px">Core Product Patterns</h3>
+      <p class="muted">
+        Trust score badges, CVE severity indicators, sortable data tables, version comparison, and multi-faceted search with advanced filtering.
+        These patterns were designed for dense security data and frequent scanning behavior.
+      </p>
+
+      <h3 style="margin-top: 24px">Dashboards & Analytics</h3>
+      <p class="muted">
+        Run history, time-series reporting, ecosystem breakdowns, and configuration workflows, implemented as real application states within the prototype.
+      </p>
+
+      <h3 style="margin-top: 24px">Access Control & Monetization</h3>
+      <p class="muted">
+        Tier-based access control, gated workflows, upgrade prompts, and monetization surfaces.
+        These flows helped validate packaging decisions alongside user experience.
+      </p>
+
+      <div class="grid grid-2" style="margin-top: 32px; gap: 24px">
         <div class="figure">
-          <img src="assets/img/guide/home.webp" alt="Guide UX Lab home interface" width="1200" height="800"/>
-          <div class="caption">Guide UX Lab: A comprehensive design system and security platform prototype with 124 components.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="research">
-      <div class="container stack">
-        <h2>Research & Discovery</h2>
-        <p>I conducted extensive research to inform the design system architecture:</p>
-        <div class="grid grid-3" style="margin-top: 24px">
-          <div class="card">
-            <h3>Competitive Analysis</h3>
-            <p class="muted">Analyzed security platforms (GitHub, Snyk, npm) and design systems (Material Design, Atlassian, Shopify Polaris) to identify best practices.</p>
-          </div>
-          <div class="card">
-            <h3>Internal Audit</h3>
-            <p class="muted">Reviewed existing Sonatype product patterns, gathered requirements from product and engineering teams across multiple projects.</p>
-          </div>
-          <div class="card">
-            <h3>Technical Research</h3>
-            <p class="muted">Evaluated modern frameworks and libraries (Radix UI, Tailwind CSS, Next.js 15) for accessibility, performance, and developer experience.</p>
+          <img src="assets/img/guide/components.webp" alt="Component library overview" loading="lazy" width="800" height="600"/>
+          <div class="caption">
+            Component system overview used to validate coverage, consistency, and adoption readiness across feature areas.
           </div>
         </div>
-        <p style="margin-top: 24px"><strong>Key insight:</strong> Teams needed both a comprehensive component library AND living examples showing how components work together in real applications.</p>
-      </div>
-    </section>
-
-    <section class="section" id="design">
-      <div class="container stack">
-        <h2>Component Library Architecture</h2>
-        <p>I designed and built a comprehensive library organized into 10 major categories, each with multiple variants and configuration options:</p>
-
-        <h3 style="margin-top: 32px">Core UI Components (40+)</h3>
-        <p class="muted">Trust score badges, CVE severity indicators, CVSS scores, sortable tables, version comparison, multi-faceted search with autocomplete, advanced filtering systems, pagination controls.</p>
-
-        <h3 style="margin-top: 24px">Dashboard & Analytics (12)</h3>
-        <p class="muted">Agent P analytics dashboard with custom branding, run history tracking, time-series charts, ecosystem breakdowns, success rate visualizations, configuration checklists.</p>
-
-        <h3 style="margin-top: 24px">Access Control & Gating (8)</h3>
-        <p class="muted">Tier-based access control, interceptor modals, locked content panels with blur effects, inline gates with unlock prompts, tier comparison tables, upgrade flows.</p>
-
-        <div class="grid grid-2" style="margin-top: 32px; gap: 24px">
-          <div class="figure">
-            <img src="assets/img/guide/components.webp" alt="Component library overview" loading="lazy" width="800" height="600"/>
-            <div class="caption">Component library with 124 production-ready React components organized by category.</div>
-          </div>
-          <div class="figure">
-            <img src="assets/img/guide/component-detail.webp" alt="Component detail page" loading="lazy" width="800" height="600"/>
-            <div class="caption">Individual component pages showcase all variants, props, and usage examples.</div>
-          </div>
-        </div>
-
-        <div class="sep"></div>
-        <a id="technical"></a>
-
-        <h2>Technical Implementation</h2>
-        <p>Built with a modern tech stack prioritizing accessibility, performance, and developer experience:</p>
-
-        <div class="grid grid-3" style="margin-top: 24px">
-          <div class="card">
-            <h3>Next.js 15 + React 19</h3>
-            <p class="muted">App Router with React Server Components, streaming, code splitting, and optimized images. Sub-2s load times with Turbopack.</p>
-          </div>
-          <div class="card">
-            <h3>TypeScript Strict Mode</h3>
-            <p class="muted">100% TypeScript coverage across all 124 components with exported interfaces, ensuring type safety and better developer experience.</p>
-          </div>
-          <div class="card">
-            <h3>Radix UI + Tailwind</h3>
-            <p class="muted">Accessible primitives with unstyled components customized via Tailwind CSS 4. Built-in keyboard navigation and ARIA support.</p>
-          </div>
-        </div>
-
-        <h3 style="margin-top: 32px">Design Token System</h3>
-        <p>Established comprehensive design tokens for consistent theming:</p>
-        <ul class="stack">
-          <li><strong>Color system</strong> - Custom Sonatype brand colors, extended Radix UI scales, 12-step gray scale, semantic mappings for status states</li>
-          <li><strong>Typography</strong> - FK-Grotesk (brand), FK-Screamer (display), Geist Sans (UI), Geist Mono (code)</li>
-          <li><strong>Spacing & layout</strong> - 9-step scale using Radix tokens, responsive breakpoints, consistent max-widths</li>
-        </ul>
-
-        <div class="grid grid-2" style="margin-top: 32px; gap: 24px">
-          <div class="figure">
-            <img src="assets/img/guide/tokens-initial.webp" alt="Initial design tokens" loading="lazy" width="800" height="600"/>
-            <div class="caption">Initial design token system with Sonatype brand colors and semantic mappings.</div>
-          </div>
-          <div class="figure">
-            <img src="assets/img/guide/tokens-revised.webp" alt="Revised design tokens with extended palette" loading="lazy" width="800" height="600"/>
-            <div class="caption">Revised token system with extended Radix UI color scales for enhanced visual hierarchy.</div>
+        <div class="figure">
+          <img src="assets/img/guide/component-detail.webp" alt="Component detail page" loading="lazy" width="800" height="600"/>
+          <div class="caption">
+            Component documentation used during design to confirm variants, accessibility behavior, and real-world usage.
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="features">
-      <div class="container stack">
-        <h2>Key Features & Demonstrations</h2>
-        <p>Built 15+ fully functional feature areas showcasing real-world application patterns:</p>
+      <div class="sep"></div>
+      <a id="technical"></a>
 
-        <div class="grid grid-3" style="margin-top: 24px">
-          <div class="card">
-            <h3>Intelligent Search</h3>
-            <p class="muted">Real-time autocomplete with dual search types, smart ranking, visual categorization with severity color-coding, keyboard navigation.</p>
-            <div class="tags"><span class="tag">Autocomplete</span><span class="tag">Multi-type</span><span class="tag">Keyboard</span></div>
-          </div>
-          <div class="card">
-            <h3>Agent P Analytics</h3>
-            <p class="muted">Custom-branded dashboard with run history, success rates, ecosystem breakdowns, time-series charts, configuration checklist.</p>
-            <div class="tags"><span class="tag">Analytics</span><span class="tag">Charts</span><span class="tag">Branding</span></div>
-          </div>
-          <div class="card">
-            <h3>Vulnerability Analysis</h3>
-            <p class="muted">Component detail pages with trust scores, CVE severity badges, CVSS scoring, version tables, remediation guidance, dependency trees.</p>
-            <div class="tags"><span class="tag">Security</span><span class="tag">CVE</span><span class="tag">Trust</span></div>
-          </div>
-          <div class="card">
-            <h3>Tier-Based Gating</h3>
-            <p class="muted">Freemium model with interceptor modals, inline gates, locked panels with blur effects, tier comparison tables, upgrade flows.</p>
-            <div class="tags"><span class="tag">Access Control</span><span class="tag">Monetization</span></div>
-          </div>
-          <div class="card">
-            <h3>Settings & Profile</h3>
-            <p class="muted">User management, token generation with expiration, team invitations, organization settings, SSO integration, billing management.</p>
-            <div class="tags"><span class="tag">User Admin</span><span class="tag">Auth</span></div>
-          </div>
-          <div class="card">
-            <h3>Billing & Plans</h3>
-            <p class="muted">Plan comparison, upgrade/downgrade flows, payment methods, usage tracking, Chargebee integration, checkout experience.</p>
-            <div class="tags"><span class="tag">Monetization</span><span class="tag">SaaS</span></div>
+      <h2>Designing Directly in Production Code</h2>
+      <p>
+        The prototype used a production-ready stack so design decisions could be tested against real constraints.
+        That included accessibility, performance, responsiveness, and developer experience.
+      </p>
+
+      <div class="grid grid-3" style="margin-top: 24px">
+        <div class="card">
+          <h3>Next.js 15 + React 19</h3>
+          <p class="muted">
+            Enabled realistic performance characteristics, including streaming and code splitting.
+            This made it possible to validate flows under production-like conditions.
+          </p>
+        </div>
+        <div class="card">
+          <h3>TypeScript Strict Mode</h3>
+          <p class="muted">
+            Type safety surfaced edge cases early and improved confidence in component behavior.
+            Interfaces were exported for consistency and reuse.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Radix UI + Tailwind</h3>
+          <p class="muted">
+            Accessible primitives provided keyboard navigation and ARIA support by default.
+            Tailwind enabled rapid iteration while keeping styling consistent.
+          </p>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 32px">Design Tokens as a Migration Layer</h3>
+      <p>
+        Design tokens were treated as a migration layer.
+        They allowed visual and interaction patterns to move between products without rewriting components.
+      </p>
+
+      <ul class="stack">
+        <li><strong>Color system</strong> Semantic, tokenized mappings supporting accessibility, theming, and adoption across products.</li>
+        <li><strong>Typography</strong> FK-Grotesk (brand), FK-Screamer (display), Geist Sans (UI), Geist Mono (code).</li>
+        <li><strong>Spacing & layout</strong> 9-step scale using Radix tokens, responsive breakpoints, and consistent max-widths.</li>
+      </ul>
+
+      <div class="grid grid-2" style="margin-top: 32px; gap: 24px">
+        <div class="figure">
+          <img src="assets/img/guide/tokens-initial.webp" alt="Initial design tokens" loading="lazy" width="800" height="600"/>
+          <div class="caption">
+            Initial token definitions used to establish brand alignment and semantic meaning across the system.
           </div>
         </div>
-
-        <div class="grid grid-3" style="margin-top: 40px; gap: 24px">
-          <div class="figure">
-            <img src="assets/img/guide/search-global.webp" alt="Global search with autocomplete" loading="lazy" width="800" height="600"/>
-            <div class="caption">Intelligent search: Real-time autocomplete with dual types and visual categorization.</div>
-          </div>
-          <div class="figure">
-            <img src="assets/img/guide/search-empty.webp" alt="Empty search state" loading="lazy" width="800" height="600"/>
-            <div class="caption">Empty states with helpful guidance encourage user exploration.</div>
-          </div>
-          <div class="figure">
-            <img src="assets/img/guide/vulnerabilities.webp" alt="Vulnerability list view" loading="lazy" width="800" height="600"/>
-            <div class="caption">Vulnerability analysis with CVE severity badges and trust scoring.</div>
-          </div>
-        </div>
-
-        <div class="grid grid-2" style="margin-top: 24px; gap: 24px">
-          <div class="figure">
-            <img src="assets/img/guide/vulnerability-detail.webp" alt="Detailed vulnerability information" loading="lazy" width="800" height="600"/>
-            <div class="caption">Detailed CVE pages with CVSS scores, version tables, and remediation guidance.</div>
-          </div>
-          <div class="figure">
-            <img src="assets/img/guide/gated-content.webp" alt="Tier-based access control" loading="lazy" width="800" height="600"/>
-            <div class="caption">Freemium model with tier-based gating, interceptor modals, and upgrade flows.</div>
+        <div class="figure">
+          <img src="assets/img/guide/tokens-revised.webp" alt="Revised design tokens with extended palette" loading="lazy" width="800" height="600"/>
+          <div class="caption">
+            Expanded tokens used to improve hierarchy and support smoother adoption in existing products.
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="impact">
-      <div class="container stack">
-        <h2>Impact & Results</h2>
+  <section class="section" id="features">
+    <div class="container stack">
+      <h2>Validating a Real Product Through Working Features</h2>
 
-        <h3 style="margin-top: 24px">Quantifiable Outcomes</h3>
-        <div class="stats" role="list">
-          <div class="stat" role="listitem"><div class="kpi">124</div><div class="muted">Components built</div></div>
-          <div class="stat" role="listitem"><div class="kpi">15+</div><div class="muted">Feature areas</div></div>
-          <div class="stat" role="listitem"><div class="kpi">100%</div><div class="muted">TypeScript</div></div>
-          <div class="stat" role="listitem"><div class="kpi">Sub-2s</div><div class="muted">Load time</div></div>
+      <p>
+        The prototype included 15+ functional feature areas.
+        These were built to validate workflows, business rules, and edge cases in a realistic product environment.
+      </p>
+
+      <div class="grid grid-3" style="margin-top: 24px">
+        <div class="card">
+          <h3>Intelligent Search</h3>
+          <p class="muted">
+            Real-time, keyboard-accessible search across multiple entity types with severity-based categorization.
+            Used to validate navigation patterns and ranking assumptions in a data-dense environment.
+          </p>
+          <div class="tags"><span class="tag">Search</span><span class="tag">Accessibility</span><span class="tag">Security UX</span></div>
         </div>
 
-        <h3 style="margin-top: 32px">Business Impact</h3>
-        <ul class="stack">
-          <li><strong>Design consistency</strong> - Established visual language now used across multiple Sonatype products</li>
-          <li><strong>Development velocity</strong> - Reusable components accelerated feature development by eliminating redundant work</li>
-          <li><strong>Stakeholder alignment</strong> - Living prototype enabled rapid iteration and feedback without engineering investment</li>
-          <li><strong>Faster time-to-market</strong> - Prototypes validated features before full implementation, reducing risk</li>
-          <li><strong>Knowledge sharing</strong> - Comprehensive documentation educated teams on modern best practices</li>
-        </ul>
-
-        <h3 style="margin-top: 32px">Technical Excellence</h3>
-        <ul class="stack">
-          <li><strong>WCAG 2.1 AA compliance</strong> - All interactive elements keyboard navigable with proper ARIA labels</li>
-          <li><strong>Performance optimized</strong> - Code splitting, lazy loading, image optimization, sub-2s load times</li>
-          <li><strong>Mobile-first responsive</strong> - Breakpoints and responsive props on all components</li>
-          <li><strong>Type-safe architecture</strong> - TypeScript strict mode caught errors early, improved reliability</li>
-        </ul>
-
-        <div class="grid grid-3" style="margin-top: 40px; gap: 24px">
-          <div class="figure">
-            <img src="assets/img/guide/admin-users.webp" alt="User management interface" loading="lazy" width="800" height="600"/>
-            <div class="caption">Admin: User management with team invitations, roles, and SSO integration.</div>
-          </div>
-          <div class="figure">
-            <img src="assets/img/guide/admin-billing.webp" alt="Billing and subscription management" loading="lazy" width="800" height="600"/>
-            <div class="caption">Admin: Billing management with plan comparison and Chargebee integration.</div>
-          </div>
-          <div class="figure">
-            <img src="assets/img/guide/admin-usage.webp" alt="Usage analytics dashboard" loading="lazy" width="800" height="600"/>
-            <div class="caption">Admin: Usage tracking with analytics and quota monitoring.</div>
-          </div>
+        <div class="card">
+          <h3>Agent P Analytics</h3>
+          <p class="muted">
+            Dashboards with run history, success rates, ecosystem breakdowns, and configuration workflows.
+            Used to validate information hierarchy and scan behavior.
+          </p>
+          <div class="tags"><span class="tag">Analytics</span><span class="tag">Dashboards</span><span class="tag">SaaS UX</span></div>
         </div>
 
-        <div class="figure" style="margin-top: 24px">
-          <img src="assets/img/guide/feature-toggles.webp" alt="Feature toggle management system" loading="lazy" width="1200" height="800"/>
-          <div class="caption">Feature toggle system enabling granular control over functionality rollout and A/B testing.</div>
+        <div class="card">
+          <h3>Vulnerability Analysis</h3>
+          <p class="muted">
+            Detailed triage flows with trust scores, CVE severity, remediation guidance, and dependency context.
+            Used to test clarity and decision support for security workflows.
+          </p>
+          <div class="tags"><span class="tag">CVE</span><span class="tag">Workflows</span><span class="tag">Data-dense UI</span></div>
+        </div>
+
+        <div class="card">
+          <h3>Tier-Based Gating</h3>
+          <p class="muted">
+            Freemium gating with upgrade prompts, locked panels, and tier comparison flows.
+            Used to validate packaging decisions and user experience tradeoffs.
+          </p>
+          <div class="tags"><span class="tag">Monetization</span><span class="tag">Access Control</span></div>
+        </div>
+
+        <div class="card">
+          <h3>Settings & Profile</h3>
+          <p class="muted">
+            Account and organization management flows, including authentication, permissions, and team configuration.
+            Built to reflect real enterprise SaaS expectations.
+          </p>
+          <div class="tags"><span class="tag">Admin</span><span class="tag">Auth</span><span class="tag">SaaS</span></div>
+        </div>
+
+        <div class="card">
+          <h3>Billing & Plans</h3>
+          <p class="muted">
+            Plan comparison, upgrades, usage tracking, and checkout flow logic.
+            Used to validate customer lifecycle scenarios.
+          </p>
+          <div class="tags"><span class="tag">Billing</span><span class="tag">SaaS</span></div>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="learnings">
-      <div class="container stack">
-        <h2>Key Learnings & Technical Decisions</h2>
-
-        <h3 style="margin-top: 24px">What Worked Well</h3>
-        <ul class="stack">
-          <li><strong>Living documentation</strong> - Combining design system with functional prototype kept docs current and demonstrated real-world usage</li>
-          <li><strong>Radix UI foundation</strong> - Unstyled primitives provided flexibility while ensuring accessibility without custom implementation</li>
-          <li><strong>TypeScript adoption</strong> - Strict mode caught errors early, improved component reliability, enhanced developer experience</li>
-          <li><strong>Real data approach</strong> - Using actual CVEs, packages, and realistic data made prototypes feel production-ready</li>
-          <li><strong>Incremental development</strong> - Building and testing components individually before composition prevented cascading issues</li>
-        </ul>
-
-        <h3 style="margin-top: 24px">Development Guidelines I Established</h3>
-        <ul class="stack">
-          <li>Prioritize Radix UI as primary component library for accessibility</li>
-          <li>Use Lucide Icons for all iconography (500+ consistent, tree-shakeable icons)</li>
-          <li>Follow mobile-first responsive design patterns on all components</li>
-          <li>Export TypeScript interfaces for all component props</li>
-          <li>Handle null/undefined states gracefully with proper error boundaries</li>
-          <li>Use semantic color names from Radix theme for automatic light/dark adaptation</li>
-        </ul>
-
-        <h3 style="margin-top: 24px">Future Enhancements</h3>
-        <p class="muted">Extract component library into standalone npm package, add Storybook for interactive documentation, implement visual regression testing, create Figma library synced with code.</p>
+      <div class="grid grid-3" style="margin-top: 40px; gap: 24px">
+        <div class="figure">
+          <img src="assets/img/guide/search-global.webp" alt="Global search with autocomplete" loading="lazy" width="800" height="600"/>
+          <div class="caption">
+            Search experience used to validate accessibility (keyboard navigation) and information scent across entity types.
+          </div>
+        </div>
+        <div class="figure">
+          <img src="assets/img/guide/search-empty.webp" alt="Empty search state" loading="lazy" width="800" height="600"/>
+          <div class="caption">
+            Empty state designed to reduce dead ends and encourage exploration when data is not available.
+          </div>
+        </div>
+        <div class="figure">
+          <img src="assets/img/guide/vulnerabilities.webp" alt="Vulnerability list view" loading="lazy" width="800" height="600"/>
+          <div class="caption">
+            List view used to validate scanability, severity prioritization, and trust scoring in a data-dense UI.
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
+
+      <div class="grid grid-2" style="margin-top: 24px; gap: 24px">
+        <div class="figure">
+          <img src="assets/img/guide/vulnerability-detail.webp" alt="Detailed vulnerability information" loading="lazy" width="800" height="600"/>
+          <div class="caption">
+            Detail page used to validate triage clarity and decision support, including remediation guidance and dependency context.
+          </div>
+        </div>
+        <div class="figure">
+          <img src="assets/img/guide/gated-content.webp" alt="Tier-based access control" loading="lazy" width="800" height="600"/>
+          <div class="caption">
+            Gating patterns used to validate packaging, upgrade prompts, and user experience tradeoffs.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="impact">
+    <div class="container stack">
+      <h2>Impact & Results</h2>
+
+      <h3 style="margin-top: 24px">Product & Organizational Impact</h3>
+      <ul class="stack">
+        <li><strong>Shared product language</strong> Established a consistent visual and interaction system intended for adoption beyond the prototype.</li>
+        <li><strong>Faster delivery</strong> Designing directly in production code reduced rework and shortened the path from concept to implementation.</li>
+        <li><strong>Stakeholder confidence</strong> A working prototype helped leadership, sales, and engineering evaluate product behavior early.</li>
+        <li><strong>Reduced product risk</strong> Workflows and edge cases were validated before committing to full-scale engineering.</li>
+        <li><strong>Process influence</strong> The Lab demonstrated a viable AI-assisted, code-first workflow that reduced handoff friction.</li>
+      </ul>
+
+      <h3 style="margin-top: 32px">Quantifiable Outcomes</h3>
+      <div class="stats" role="list">
+        <div class="stat" role="listitem"><div class="kpi">124</div><div class="muted">Production-ready components</div></div>
+        <div class="stat" role="listitem"><div class="kpi">15+</div><div class="muted">Functional feature areas</div></div>
+        <div class="stat" role="listitem"><div class="kpi">100%</div><div class="muted">Type-safe system</div></div>
+        <div class="stat" role="listitem"><div class="kpi">Sub-2s</div><div class="muted">Load times</div></div>
+      </div>
+
+      <h3 style="margin-top: 32px">Design Decisions Validated in Production</h3>
+      <ul class="stack">
+        <li><strong>Accessibility</strong> WCAG 2.1 AA behavior was validated during design, including keyboard navigation and ARIA labeling.</li>
+        <li><strong>Performance</strong> Streaming, lazy loading, and code splitting were exercised under production-like conditions.</li>
+        <li><strong>Responsiveness</strong> Mobile-first layouts and responsive behavior were validated across features and states.</li>
+        <li><strong>Reliability</strong> Strict TypeScript surfaced edge cases early and improved confidence in component behavior.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="learnings">
+    <div class="container stack">
+      <h2>Reflections & What This Changed</h2>
+
+      <h3 style="margin-top: 24px">What Worked Well</h3>
+      <ul class="stack">
+        <li><strong>Design as a living artifact</strong> Because the prototype was the product environment, there was less drift between intent and implementation.</li>
+        <li><strong>Accessibility-first foundations</strong> Starting with accessible primitives kept inclusive behavior as a default, not a retrofit.</li>
+        <li><strong>Type safety as a design tool</strong> Strict typing revealed edge cases early and improved component reliability.</li>
+        <li><strong>Real data improved realism</strong> Using actual CVEs and dependency data surfaced usability problems that mock content would have hidden.</li>
+        <li><strong>Progressive composition</strong> Building components in isolation before composition reduced complexity and prevented cascading issues.</li>
+      </ul>
+
+      <h3 style="margin-top: 24px">Design & Engineering Standards Established</h3>
+      <ul class="stack">
+        <li>Default to accessible primitives and keyboard-first interactions.</li>
+        <li>Standardize iconography to support consistency and performance.</li>
+        <li>Use mobile-first layout patterns across components and flows.</li>
+        <li>Export TypeScript interfaces for component APIs to support reuse and safety.</li>
+        <li>Handle empty, null, and error states explicitly to reduce hidden failures.</li>
+        <li>Use semantic design tokens to support theming and future adoption.</li>
+      </ul>
+
+      <h3 style="margin-top: 24px">What I'd Do Next</h3>
+      <p class="muted">
+        Extract the component library into a shared package, add interactive documentation (Storybook or similar),
+        implement visual regression testing, and align design tokens between code and Figma.
+        The goal would be faster adoption across products with lower maintenance cost.
+      </p>
+    </div>
+  </section>
+</main>
 
   <footer class="footer">
-    <div class="container">© <span id="y"></span> Jordan Walz • Built without frameworks • Case study: Guide UX Lab</div>
+    <div class="container">© <span id="y"></span> Jordan Walz</div>
   </footer>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>

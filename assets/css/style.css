@@ -451,6 +451,50 @@ main {
 }
 
 /* ============================================
+   Hero split layout (text + visual)
+   ============================================ */
+.hero-inner {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.hero-copy {
+  flex: 1 1 auto;
+  min-width: 0; /* allow the copy to shrink inside flex */
+  max-width: calc(100% - 460px); /* reserve space for visual */
+}
+
+.hero-visual {
+  flex: 0 0 420px;
+  max-width: 420px;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 800px) {
+  .hero-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+
+  .hero-visual {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* ============================================
    Buttons & Actions
    ============================================ */
 .actions {
