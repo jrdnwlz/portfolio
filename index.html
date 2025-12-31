@@ -27,16 +27,6 @@
   <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
 </head>
 <body>
-  <!-- Temporary blur mask for unfinished portfolio -->
-  <div class="blur-mask-overlay">
-    <div class="blur-mask-content">
-      <h2>Portfolio Under Construction</h2>
-      <p>Thanks for visiting! This portfolio is currently being polished and isn't quite ready for public viewing yet.</p>
-      <p>If you're here to submit a testimonial, click the button below!</p>
-      <a class="btn primary" href="submit-testimonial.html">Submit a Testimonial</a>
-    </div>
-  </div>
-
   <header class="header">
     <div class="container header-inner">
       <a class="brand" href="index.html">Jordan Walz</a>
@@ -186,14 +176,5 @@
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   <script src="assets/js/interactions.js"></script>
   <script src="assets/js/testimonials.js"></script>
-  <script>
-    // Hide blur mask on localhost for development
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      const blurMask = document.querySelector('.blur-mask-overlay');
-      if (blurMask) {
-        blurMask.style.display = 'none';
-      }
-    }
-  </script>
 </body>
 </html>
