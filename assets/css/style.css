@@ -456,7 +456,7 @@ main {
 .hero-inner {
   display: flex;
   gap: 32px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .hero-copy {
