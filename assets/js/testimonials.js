@@ -10,6 +10,60 @@
 
   if (!testimonialsContainer) return;
 
+  // Ensure the container is keyboard-focusable (in case markup is changed later)
+  if (!testimonialsContainer.hasAttribute('tabindex')) {
+    testimonialsContainer.setAttribute('tabindex', '0');
+  }
+  if (!testimonialsContainer.hasAttribute('aria-label')) {
+    testimonialsContainer.setAttribute('aria-label', 'Testimonials — horizontal scroll');
+  }
+
+  // Keyboard arrow support: Left/Right scroll the container by ~60% of its width
+  testimonialsContainer.addEventListener('keydown', (e) => {
+    const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const amount = Math.round(testimonialsContainer.clientWidth * 0.6) || 300;
+
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      testimonialsContainer.scrollBy({ left: amount, behavior: isReduced ? 'auto' : 'smooth' });
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      testimonialsContainer.scrollBy({ left: -amount, behavior: isReduced ? 'auto' : 'smooth' });
+    }
+  });
+
+  // Scroll navigation buttons (prev/next)
+  const prevBtn = document.querySelector('.testimonials-nav.prev');
+  const nextBtn = document.querySelector('.testimonials-nav.next');
+
+  function updateNavState() {
+    if (!prevBtn || !nextBtn) return;
+    const atStart = testimonialsContainer.scrollLeft <= 1;
+    const atEnd = testimonialsContainer.scrollLeft + testimonialsContainer.clientWidth >= testimonialsContainer.scrollWidth - 1;
+    prevBtn.disabled = atStart;
+    nextBtn.disabled = atEnd;
+  }
+
+  if (prevBtn && nextBtn) {
+    const getAmount = () => Math.round(testimonialsContainer.clientWidth * 0.6) || 300;
+
+    prevBtn.addEventListener('click', () => {
+      const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      testimonialsContainer.scrollBy({ left: -getAmount(), behavior: isReduced ? 'auto' : 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      testimonialsContainer.scrollBy({ left: getAmount(), behavior: isReduced ? 'auto' : 'smooth' });
+    });
+
+    testimonialsContainer.addEventListener('scroll', updateNavState);
+    window.addEventListener('resize', updateNavState);
+
+    // initialize after potential image/layout load
+    setTimeout(updateNavState, 100);
+  }
+
   const CACHE_KEY = 'testimonials_cache';
   const CACHE_DURATION = 1000 * 60 * 60; // 1 hour
 

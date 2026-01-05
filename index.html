@@ -129,10 +129,16 @@
     </section>
 
     <section class="section section-centered testimonials-section">
-      <div class="container">
+      <div class="container" style="margin-bottom:32px;">
         <p class="kicker">Testimonials</p>
+      </div>
 
-        <div class="testimonials">
+      <div class="testimonials-wrapper">
+        <button class="testimonials-nav prev" aria-controls="testimonials-list" aria-label="Scroll testimonials left">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <div id="testimonials-list" class="testimonials" tabindex="0" aria-label="Testimonials — horizontal scroll">
           <div class="testimonial">
             <blockquote>
               <p>"I had the pleasure to work with Jordan Walz for the past four years and she consistently delivers thoughtful, high-quality work. Jordan is a quick learner who picks up new concepts easily and applies them effectively in her design process. She's flexible, open to feedback, and willing to experiment with new approaches when the situation calls for it.</p>
@@ -164,7 +170,12 @@
               <span class="muted">LDirector, Product Management</span>
             </div>
           </div>
+
         </div>
+
+        <button class="testimonials-nav next" aria-controls="testimonials-list" aria-label="Scroll testimonials right">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     </section>
   </main>
