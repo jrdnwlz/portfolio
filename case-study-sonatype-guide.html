@@ -48,13 +48,12 @@
         </div>
 
         <div class="hero-visual" aria-hidden="false">
-          <img src="assets/img/placeholder-hero.svg" alt="Placeholder: hero illustration or screenshot" width="520" height="360" loading="lazy" />
+          <img src="assets/img/guide/sonatype-guide_hero.png" alt="Sonatype Guide UX Lab screenshots" width="440" height="285" loading="lazy" />
         </div>
       </div>
       <div class="stats" role="list">
             <div class="stat" role="listitem"><div class="kpi">124</div><div class="muted">Reusable UI components</div></div>
             <div class="stat" role="listitem"><div class="kpi">15+</div><div class="muted">Functional feature areas</div></div>
-            <div class="stat" role="listitem"><div class="kpi">100%</div><div class="muted">Type-safe UI system</div></div>
             <div class="stat" role="listitem"><div class="kpi">WCAG AA</div><div class="muted">Accessibility baseline</div></div>
           </div>
     </div>
@@ -62,17 +61,13 @@
 
   <section class="section" id="overview">
     <div class="container stack">
-      <h2>What Changed</h2>
-      <p>
-        Before Guide UX Lab, Sonatype's design process leaned on static wireframes and Figma prototypes.
-        That approach worked for exploration, but it often created translation gaps during engineering handoff.
-        It also limited confidence when evaluating feasibility for a new product SKU.
-      </p>
+      <h2>tl;dr</h2>
+      <p>This project achieved a triptych of goals: to release a developer-first tool that <em>actually</em> helps developers; to create a new design system that can be adapted by existing SKUs; and spearhead a new, AI-assisted PDLC for rapid go-to-market release. Honestly, it was a dream assignment.</p>
 
       <p>
-        For this project, I designed entirely in VS Code and used AI to accelerate ideation and iteration.
-        Instead of handing off a prototype for interpretation, I built a working product environment.
-        That artifact could be evaluated immediately by leadership, sales, and engineering.
+        For this project, I designed entirely in VS Code and used AI to accelerate ideation, iteration, and testing.
+        Instead of relying on a mocked prototype for interpretation, I designed and built a working product environment.
+        That artifact, the UX Lab, could be evaluated immediately and intimately by leadership, sales, and engineering teams alike.
       </p>
 
       <div class="row" style="margin-top: 16px">
@@ -90,58 +85,90 @@
 
   <section class="section" id="problem">
     <div class="container stack">
-      <h2>The Challenge</h2>
+      <h2>The Challenge(s)</h2>
       <h3>Define and design a new product offering for warp-speed GTM release</h3>
       <p>
         Sonatype needed a way to create a new SKU without relying on static design artifacts, elongated timelines, and design-to-dev translation errors.
         The goal was to craft and validate workflows, edge cases, and feasibility early, while also creating a working example to plan and develop from.</p>
-      <div class="hero-inner">
-        <div class="hero-copy">
-      <p><strong>Support PDLC advancement</strong><br>Serve as an interactive visual aid during planning, estimating, and grooming discussions.</p>
-        <p><strong>Establish consistency</strong><br>Create UI and interaction patterns that could scale and easily migrate to existing Sonatype products.</p>
-        <p><strong>Reduce product risk</strong><br>Validate workflows and edge cases in a realistic environment before committing to full engineering implementation.</p>
-        <p><strong>Accelerate delivery</strong><br>Reduce rework by designing directly against production constraints, including accessibility and performance.</p>
-        <p><strong>Set a new design standard</strong><br>Demonstrate an AI-assisted, code-first approach that reduced handoff friction and improved alignment.</p>
-        <p><strong>Support long-term evolution</strong><br>Build a living system that could evolve alongside the product, not a one-off prototype.</p>
-</div>
-<div class="hero-visual">
-      <div class="figure">
-        <img src="assets/img/guide/home.webp" alt="Guide UX Lab home interface" width="1200" height="800"/>
-        <div class="caption">
-          The working prototype served as a shared reference for leadership, sales, design, and engineering.
-          It reduced ambiguity by making product behavior visible early.
+          <div class="challenges-list">
+          <div class="challenge">
+            <core-person-private class="challenge-icon" aria-hidden="true" width="48" height="48"></core-person-private>
+            <noscript>
+              <img class="challenge-icon" src="https://glyphs.fyi/dir?c=human&i=personPrivate" alt="" aria-hidden="true" width="48" height="48" loading="lazy" />
+            </noscript>
+            <h4>Design for developers</h4>
+            <ul>
+              <li>Craft a useful and usable product, specifically suited to solve common jobs-to-be-done (JTBD)</li>
+            </ul>
+          </div>
+
+          <div class="challenge">
+            <core-shapes class="challenge-icon" aria-hidden="true" width="48" height="48"></core-shapes>
+            <h4>Establish scalable UX</h4>
+            <ul>
+              <li>Ensure new visual and interaction patterns can be easily adopted by existing Sonatype products</li>
+            </ul>
+          </div>
+
+          <div class="challenge">
+            <core-rocket class="challenge-icon" aria-hidden="true" width="48" height="48"></core-rocket>
+            <h4>Accelerate delivery</h4>
+            <ul>
+              <li>Design directly against production constraints, including performance, to reduce overlap and rework</li>
+            </ul>
+          </div>
+
+          <div class="challenge">
+            <core-target-pointer class="challenge-icon" aria-hidden="true" width="48" height="48"></core-target-pointer>
+            <h4>Provide a usable prototype</h4>
+            <ul>
+              <li>Deliver a working, usable example to support internal discussions and dogfooding exercises</li>
+            </ul>
+          </div>
+
+          <div class="challenge">
+            <core-comment-question class="challenge-icon" aria-hidden="true" width="48" height="48"></core-comment-question>
+            <h4>Reduce product risk</h4>
+            <ul>
+              <li>Validate workflows and edge cases in a realistic environment before committing to full engineering implementation</li>
+            </ul>
+          </div>
+
+          <div class="challenge">
+            <core-robot-head class="challenge-icon" aria-hidden="true" width="48" height="48"></core-robot-head>
+            <h4>Set a new design standard</h4>
+            <ul>
+              <li>Demonstrate an AI-assisted, code-first approach that reduces handoff friction and improves alignment</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      </div>
-      </div>
     </div>
   </section>
 
   <section class="section" id="role">
     <div class="container stack">
       <h2>My Role</h2>
-      <p class="lead">
-        As <strong>Senior Product Designer and Lead Developer</strong>, I owned the initiative end to end.
-        I designed the system architecture, built the component library, and implemented the working prototype.
-        This approach removed the traditional handoff step between design and engineering.
-      </p>
+      <p class="lead">I'm fortunate to have been selected as the <strong>lead designer for Guide and the UX Lab</strong> project, invited to work closely with Product leadership and executives on a daily basis. My role in each discussion was to act as a champion for the developer-user, tapping into all that I've learned and heard from them over the years.</p> 
+        <p>In the early stages, I collaborated with our small team to define the scope, goals, and success metrics for the initiative. 
+        Orbiting the UX around specific workflows, I (and Claude Code) began building out pages, components, and patterns directly in VS Code. As the project progressed, I was responsible for aligning our UX Lab with any recent decisions or pivots, keeping our live artifact up to date.
+        I later worked closely with engineering during the build phase to ensure a smooth handoff, and was ultimately asked to join the development effort myself.</p>
       <div class="grid grid-3" style="margin-top: 24px">
         <div class="card">
-          <h3>Working Product Prototype</h3>
+          <h3>Design-gineer</h3>
           <p class="muted">
             Built a functional prototype across 15+ feature areas so teams could evaluate real workflows,
             product behavior, and edge cases during planning and stakeholder review.
           </p>
         </div>
         <div class="card">
-          <h3>Design System (Built for Migration)</h3>
+          <h3>Experience Architect</h3>
           <p class="muted">
-            Designed a foundational component library and token system intended to be adopted by existing Sonatype products,
-            not limited to a single SKU or prototype.
+            Designed a foundational component library and token system, compatible with and easily adopted by existing Sonatype SKUs,
+            to replace our outdated design system.
           </p>
         </div>
         <div class="card">
-          <h3>Process Leadership</h3>
+          <h3>Process Guinea Pig</h3>
           <p class="muted">
             Established a code-first, AI-assisted workflow that improved iteration speed and reduced translation gaps.
             The project also set a reference model for future design work.
@@ -467,6 +494,35 @@
   </footer>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+    <!-- Glyphs: use classic scripts (UMD) because these dist files are parcel-built bundles that assume global scope -->
+    <script src="https://unpkg.com/@glyphs/wc-core/dist/index.js"></script>
+    <script src="https://unpkg.com/@glyphs/wc-brands/dist/index.js"></script>
+    <script src="https://unpkg.com/@glyphs/wc-flags/dist/index.js"></script>
   <script src="assets/js/interactions.js"></script>
+
+  <script>
+    // Fallback: if Glyphs webcomponent doesn't register, replace with a static SVG image
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        try {
+          if (!customElements.get('core-person-private')) {
+            var el = document.querySelector('core-person-private.challenge-icon');
+            if (el) {
+              var img = document.createElement('img');
+              img.className = 'challenge-icon';
+              img.src = 'https://glyphs.fyi/dir?c=human&i=personPrivate';
+              img.alt = '';
+              img.setAttribute('aria-hidden', 'true');
+              img.width = 48;
+              img.height = 48;
+              el.replaceWith(img);
+            }
+          }
+        } catch (e) {
+          // noop
+        }
+      }, 500);
+    });
+  </script>
 </body>
 </html>

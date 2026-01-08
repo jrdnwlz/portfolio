@@ -6,6 +6,11 @@
     "add-testimonial": "node scripts/add-testimonial-local.js",
     "serve": "python3 -m http.server 8000"
   },
+  "dependencies": {
+    "@glyphs/wc-core": "latest",
+    "@glyphs/wc-brands": "latest",
+    "@glyphs/wc-flags": "latest"
+  },
   "keywords": [
     "portfolio",
     "design",
