@@ -816,6 +816,78 @@ main {
   }
 }
 
+/* Research Flow Layout */
+.research-flow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 64px;
+  margin-top: 24px;
+  position: relative;
+}
+
+.research-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.research-item-even {
+  direction: rtl;
+}
+
+.research-item-even > * {
+  direction: ltr;
+}
+
+.research-number {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--primary-accent);
+  opacity: 0.12;
+  line-height: 1;
+  min-width: 56px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.research-item-even .research-number {
+  text-align: left;
+}
+
+.research-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .research-flow {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .research-item {
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+  }
+
+  .research-item-even {
+    direction: ltr;
+  }
+
+  .research-number {
+    font-size: 48px;
+    min-width: 48px;
+  }
+
+  .research-item-even .research-number {
+    text-align: right;
+  }
+}
+
 .figure {
   margin: 20px 0;
   position: relative;
