@@ -896,7 +896,7 @@ main {
 
 .alt-row {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 395px;
   gap: 24px;
   align-items: center;
   padding: 0 4%;
@@ -923,9 +923,6 @@ main {
   width: 100%;
   height: auto;
   border-radius: var(--radius);
-  border: 2px solid var(--border);
-  background: var(--surface-2);
-  box-shadow: var(--shadow-sm);
   cursor: zoom-in;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
