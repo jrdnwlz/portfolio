@@ -221,49 +221,52 @@
 
   <section class="section" id="design">
     <div class="container stack">
-      <h2>Designing a Migratable System in Code</h2>
-
-      <p>
-        I designed the system directly in code and structured it to support real product workflows, not isolated UI elements.
-        Components were organized to reflect how features would be built and used, with an explicit goal of future adoption across products.
-      </p>
-
-      <h3 style="margin-top: 32px">Core Product Patterns</h3>
-      <p class="muted">
-        Trust score badges, CVE severity indicators, sortable data tables, version comparison, and multi-faceted search with advanced filtering.
-        These patterns were designed for dense security data and frequent scanning behavior.
-      </p>
-
-      <h3 style="margin-top: 24px">Dashboards & Analytics</h3>
-      <p class="muted">
-        Run history, time-series reporting, ecosystem breakdowns, and configuration workflows, implemented as real application states within the prototype.
-      </p>
-
-      <h3 style="margin-top: 24px">Access Control & Monetization</h3>
-      <p class="muted">
-        Tier-based access control, gated workflows, upgrade prompts, and monetization surfaces.
-        These flows helped validate packaging decisions alongside user experience.
-      </p>
-
-      <div class="grid grid-2" style="margin-top: 32px; gap: 24px">
-        <div class="figure">
-          <img src="assets/img/guide/components.webp" alt="Component library overview" loading="lazy" width="800" height="600"/>
-          <div class="caption">
-            Component system overview used to validate coverage, consistency, and adoption readiness across feature areas.
+      <h2>Design in Service of Developers</h2>
+      <p class="lead">This phase of the project consisted of the design decisions that served to shape how developers and security engineers use the Guide interface and MCP server. </p>
+      <p>Design choices were grounded in real developer workflows and constraints, addressing real pain-points and meeting real needs. Users are often scanning large volumes of security data, prioritizing fixes, and making decisions under time pressure. The interface prioritizes clarity, scanability, and predictable behavior so users can quickly understand what matters and take action with confidence.</p>
+      <p>Rather than designing features in isolation, I focused on repeatable patterns that support common jobs-to-be-done, while remaining flexible enough for different levels of expertise. This ensured that Guide could function as a cohesive standalone product, while allowing its patterns and components to be adopted naturally across the Sonatype suite.</p>
+      <div class="alt-grid" style="margin-top: 32px;">
+        <div class="alt-row">
+          <div class="alt-content">
+            <h4>Core Product Patterns</h4>
+            <p class="muted">Developers and security engineers often work under time pressure, scanning large volumes of information to identify the biggest risk and quickest wins. The design prioritizes visual hierarchy and semantic cues to support this behavior.</p>
+            <p class="muted">Trust score badges, CVE severity indicators, and CVSS scoring are designed to surface risk at a glance, allowing users to quickly triage issues before diving into detail. Sortable data tables, version comparison views, and multi-faceted search with advanced filtering support exploratory workflows, enabling users to move fluidly between broad overviews and precise queries without losing context.</p>
+          </div>
+          <div class="alt-media">
+            <img class="alt-media-img" src="assets/img/guide/components.webp" data-full="assets/img/guide/components.webp" alt="Component library overview" loading="lazy" width="800" height="600" />
+            <div class="caption">Lorem caption</div>
           </div>
         </div>
-        <div class="figure">
-          <img src="assets/img/guide/component-detail.webp" alt="Component detail page" loading="lazy" width="800" height="600"/>
-          <div class="caption">
-            Component documentation used during design to confirm variants, accessibility behavior, and real-world usage.
+        
+        <div class="alt-row">
+          <div class="alt-content">
+            <h4>Dashboards & Analytics</h4>
+            <p class="muted">Dashboards were designed to answer a small set of recurring questions: <em>What changed? What requires attention? What actions do I take next?</em></p>
+            <p class="muted">Run history, time-series reporting, ecosystem breakdowns, and configuration workflows are presented as real application states rather than static summaries. This allows users to trace outcomes back to inputs, understand trends over time, and adjust configurations with confidence.</p>
+            <p class="muted">The design emphasizes scanability and progressive disclosure. High-level signals are surfaced first, with deeper detail available on demand. This supports both quick check-ins and more deliberate analysis, depending on user intent.</p>
+          </div>
+          <div class="alt-media">
+            <img class="alt-media-img" src="assets/img/guide/search-global.webp" data-full="assets/img/guide/search-global.webp" alt="Global search with autocomplete" loading="lazy" width="800" height="600" />
+            <div class="caption">Lorem caption</div>
+          </div>
+        </div>
+        
+        <div class="alt-row">
+          <div class="alt-content">
+            <h4>Access Control & Monetization</h4>
+            <p class="muted">Access control and monetization were treated as product experiences, not overlays. Tier-based access, gated workflows, upgrade prompts, and plan comparison surfaces were designed to feel integrated rather than interruptive.</p>
+            <p class="muted">The goal was to communicate value clearly at the moment it becomes relevant. Users encounter gates in context, tied directly to features or insights they are attempting to access. This approach supports informed decision-making while preserving trust and minimizing frustration, which is especially important in developer-facing tools.</p>
+          </div>
+          <div class="alt-media">
+            <img class="alt-media-img" src="assets/img/guide/vulnerability-detail.webp" data-full="assets/img/guide/vulnerability-detail.webp" alt="Detailed vulnerability information" loading="lazy" width="800" height="600" />
+            <div class="caption">Lorem caption</div>
           </div>
         </div>
       </div>
 
       <div class="sep"></div>
-      <a id="technical"></a>
-
       <h2>Designing in Production-Ready Code</h2>
+      <p class="lead">This was a new experience for me.</p>
       <p>
         The prototype used a production-ready stack so design decisions could be tested against real constraints.
         That included accessibility, performance, responsiveness, and developer experience.

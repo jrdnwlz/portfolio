@@ -164,6 +164,60 @@
     });
   }
 
+  /* Lightbox (image preview) */
+  function initLightbox() {
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+
+    overlay.innerHTML = '\n      <div class="lightbox-content" role="dialog" aria-modal="true">\n        <button class="lightbox-close" aria-label="Close image">\u00d7</button>\n        <img src="" alt="" />\n        <div class="lightbox-caption" aria-hidden="false"></div>\n      </div>';
+
+    document.body.appendChild(overlay);
+
+    var lbImg = overlay.querySelector('img');
+    var lbCaption = overlay.querySelector('.lightbox-caption');
+    var lbClose = overlay.querySelector('.lightbox-close');
+    var lastFocused = null;
+
+    function openLightbox(src, caption) {
+      lastFocused = document.activeElement;
+      lbImg.src = src;
+      lbImg.alt = caption || '';
+      lbCaption.textContent = caption || '';
+      overlay.classList.add('open');
+      document.body.classList.add('no-scroll');
+      lbClose.focus();
+    }
+
+    function closeLightbox() {
+      overlay.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+      lbImg.src = '';
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    // Delegate clicks on images with preview intent
+    document.body.addEventListener('click', function(e) {
+      var img = e.target.closest && e.target.closest('.alt-media-img, .figure img');
+      if (!img) return;
+      e.preventDefault();
+      var full = img.getAttribute('data-full') || img.src;
+      var captionEl = img.closest('.alt-media') ? img.closest('.alt-media').querySelector('.caption') : img.closest('.figure') ? img.closest('.figure').querySelector('.caption') : null;
+      var caption = captionEl ? captionEl.textContent.trim() : '';
+      openLightbox(full, caption);
+    });
+
+    // Close handlers
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeLightbox();
+    });
+
+    lbClose.addEventListener('click', function() { closeLightbox(); });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && overlay.classList.contains('open')) closeLightbox();
+    });
+  }
+
   /**
    * Initialize all interactions
    */
@@ -173,6 +227,8 @@
 
     // Career timeline animations
     initCareerTimeline();
+    // Lightbox for image previews
+    initLightbox();
 
     // Mobile menu enhancements
     document.addEventListener('click', handleOutsideClick);
