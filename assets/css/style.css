@@ -2091,7 +2091,6 @@ body.no-scroll { overflow: hidden; }
   gap: 12px;
   flex-wrap: wrap;
   padding-top: 8px;
-  border-top: 1px solid var(--border);
 }
 
 .case-study-highlights .highlight {
