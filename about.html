@@ -11,6 +11,8 @@
   <meta property="og:description" content="Creating great experiences across fashion, events, and software."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://jordanwalz.com/about.html"/>
+  <meta property="og:image" content="https://jordanwalz.com/assets/img/headshot_2026-square.webp"/>
+  <meta name="twitter:card" content="summary_large_image"/>
 
   <!-- Performance -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -23,6 +25,7 @@
   <link rel="icon" href="/assets/img/favicon.svg"/>
 
   <!-- Theme Color -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Jordan Walz","url":"https://jordanwalz.com","jobTitle":"Senior Product Designer"}</script>
   <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
   <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
 </head>
@@ -46,17 +49,49 @@
       <div class="container">
         <div class="about-hero">
           <div class="about-headshot">
-            <div class="headshot-placeholder">
-              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-            </div>
+            <img
+              src="assets/img/headshot_2026-square.webp"
+              srcset="assets/img/headshot_2026-square.webp 1x, assets/img/headshot_2026-square@2x.webp 2x, assets/img/headshot_2026-square.jpg 1x"
+              alt="Jordan Walz — Product Designer"
+              class="about-headshot-img"
+              loading="lazy"
+              width="1158"
+              height="1158"
+            />
           </div>
           <div class="about-intro">
             <h4 class="kicker mb-18">About Me</h4>
             <h1 class="gradient-text">Talented designer, reliable teammate, valued contributor</h1>
             <p class="lead">Designing enterprise systems with clarity, curiosity, and care.</p>
+
+            <div class="actions about-actions" aria-hidden="false">
+              <a class="btn primary" href="case-study-sonatype-guide.html">View flagship case study</a>
+              <a class="btn" href="contact.html">Get in touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Row -->
+    <section class="section section-bg">
+      <div class="container">
+        <div class="stats" aria-label="Career highlights">
+          <div class="stat">
+            <div class="kpi">10+</div>
+            <div class="muted">Years Experience</div>
+          </div>
+          <div class="stat">
+            <div class="kpi">124</div>
+            <div class="muted">Features Shipped</div>
+          </div>
+          <div class="stat">
+            <div class="kpi">15</div>
+            <div class="muted">Sprints Facilitated</div>
+          </div>
+          <div class="stat">
+            <div class="kpi">3</div>
+            <div class="muted">Speaking Engagements</div>
           </div>
         </div>
       </div>
@@ -66,32 +101,28 @@
     <section class="section">
       <div class="container">        
         <div class="narrative-content">
+          <h3 class="about-section-heading">An Unconventional Path</h3>
           <p>At a recent STEM event, local high-school students asked me how to "get here." Not philosophically, but practically. What to study. Which classes to take. The shortest path between curiosity and a career.</p>
           <p>I watched the sparkle fade from their eyes when I told them my path reads more like a horoscope than a recipe.</p>
-        </div>
-
-        <h2 class="about-section-heading">Unconventional Path</h2>
-        
-        <div class="narrative-content">
           <p>College in Philly consisted of math classes that soothed my brain between six-hour design sessions, credits accumulating before I'd realized. I interned for a fashion designer during peak 2000's-era NYC, culminating backstage at New York Fashion Week. West Coast intentions turned into worldly travels, backpacking around the globe.</p>
-          <p>Somewhere in there, I learned <strong>how to learn.</strong></p>
+          <p>Somewhere along the way, I learned <strong>how to learn.</strong></p>
         </div>
-
-        <h2 class="about-section-heading">Designing Today</h2>
-        
         <div class="narrative-content">
+          <h3 class="about-section-heading">Designing Today</h3>
           <p>Today, I design products inside enterprise systems, where complexity is expected and clarity is the real challenge. I work across strategy, discovery, and execution with product and engineering partners to build things that are resilient, usable, and quietly well made.</p>
           <p>I am IC-focused, naturally collaborative, and happiest in environments that integrate design thinking throughout the SDLC.</p>
         </div>
       </div>
     </section>
+    
+    <hr class="section-divider">
 
     <!-- Beyond Work -->
     <section class="section">
       <div class="container">
         <div class="ai-focus-box">
-          <h3>Beyond Work</h3>
-          <p>When I'm not designing, I'm either shuttling my kids between sports or squeezing in a twilight round of golf.</p>
+          <h3>In Real Life</h3>
+          <p>I'm a right-handed Libra, my favorite color is yellow, and I prefer light-mode over dark. When I'm not at my desk, I'm either shuttling my kids between rec sports or squeezing in a twilight round of golf.</p>
         </div>
       </div>
     </section>
