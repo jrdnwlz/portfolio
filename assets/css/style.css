@@ -2025,11 +2025,16 @@ body.no-scroll { overflow: hidden; }
     padding: 0 !important;
   }
 
+  .section {
+    padding: 0 !important;
+    margin: 0 0 12pt 0 !important;
+  }
+
   /* Typography tweaks for print clarity */
   h1 { font-size: 16pt !important; margin: 0 0 6pt 0; }
-  h2 { font-size: 14pt !important; margin: 18pt 0 6pt 0; }
-  h3 { font-size: 12pt !important; margin: 12pt 0 4pt 0; }
-  p  { margin: 0 0 8pt 0; }
+  h2 { font-size: 14pt !important; margin: 10pt 0 6pt 0; }
+  h3 { font-size: 12pt !important; margin: 8pt 0 4pt 0; }
+  p  { margin: 0 0 6pt 0; }
 
   /* Make links print-friendly */
   a, a:visited {
@@ -2040,11 +2045,9 @@ body.no-scroll { overflow: hidden; }
   /* Prevent awkward breaks in key blocks */
   .stats,
   .stat,
-  .recent-highlights,
   .highlight,
   .role,
   .timeline-item,
-  ul,
   li {
     page-break-inside: avoid;
     break-inside: avoid;
@@ -2083,6 +2086,26 @@ body.no-scroll { overflow: hidden; }
   #competencies {
     font-size: 10.5pt;
     line-height: 1.3;
+  }
+
+  /* Core competencies: print as a three-column bulleted list */
+  .skills-badges {
+    display: block !important;
+    column-count: 3;
+    column-gap: 18px;
+    gap: 0;
+  }
+  .skill-badge {
+    display: list-item !important;
+    list-style: disc;
+    list-style-position: outside;
+    margin-left: 18px;
+    padding: 0 0 6px 0;
+    background: none !important;
+    border: 0 !important;
+    border-radius: 0;
+    color: #000 !important;
+    break-inside: avoid;
   }
 
   /* Ensure any "collapsed" timeline content prints expanded */
