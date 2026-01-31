@@ -2047,7 +2047,6 @@ body.no-scroll { overflow: hidden; }
   .stat,
   .highlight,
   .role,
-  .timeline-item,
   li {
     page-break-inside: avoid;
     break-inside: avoid;
@@ -2448,6 +2447,17 @@ body.no-scroll { overflow: hidden; }
 }
 
 /* Skills Categories */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-between;
+  row-gap: 28px;
+}
+
+.skills-grid > .skills-category {
+  margin-bottom: 0;
+}
+
 .skills-category {
   margin-bottom: 32px;
 }
@@ -2465,12 +2475,75 @@ body.no-scroll { overflow: hidden; }
   letter-spacing: 0.05em;
 }
 
+.skills-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skills-toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--primary-accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 0;
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.skills-toggle-label .label-less {
+  display: none;
+}
+
+.skills-toggle:checked ~ .skills-toggle-label .label-more {
+  display: none;
+}
+
+.skills-toggle:checked ~ .skills-toggle-label .label-less {
+  display: inline;
+}
+
+.skills-more {
+  display: none;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.skills-toggle:checked ~ .skills-more {
+  display: grid;
+}
+
+.skills-toggle-label {
+  order: 3;
+}
+
+.skills-more {
+  order: 2;
+}
+
 /* Skills Badges */
 .skills-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: space-between;
+  padding: 12px;
 }
 
 .skill-badge {
@@ -2491,6 +2564,17 @@ body.no-scroll { overflow: hidden; }
 
 .skill-badge:hover svg {
   opacity: 1;
+}
+
+@media print {
+  .skills-toggle,
+  .skills-toggle-label {
+    display: none !important;
+  }
+
+  .skills-more {
+    display: block !important;
+  }
 }
 
 /* Resume Entry Enhancements */
@@ -2694,6 +2778,15 @@ body.no-scroll { overflow: hidden; }
 
   .resume-highlights-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .skills-more {
+    grid-template-columns: 1fr;
   }
 
   .skill-badge {
