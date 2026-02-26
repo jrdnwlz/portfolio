@@ -3,42 +3,25 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Jordan Walz | Case Study: Sonatype Guide</title>
-  <meta name="description" content="Designing explainable automation for secure dependency choices. Role: Senior Product Designer (lead), 2024 - 2025."/>
+  <title>Jordan Walz | Case Study Update</title>
+  <meta name="description" content="This case study has moved to two dedicated pages: Sonatype Guide and Guide UX Lab."/>
 
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Sonatype Guide Case Study"/>
-  <meta property="og:description" content="Designing explainable automation for secure dependency choices"/>
+  <meta property="og:title" content="Case Study Update"/>
+  <meta property="og:description" content="This case study has moved to two dedicated pages."/>
   <meta property="og:type" content="article"/>
 
-  <!-- Performance -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
-
-  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css"/>
-
-  <!-- Favicon -->
   <link rel="icon" href="/assets/img/favicon.svg"/>
 
-  <!-- Theme Color -->
   <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
   <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
-
-  <!-- Privacy-friendly analytics by Plausible -->
-<script async src="https://plausible.io/js/pa-fv5WdArQQO4f5521_Vmjt.js"></script>
-<script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
-</script>
-
 </head>
 <body>
   <header class="header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Jordan Walz, Senior Product Designer portfolio">
-      Jordan Walz <span style="color: var(--surface);">Senior Product Designer</span>
-    </a>
+      <a class="brand" href="index.html">Jordan Walz</a>
       <nav class="nav" aria-label="Main">
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
@@ -48,427 +31,39 @@
       <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
     </div>
   </header>
-<main>
-  <section class="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <div class="kicker" style="margin-bottom:16px;">FLAGSHIP CASE STUDY · SONATYPE</div>
-          <h1>Guide UX Lab</h1>
-          <h3 class="lead" style="margin-top:16px;">A code-first, AI-assisted design initiative that produced a working prototype for a new Sonatype SKU, established a migratable design system, and introduced a new workflow for the design team.</h3>
-        </div>
 
-        <div class="hero-visual" aria-hidden="false">
-          <img src="assets/img/guide/sonatype-guide_hero.png" alt="Sonatype Guide UX Lab screenshots" width="440" height="285" loading="lazy" />
+  <main>
+    <section class="hero hero-centered">
+      <div class="container">
+        <h1>This case study has moved</h1>
+        <p class="lead">The previous combined page is now split into two focused case studies.</p>
+      </div>
+    </section>
+
+    <section class="section section-bg">
+      <div class="container">
+        <div class="case-studies-grid">
+          <article class="case-study-card">
+            <h3 class="case-study-title"><a href="case-studies/sonatype-guide.html">Sonatype Guide</a></h3>
+            <p class="case-study-description">Product design for developer-facing security workflows and decision confidence.</p>
+            <a class="case-study-link" href="case-studies/sonatype-guide.html">Read case study &#8594;</a>
+          </article>
+
+          <article class="case-study-card">
+            <h3 class="case-study-title"><a href="case-studies/guide-ux-lab.html">Guide UX Lab</a></h3>
+            <p class="case-study-description">Code-first prototyping and AI-assisted PDLC for lower handoff ambiguity.</p>
+            <a class="case-study-link" href="case-studies/guide-ux-lab.html">Read case study &#8594;</a>
+          </article>
         </div>
       </div>
-      <div class="stats" role="list">
-            <div class="stat" role="listitem"><div class="kpi">64</div><div class="muted">Reusable UI components</div></div>
-            <div class="stat" role="listitem"><div class="kpi">15+</div><div class="muted">Functional feature areas</div></div>
-            <div class="stat" role="listitem"><div class="kpi">WCAG AA</div><div class="muted">Accessibility baseline</div></div>
-          </div>
-    </div>
-  </section>
-
-  <section class="section" id="overview">
-    <div class="container stack">
-      <h2>tl;dr</h2>
-      <p>This project achieved a triptych of goals: to release a developer-first tool that <em>actually</em> helps developers; to create a new design system that can be adapted by existing SKUs; and spearhead a new, AI-assisted PDLC for rapid go-to-market release. Honestly, it was a dream assignment.</p>
-
-      <p>
-        For this project, I designed entirely in VS Code and used AI to accelerate ideation, iteration, and testing.
-        Instead of relying on a mocked prototype for interpretation, I designed and built a working product environment.
-        That artifact, the UX Lab, could be evaluated immediately and intimately by leadership, sales, and engineering teams alike.
-      </p>
-
-      <div class="row" style="margin-top: 16px">
-        <span class="tag">Next.js 15</span>
-        <span class="tag">React 19</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">Radix UI</span>
-        <span class="tag">Tailwind CSS</span>
-        <span class="tag">Design Systems</span>
-        <span class="tag">Accessibility</span>
-        <span class="tag">AI-assisted workflow</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="problem">
-    <div class="container stack">
-      <h2>The Challenge(s)</h2>
-      <h3>Define and design a new product offering for warp-speed GTM release</h3>
-      <p>
-        Sonatype needed a way to create a new SKU without relying on static design artifacts, elongated timelines, and design-to-dev translation errors.
-        The goal was to craft and validate workflows, edge cases, and feasibility early, while also creating a working example to plan and develop from.</p>
-          <div class="challenges-list">
-          <div class="challenge">
-            <core-person-private class="challenge-icon" aria-hidden="true" width="48" height="48"></core-person-private>
-            <noscript>
-              <img class="challenge-icon" src="https://glyphs.fyi/dir?c=human&i=personPrivate" alt="" aria-hidden="true" width="48" height="48" loading="lazy" />
-            </noscript>
-            <h4>Design for developers</h4>
-            <ul>
-              <li>Craft a useful and usable product, specifically suited to solve common jobs-to-be-done (JTBD)</li>
-            </ul>
-          </div>
-
-          <div class="challenge">
-            <core-shapes class="challenge-icon" aria-hidden="true" width="48" height="48"></core-shapes>
-            <h4>Establish scalable UX</h4>
-            <ul>
-              <li>Ensure new visual and interaction patterns can be easily adopted by existing Sonatype products</li>
-            </ul>
-          </div>
-
-          <div class="challenge">
-            <core-rocket class="challenge-icon" aria-hidden="true" width="48" height="48"></core-rocket>
-            <h4>Accelerate delivery</h4>
-            <ul>
-              <li>Design directly against production constraints, including performance, to reduce overlap and rework</li>
-            </ul>
-          </div>
-
-          <div class="challenge">
-            <core-target-pointer class="challenge-icon" aria-hidden="true" width="48" height="48"></core-target-pointer>
-            <h4>Provide a usable prototype</h4>
-            <ul>
-              <li>Deliver a working, usable example to support internal discussions and dogfooding exercises</li>
-            </ul>
-          </div>
-
-          <div class="challenge">
-            <core-comment-question class="challenge-icon" aria-hidden="true" width="48" height="48"></core-comment-question>
-            <h4>Reduce product risk</h4>
-            <ul>
-              <li>Validate workflows and edge cases in a realistic environment before committing to full engineering implementation</li>
-            </ul>
-          </div>
-
-          <div class="challenge">
-            <core-robot-head class="challenge-icon" aria-hidden="true" width="48" height="48"></core-robot-head>
-            <h4>Set a new design standard</h4>
-            <ul>
-              <li>Demonstrate an AI-assisted, code-first approach that reduces handoff friction and improves alignment</li>
-            </ul>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <section class="section" id="role">
-    <div class="container stack">
-      <h2>My Role</h2>
-      <p class="lead">I'm fortunate to have been selected as the <strong>lead designer for Guide and the UX Lab</strong> project, invited to work closely with Product leadership and executives on a daily basis. My role in each discussion was to act as a champion for the developer-user, tapping into all that I've learned and heard from them over the years.</p> 
-        <p>In the early stages, I collaborated with our small team to define the scope, goals, and success metrics for the initiative. 
-        Orbiting the UX around specific workflows, I (and Claude Code) began building out pages, components, and patterns directly in VS Code. As the project progressed, I was responsible for aligning our UX Lab with any recent decisions or pivots, keeping our live artifact up to date.
-        I later worked closely with engineering during the build phase to ensure a smooth handoff, and was ultimately asked to join the development effort myself.</p>
-      <div class="grid grid-3" style="margin-top: 24px">
-        <div class="card">
-          <h3>Design-gineer</h3>
-          <p class="muted">
-            Built a functional prototype across 15+ feature areas so teams could evaluate real workflows,
-            product behavior, and edge cases during planning and stakeholder review.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Experience Architect</h3>
-          <p class="muted">
-            Designed a foundational component library and token system, compatible with and easily adopted by existing Sonatype SKUs,
-            to replace our outdated design system.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Process Guinea Pig</h3>
-          <p class="muted">
-            Established a code-first, AI-assisted workflow that improved iteration speed and reduced translation gaps.
-            The project also set a reference model for future design work.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="research">
-    <div class="container stack">
-      <h2>Research & Discovery</h2>
-      <p>Research focused on understanding the problem space before committing to solutions. This included the realities of building security products, the workflows users rely on, and the constraints imposed by existing systems and business goals. The goal was to ground design decisions in real usage, not abstract artifacts.</p>
-
-      <div class="research-flow">
-        <div class="research-item">
-          <div class="research-number">01</div>
-          <div class="research-content">
-            <h3>Product Context & User Workflows</h3>
-            <p class="muted">I reviewed how developers, security engineers, and platform teams interact with vulnerability data, trust signals, and remediation guidance. These workflows are often fast-paced, data-dense, and interruption-prone. That context informed decisions around information hierarchy, scanability, and keyboard accessibility from the start.</p>
-          </div>
-        </div>
-
-        <div class="research-item research-item-even">
-          <div class="research-number">02</div>
-          <div class="research-content">
-            <h3>Competitive Analysis</h3>
-            <p class="muted">I reviewed modern security platforms and mature design systems to understand how large datasets remain usable, how accessibility is handled by default, and how consistency is maintained across complex feature sets. This helped identify common interaction patterns that users already expect, as well as gaps where existing tools create friction.</p>
-          </div>
-        </div>
-
-        <div class="research-item">
-          <div class="research-number">03</div>
-          <div class="research-content">
-            <h3>Internal Audit</h3>
-            <p class="muted">I audited existing Sonatype products and collaborated with product and engineering teams to identify shared patterns, inconsistencies, and technical constraints. This work surfaced opportunities to create a system that could migrate into current products rather than remain isolated as a prototype.</p>
-          </div>
-        </div>
-
-        <div class="research-item research-item-even">
-          <div class="research-number">04</div>
-          <div class="research-content">
-            <h3>Technical Research</h3>
-            <p class="muted">I evaluated frameworks and libraries early to understand what could realistically be designed and validated in code. Accessibility, performance, and developer experience were treated as design constraints, not implementation details to resolve later.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="design">
-    <div class="container stack">
-      <h2>Design in Service of Developers</h2>
-      <p class="lead">This phase of the project consisted of the design decisions that served to shape how developers and security engineers use the Guide interface and MCP server. </p>
-      <p>Design choices were grounded in real developer workflows and constraints, addressing real pain-points and meeting real needs. Users are often scanning large volumes of security data, prioritizing fixes, and making decisions under time pressure. The interface prioritizes clarity, scanability, and predictable behavior so users can quickly understand what matters and take action with confidence.</p>
-      <p>Rather than designing features in isolation, I focused on repeatable patterns that support common jobs-to-be-done, while remaining flexible enough for different levels of expertise. This ensured that Guide could function as a cohesive standalone product, while allowing its patterns and components to be adopted naturally across the Sonatype suite.</p>
-      <div class="alt-grid" style="margin-top: 32px;">
-        <div class="alt-row">
-          <div class="alt-content">
-            <h4>Core Product Patterns</h4>
-            <p class="muted">Developers and security engineers often work under time pressure, scanning large volumes of information to identify the biggest risk and quickest wins. The design prioritizes visual hierarchy and semantic cues to support this behavior.</p>
-            <p class="muted">Trust score badges, CVE severity indicators, and CVSS scoring are designed to surface risk at a glance, allowing users to quickly triage issues before diving into detail. Sortable data tables, version comparison views, and multi-faceted search with advanced filtering support exploratory workflows, enabling users to move fluidly between broad overviews and precise queries without losing context.</p>
-          </div>
-          <div class="alt-media">
-            <img class="alt-media-img" src="assets/img/guide/patterns.png" data-full="assets/img/guide/patterns.png" alt="Core design patterns" loading="lazy" width="391" height="232" />
-          </div>
-        </div>
-        
-        <div class="alt-row">
-          <div class="alt-content">
-            <h4>Dashboards & Analytics</h4>
-            <p class="muted">Dashboards were designed to answer a small set of recurring questions: <em>What changed? What requires attention? What actions do I take next?</em></p>
-            <p class="muted">Run history, time-series reporting, ecosystem breakdowns, and configuration workflows are presented as real application states rather than static summaries. This allows users to trace outcomes back to inputs, understand trends over time, and adjust configurations with confidence.</p>
-            <p class="muted">The design emphasizes scanability and progressive disclosure. High-level signals are surfaced first, with deeper detail available on demand. This supports both quick check-ins and more deliberate analysis, depending on user intent.</p>
-          </div>
-          <div class="alt-media">
-            <img class="alt-media-img" src="assets/img/guide/analytics.png" data-full="assets/img/guide/analytics.png" alt="Dashboards and metrics" loading="lazy" width="391" height="186" />
-          </div>
-        </div>
-        
-        <div class="alt-row">
-          <div class="alt-content">
-            <h4>Access Control & Monetization</h4>
-            <p class="muted">Access control and monetization were treated as product experiences, not overlays. Tier-based access, gated workflows, upgrade prompts, and plan comparison surfaces were designed to feel integrated rather than interruptive.</p>
-            <p class="muted">The goal was to communicate value clearly at the moment it becomes relevant. Users encounter gates in context, tied directly to features or insights they are attempting to access. This approach supports informed decision-making while preserving trust and minimizing frustration, which is especially important in developer-facing tools.</p>
-          </div>
-          <div class="alt-media">
-            <img class="alt-media-img" src="assets/img/guide/access.png" data-full="assets/img/guide/access.png" alt="Gated access and sign-up prompts" loading="lazy" width="391" height="232" />
-          </div>
-        </div>
-      </div>
-
-      <div class="sep"></div>
-      <h2>Designing in Production-Ready Code</h2>
-      <p class="lead">This was a new experience for me.</p>
-      <p>
-        The prototype used a production-ready stack so design decisions could be tested against real constraints, including accessibility, performance, responsiveness, and developer experience. Design tokens were treated as a migration layer, allowing visual and interaction patterns to move between products without rewriting components.
-      </p>
-
-      <div class="grid grid-3" style="margin-top: 24px">
-        <div class="card">
-          <h3>Next.js 15 + React 19</h3>
-          <p class="muted">
-            Enabled realistic performance characteristics, including streaming and code splitting.
-            This made it possible to validate flows under production-like conditions.
-          </p>
-        </div>
-        <div class="card">
-          <h3>TypeScript Strict Mode</h3>
-          <p class="muted">
-            Type safety surfaced edge cases early and improved confidence in component behavior.
-            Interfaces were exported for consistency and reuse.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Radix UI + Tailwind</h3>
-          <p class="muted">
-            Accessible primitives provided keyboard navigation and ARIA support by default.
-            Tailwind enabled rapid iteration while keeping styling consistent.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="features">
-    <div class="container stack">
-      <h2>Validating a Real Product Through Working Features</h2>
-
-      <p>
-        The prototype included 15+ functional feature areas.
-        These were built to validate workflows, business rules, and edge cases in a realistic product environment.
-      </p>
-
-      <div class="grid grid-3" style="margin-top: 24px">
-        <div class="card">
-          <h3>Intelligent Search</h3>
-          <p class="muted">
-            Real-time, keyboard-accessible search across multiple entity types with severity-based categorization.
-            Used to validate navigation patterns and ranking assumptions in a data-dense environment.
-          </p>
-          <div class="tags"><span class="tag">Search</span><span class="tag">Accessibility</span><span class="tag">Security UX</span></div>
-        </div>
-
-        <div class="card">
-          <h3>MCP Analytics</h3>
-          <p class="muted">
-            Run history, success rates, ecosystem breakdowns, and configuration workflows are used to validate information hierarchy and CLI behavior.
-          </p>
-          <div class="tags"><span class="tag">Analytics</span><span class="tag">MCP</span><span class="tag">AI</span></div>
-        </div>
-
-        <div class="card">
-          <h3>Vulnerability Analysis</h3>
-          <p class="muted">
-            Detailed triage flows with trust scores, CVE severity, remediation guidance, and dependency context.
-            Used to test clarity and decision support for security workflows.
-          </p>
-          <div class="tags"><span class="tag">CVE</span><span class="tag">Workflows</span><span class="tag">Data-dense UI</span></div>
-        </div>
-
-        <div class="card">
-          <h3>Tier-Based Gating</h3>
-          <p class="muted">
-            Freemium gating with upgrade prompts, locked panels, and tier comparison flows.
-            Used to validate packaging decisions and user experience tradeoffs.
-          </p>
-          <div class="tags"><span class="tag">Monetization</span><span class="tag">Access Control</span></div>
-        </div>
-
-        <div class="card">
-          <h3>Settings & Profile</h3>
-          <p class="muted">
-            Account and organization management flows, including authentication, permissions, and team configuration.
-            Built to reflect real enterprise SaaS expectations.
-          </p>
-          <div class="tags"><span class="tag">Admin</span><span class="tag">Auth</span><span class="tag">SaaS</span></div>
-        </div>
-
-        <div class="card">
-          <h3>Billing & Plans</h3>
-          <p class="muted">
-            Plan comparison, upgrades, usage tracking, and checkout flow logic.
-            Used to validate customer lifecycle scenarios.
-          </p>
-          <div class="tags"><span class="tag">Billing</span><span class="tag">PLG</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="impact">
-    <div class="container stack">
-      <h2>Impact & Results</h2>
-
-      <h3 style="margin-top: 24px">Product & Organizational Impact</h3>
-      <ul class="stack">
-        <li><strong>Shared product language</strong> Established a consistent visual and interaction system intended for adoption beyond the prototype.</li>
-        <li><strong>Faster delivery</strong> Designing directly in production code reduced rework and shortened the path from concept to implementation.</li>
-        <li><strong>Stakeholder confidence</strong> A working prototype helped leadership, sales, and engineering evaluate product behavior early.</li>
-        <li><strong>Reduced product risk</strong> Workflows and edge cases were validated before committing to full-scale engineering.</li>
-        <li><strong>Process influence</strong> The Lab demonstrated a viable AI-assisted, code-first workflow that reduced handoff friction.</li>
-      </ul>
-
-      <h3 style="margin-top: 32px">Quantifiable Outcomes</h3>
-      <div class="stats" role="list">
-        <div class="stat" role="listitem"><div class="kpi">64</div><div class="muted">Production-ready components</div></div>
-        <div class="stat" role="listitem"><div class="kpi">15+</div><div class="muted">Functional feature areas</div></div>
-        <div class="stat" role="listitem"><div class="kpi">100%</div><div class="muted">Type-safe system</div></div>
-        <div class="stat" role="listitem"><div class="kpi">Sub-2s</div><div class="muted">Load times</div></div>
-      </div>
-
-      <h3 style="margin-top: 32px">Design Decisions Validated in Production</h3>
-      <ul class="stack">
-        <li><strong>Accessibility</strong> WCAG 2.1 AA behavior was validated during design, including keyboard navigation and ARIA labeling.</li>
-        <li><strong>Performance</strong> Streaming, lazy loading, and code splitting were exercised under production-like conditions.</li>
-        <li><strong>Responsiveness</strong> Mobile-first layouts and responsive behavior were validated across features and states.</li>
-        <li><strong>Reliability</strong> Strict TypeScript surfaced edge cases early and improved confidence in component behavior.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section" id="learnings">
-    <div class="container stack">
-      <h2>Reflections & What This Changed</h2>
-
-      <h3 style="margin-top: 24px">What Worked Well</h3>
-      <ul class="stack">
-        <li><strong>Design as a living artifact</strong> Because the prototype was the product environment, there was less drift between intent and implementation.</li>
-        <li><strong>Accessibility-first foundations</strong> Starting with accessible primitives kept inclusive behavior as a default, not a retrofit.</li>
-        <li><strong>Type safety as a design tool</strong> Strict typing revealed edge cases early and improved component reliability.</li>
-        <li><strong>Real data improved realism</strong> Using actual CVEs and dependency data surfaced usability problems that mock content would have hidden.</li>
-        <li><strong>Progressive composition</strong> Building components in isolation before composition reduced complexity and prevented cascading issues.</li>
-      </ul>
-
-      <h3 style="margin-top: 24px">Design & Engineering Standards Established</h3>
-      <ul class="stack">
-        <li>Default to accessible primitives and keyboard-first interactions.</li>
-        <li>Standardize iconography to support consistency and performance.</li>
-        <li>Use mobile-first layout patterns across components and flows.</li>
-        <li>Export TypeScript interfaces for component APIs to support reuse and safety.</li>
-        <li>Handle empty, null, and error states explicitly to reduce hidden failures.</li>
-        <li>Use semantic design tokens to support theming and future adoption.</li>
-      </ul>
-
-      <h3 style="margin-top: 24px">What I'd Do Next</h3>
-      <p class="muted">
-        Extract the component library into a shared package, add interactive documentation (Storybook or similar),
-        implement visual regression testing, and align design tokens between code and Figma.
-        The goal would be faster adoption across products with lower maintenance cost.
-      </p>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">© <span id="y"></span> Jordan Walz</div>
   </footer>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
-    <!-- Glyphs: use classic scripts (UMD) because these dist files are parcel-built bundles that assume global scope -->
-    <script src="https://unpkg.com/@glyphs/wc-core/dist/index.js"></script>
-    <script src="https://unpkg.com/@glyphs/wc-brands/dist/index.js"></script>
-    <script src="https://unpkg.com/@glyphs/wc-flags/dist/index.js"></script>
   <script src="assets/js/interactions.js"></script>
-
-  <script>
-    // Fallback: if Glyphs webcomponent doesn't register, replace with a static SVG image
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        try {
-          if (!customElements.get('core-person-private')) {
-            var el = document.querySelector('core-person-private.challenge-icon');
-            if (el) {
-              var img = document.createElement('img');
-              img.className = 'challenge-icon';
-              img.src = 'https://glyphs.fyi/dir?c=human&i=personPrivate';
-              img.alt = '';
-              img.setAttribute('aria-hidden', 'true');
-              img.width = 48;
-              img.height = 48;
-              el.replaceWith(img);
-            }
-          }
-        } catch (e) {
-          // noop
-        }
-      }, 500);
-    });
-  </script>
 </body>
 </html>

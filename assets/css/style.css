@@ -2264,6 +2264,41 @@ body.no-scroll { overflow: hidden; }
   color: var(--tertiary-accent);
 }
 
+/* Reusable case study diagram placeholder */
+.diagram-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.diagram-caption {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.diagram-placeholder {
+  border: 1px dashed var(--border-bright);
+  border-radius: 10px;
+  background: var(--surface-2);
+  padding: 18px;
+}
+
+.diagram-placeholder p {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.diagram-placeholder p:last-child {
+  margin-bottom: 0;
+}
+
+.diagram-callout {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 /* ============================================
    Resume Page Styles
    ============================================ */

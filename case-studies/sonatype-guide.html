@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Jordan Walz | Case Study: Sonatype Guide</title>
+  <meta name="description" content="Product design case study for Sonatype Guide, focused on developer-facing security workflows and decision confidence."/>
+
+  <meta property="og:title" content="Sonatype Guide Case Study"/>
+  <meta property="og:description" content="Designing enterprise workflows that improve clarity in open-source security decisions."/>
+  <meta property="og:type" content="article"/>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+  <link rel="icon" href="/assets/img/favicon.svg"/>
+
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">Jordan Walz</a>
+      <nav class="nav" aria-label="Main">
+        <a href="../work.html">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../resume.html">Resume</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="kicker" style="margin-bottom: 16px;">FEATURED WORK · SONATYPE</p>
+            <h1>Sonatype Guide</h1>
+            <p class="lead" style="margin-top: 16px;">A product design case study focused on clearer security decisions in configuration-heavy, developer-facing workflows.</p>
+
+            <div class="row" style="margin-top: 20px;">
+              <span class="tag">Role: Senior Product Designer</span>
+              <span class="tag">Timeframe: 2024 to 2025</span>
+              <span class="tag">Tools: Figma, Workshop Facilitation, Enterprise Design Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-bg" id="featured-work-summary">
+      <div class="container">
+        <article class="case-study-card featured">
+          <h3 class="case-study-title">Featured Work Summary</h3>
+          <p class="case-study-description">Designing to: help developers and security teams make secure open-source decisions with better state visibility and clearer policy outcomes.</p>
+          <div class="case-study-highlights">
+            <span class="highlight">Developer-Facing</span>
+            <span class="highlight">Platform Strategy</span>
+            <span class="highlight">Rule Hierarchy</span>
+            <span class="highlight">Decision Confidence</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="executive-summary">
+      <div class="container stack">
+        <h2>Executive Summary</h2>
+        <div class="grid grid-3" style="margin-top: 8px;">
+          <div class="card">
+            <h3>Context</h3>
+            <p class="muted">Guide introduced a new way to evaluate open-source packages, vulnerabilities, and trust signals inside an enterprise SaaS environment.</p>
+          </div>
+          <div class="card">
+            <h3>Role</h3>
+            <p class="muted">I led product design across problem framing, interaction architecture, and system-level pattern decisions with product and engineering partners.</p>
+          </div>
+          <div class="card">
+            <h3>Challenge</h3>
+            <p class="muted">Users had to combine policy logic, vulnerability severity, and package quality signals under time pressure. Important context was often split across views.</p>
+          </div>
+          <div class="card">
+            <h3>Objective</h3>
+            <p class="muted">Improve clarity for high-stakes decisions by making rule hierarchy, remediation path, and waiver impact easier to interpret.</p>
+          </div>
+          <div class="card">
+            <h3>Outcome</h3>
+            <p class="muted">The updated structure improved clarity during review sessions and gave teams a stronger baseline for consistent workflow behavior.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problem-context">
+      <div class="container stack">
+        <h2>Problem / Context</h2>
+        <p>Developers and security engineers were making frequent package decisions across dense datasets, policy checks, and dependency graphs. Existing flows made it hard to answer three key questions quickly: what is blocked, why it is blocked, and what path is available now.</p>
+        <p>The product needed to support fast triage and deliberate analysis in the same interface, without obscuring policy intent or remediation tradeoffs.</p>
+      </div>
+    </section>
+
+    <section class="section" id="constraints">
+      <div class="container stack">
+        <h2>Constraints</h2>
+        <ul>
+          <li>Configuration-heavy workflows had to remain flexible for different enterprise policy models.</li>
+          <li>Security language and status states needed to stay precise across product surfaces.</li>
+          <li>Patterns had to align with existing platform behavior so teams could adopt them without heavy rework.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="approach-strategy">
+      <div class="container stack">
+        <h2>Approach / Strategy</h2>
+        <p>I structured the work around decision points instead of screens. The design strategy focused on hierarchy first: signal relevance, policy precedence, and traceable action paths. This reduced context switching and improved continuity between triage, analysis, and execution.</p>
+        <p>Design reviews used scenario-based walkthroughs to validate confidence under realistic conditions, including edge-case dependencies and competing policy outcomes.</p>
+      </div>
+    </section>
+
+    <section class="section" id="architecture-flows">
+      <div class="container stack">
+        <h2>Architecture / Flows</h2>
+        <p class="muted">Diagrams below illustrate logic and flow design without relying on proprietary screenshots.</p>
+
+        <figure class="diagram-figure">
+          <figcaption class="diagram-caption">Workflow map: before and after</figcaption>
+          <div class="diagram-placeholder" role="img" aria-label="Workflow map before and after">
+            <p><strong>Before:</strong> Search -> open detail -> parse policy status in multiple sections -> choose action</p>
+            <p><strong>After:</strong> Search -> review unified risk and policy panel -> choose clear next action</p>
+          </div>
+          <p class="diagram-callout"><strong>Note:</strong> The revised path kept state visibility present at each decision step.</p>
+        </figure>
+
+        <figure class="diagram-figure">
+          <figcaption class="diagram-caption">Decision funnel and prioritization logic</figcaption>
+          <div class="diagram-placeholder" role="img" aria-label="Decision funnel and prioritization logic">
+            <p>Policy violation severity -> exploitability context -> dependency criticality -> remediation effort</p>
+          </div>
+          <p class="diagram-callout"><strong>Note:</strong> Priority logic reduced noise when several issues competed for attention.</p>
+        </figure>
+
+        <figure class="diagram-figure">
+          <figcaption class="diagram-caption">Policy and waiver rule hierarchy</figcaption>
+          <div class="diagram-placeholder" role="img" aria-label="Policy and waiver rule hierarchy">
+            <p>Global policy -> organization policy -> project rule -> temporary waiver -> user-visible outcome</p>
+          </div>
+          <p class="diagram-callout"><strong>Note:</strong> This model made override behavior explicit to reduce ambiguity during exception handling.</p>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="patterns-decisions">
+      <div class="container stack">
+        <h2>Key Patterns / Decisions</h2>
+        <ul>
+          <li>Unified state panel for risk, policy, and remediation to reduce cross-page interpretation.</li>
+          <li>Consistent status language for blocked, waivable, and approved paths.</li>
+          <li>Progressive disclosure for dense technical metadata so users can scan first and inspect deeper on demand.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="collaboration">
+      <div class="container stack">
+        <h2>Collaboration</h2>
+        <p>This work required close alignment between product, security domain experts, and engineering. We used working sessions to map rule behavior and review edge cases, then validated interaction details in iterative design reviews tied to release planning milestones.</p>
+      </div>
+    </section>
+
+    <section class="section" id="outcomes">
+      <div class="container stack">
+        <h2>Outcomes</h2>
+        <ul>
+          <li>Improved clarity in policy interpretation across key decision surfaces.</li>
+          <li>Stronger alignment on expected behavior for rule overrides and waivers.</li>
+          <li>A reusable foundation for future platform workflows that depend on decision confidence.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="reflection">
+      <div class="container stack">
+        <h2>Reflection / Learnings</h2>
+        <p>In security contexts, visual polish matters less than decision traceability. The most valuable shift was treating rule hierarchy as core product architecture, not just policy copy. Future iterations should continue to strengthen state explanations for mixed-expertise teams.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Jordan Walz</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="../assets/js/interactions.js"></script>
+</body>
+</html>

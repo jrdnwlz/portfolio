@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Jordan Walz | Case Study: Guide UX Lab</title>
+  <meta name="description" content="Code-first prototyping case study for Guide UX Lab, focused on reducing handoff ambiguity and improving GTM alignment."/>
+
+  <meta property="og:title" content="Guide UX Lab Case Study"/>
+  <meta property="og:description" content="A code-first, AI-assisted PDLC workflow for faster alignment and clearer handoff."/>
+  <meta property="og:type" content="article"/>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+  <link rel="icon" href="/assets/img/favicon.svg"/>
+
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">Jordan Walz</a>
+      <nav class="nav" aria-label="Main">
+        <a href="../work.html">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../resume.html">Resume</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="kicker" style="margin-bottom: 16px;">FEATURED WORK · GUIDE UX LAB</p>
+            <h1>Guide UX Lab</h1>
+            <p class="lead" style="margin-top: 16px;">A code-first prototyping initiative that replaced click-through mockups with a working product artifact for planning, GTM alignment, and engineering handoff.</p>
+
+            <div class="row" style="margin-top: 20px;">
+              <span class="tag">Role: Senior Product Designer</span>
+              <span class="tag">Timeframe: 2024 to 2025</span>
+              <span class="tag">Tools: VS Code, Next.js, TypeScript, AI-assisted workflow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-bg" id="featured-work-summary">
+      <div class="container">
+        <article class="case-study-card featured">
+          <h3 class="case-study-title">Featured Work Summary</h3>
+          <p class="case-study-description">Designing to: reduce ambiguity between design and engineering in complex platform workflows.</p>
+          <div class="case-study-highlights">
+            <span class="highlight">Code-First Prototype</span>
+            <span class="highlight">GTM Enablement</span>
+            <span class="highlight">Developer-Facing</span>
+            <span class="highlight">Platform Strategy</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="executive-summary">
+      <div class="container stack">
+        <h2>Executive Summary</h2>
+        <div class="grid grid-3" style="margin-top: 8px;">
+          <div class="card">
+            <h3>Context</h3>
+            <p class="muted">The team needed a realistic way to validate feature behavior before full implementation and before GTM planning locked.</p>
+          </div>
+          <div class="card">
+            <h3>Role</h3>
+            <p class="muted">I led design and built the prototype directly in code, while coordinating product and engineering feedback loops.</p>
+          </div>
+          <div class="card">
+            <h3>Challenge</h3>
+            <p class="muted">Click-through prototypes communicated layout but left important interaction and state behavior open to interpretation.</p>
+          </div>
+          <div class="card">
+            <h3>Objective</h3>
+            <p class="muted">Reduce handoff ambiguity by using a runnable artifact that made decisions, edge cases, and tradeoffs explicit.</p>
+          </div>
+          <div class="card">
+            <h3>Outcome</h3>
+            <p class="muted">The Lab improved cross-functional alignment and gave teams a shared reference for implementation and launch planning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problem-context">
+      <div class="container stack">
+        <h2>Problem / Context</h2>
+        <p>Traditional handoff artifacts were useful for visual review but weak for behavior review. Questions around loading states, edge cases, navigation logic, and system rules often surfaced late, which slowed planning and increased translation effort between design and engineering.</p>
+        <p>We needed a process that preserved design intent while allowing engineering-grade validation earlier in the PDLC.</p>
+      </div>
+    </section>
+
+    <section class="section" id="constraints">
+      <div class="container stack">
+        <h2>Constraints</h2>
+        <ul>
+          <li>Prototype fidelity had to be high enough for planning decisions, not only visual direction.</li>
+          <li>The approach needed to support collaboration with product, engineering, and GTM teams in parallel.</li>
+          <li>Patterns had to be reusable so the prototype could inform future platform work instead of one release only.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="approach-strategy">
+      <div class="container stack">
+        <h2>Approach / Strategy</h2>
+        <p>The Lab used a code-first strategy: interaction and state behavior were authored directly in a production-ready stack. AI support was used for rapid iteration, scenario expansion, and test coverage of edge states. This allowed design and engineering to review the same artifact instead of translating between separate prototype formats.</p>
+      </div>
+    </section>
+
+    <section class="section" id="architecture-flows">
+      <div class="container stack">
+        <h2>Architecture / Flows</h2>
+
+        <figure class="diagram-figure">
+          <figcaption class="diagram-caption">Clickable prototypes vs code-first prototype</figcaption>
+          <div class="diagram-placeholder" role="img" aria-label="Comparison between click-through and code-first prototypes">
+            <p><strong>Clickable:</strong> strong for layout, weak for state logic and implementation detail</p>
+            <p><strong>Code-first:</strong> strong for behavior, constraints, and implementation readiness</p>
+          </div>
+          <p class="diagram-callout"><strong>Note:</strong> The comparison helped stakeholders choose a review model based on decision type.</p>
+        </figure>
+
+        <figure class="diagram-figure">
+          <figcaption class="diagram-caption">Handoff friction reduction loop</figcaption>
+          <div class="diagram-placeholder" role="img" aria-label="Handoff friction reduction loop">
+            <p>Design intent in code -> shared review with engineering -> issue discovery earlier -> lower rework in implementation</p>
+          </div>
+          <p class="diagram-callout"><strong>Note:</strong> Loop reviews created clearer ownership boundaries and faster resolution.</p>
+        </figure>
+
+        <figure class="diagram-figure">
+          <figcaption class="diagram-caption">Pattern library and interaction model overview</figcaption>
+          <div class="diagram-placeholder" role="img" aria-label="Pattern library and interaction model overview">
+            <p>Token layer -> reusable components -> workflow modules -> product surfaces</p>
+          </div>
+          <p class="diagram-callout"><strong>Note:</strong> This structure made it easier to map UX decisions into engineering backlog items.</p>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="patterns-decisions">
+      <div class="container stack">
+        <h2>Key Patterns / Decisions</h2>
+        <ul>
+          <li>Build interaction-critical flows in code first, then layer visual refinement.</li>
+          <li>Define component APIs and state variants early to reduce interpretation drift.</li>
+          <li>Use one shared artifact for design review, engineering planning, and GTM walkthroughs.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="collaboration">
+      <div class="container stack">
+        <h2>Collaboration</h2>
+        <p>Product, design, engineering, and GTM partners reviewed the same runnable prototype throughout planning. This reduced ambiguity in scope discussions and improved confidence in launch sequencing because behavior-level details were visible early.</p>
+      </div>
+    </section>
+
+    <section class="section" id="outcomes">
+      <div class="container stack">
+        <h2>Outcomes</h2>
+        <ul>
+          <li>Reduced handoff ambiguity across core workflow decisions.</li>
+          <li>Improved cross-functional alignment during GTM and release planning.</li>
+          <li>Established a repeatable AI-assisted, code-first pattern for future PDLC work.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="reflection">
+      <div class="container stack">
+        <h2>Reflection / Learnings</h2>
+        <p>Code-first prototyping works best when it is treated as a collaboration artifact, not a solo design exercise. The largest gain was reducing interpretation gaps early, which improved planning quality for both product and engineering.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Jordan Walz</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="../assets/js/interactions.js"></script>
+</body>
+</html>
