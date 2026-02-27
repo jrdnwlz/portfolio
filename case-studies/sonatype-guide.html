@@ -162,7 +162,7 @@
     <section class="section" id="approach-strategy">
       <div class="container stack">
         <h2>Design Strategy</h2>
-        <p>Guide required more than visual simplification. The goal was to shift open-source security from reactive enforcement to proactive decision-making, within a compressed release timeline and a monetized product model. Across each decision, the goal was not to eliminate complexity, but to organize and clarify it.</p>
+        <p>The goal was to shift open-source security from reactive enforcement to proactive decision-making, within a compressed release timeline and a monetized product model. Across each decision, the goal was not to eliminate complexity, but to organize and clarify it.</p>
         <div class="research-flow" aria-label="Design strategy principles">
           <article class="research-item">
             <span class="research-number" aria-hidden="true">01</span>
@@ -174,8 +174,8 @@
           <article class="research-item research-item-even">
             <span class="research-number" aria-hidden="true">02</span>
             <div class="research-content">
-              <h3>Make policy logic visible</h3>
-              <p class="muted">Rather than abstracting enforcement outcomes, the experience prioritized transparency around why a component is risky, how severity is evaluated, and what remediation paths are available. Rule hierarchy and state relationships were treated as first-class UI elements.</p>
+              <h3>Make risk logic visible</h3>
+              <p class="muted">The experience prioritized transparency around why a component is risky, how severity is evaluated, and what remediation paths are available. Rule hierarchy and state relationships were treated as first-class UI elements.</p>
             </div>
           </article>
           <article class="research-item">
@@ -189,7 +189,7 @@
             <span class="research-number" aria-hidden="true">04</span>
             <div class="research-content">
               <h3>Build durable interaction patterns</h3>
-              <p class="muted">Given the accelerated timeline and the need for design-in-code, the solution relied on reusable, system-aligned interaction patterns. Decisions were made at the model level first, ensuring the interface reflected real data relationships rather than visual groupings.</p>
+              <p class="muted">Given the tight timeline and design-in-code method, reusable, system-aligned interaction patterns were crucial. Decisions were made at the model level first, ensuring the interface reflected real data relationships.</p>
             </div>
           </article>
         </div>
@@ -199,14 +199,30 @@
     <section class="section section-alt" id="architecture-flows">
       <div class="container stack">
         <h2>Workflow Architecture</h2>
-        <p>Guide was designed as a relational security intelligence system, not simply a component lookup tool. Components, vulnerabilities, and documentation could be searched independently, but their records were interlinked, allowing developers to move between artifacts without losing context.</p>
-        <p>The architecture was anchored by global search as the primary entry point into the system. From the moment a user arrived, search unified discovery, validation, and navigation across artifact types.</p>
-        <p>Three structural shifts defined the experience:</p>
+        <p>Guide was designed as a relational security intelligence system, more than a package lookup tool. Components and vulnerabilities could be searched independently, but their records were interlinked, allowing developers to move between artifacts without losing context.</p>
+        <p>From the moment a user arrives, search unifies discovery, validation, and navigation across artifact types. The product architecture was organized around three core developer jobs: search quickly, choose confidently, and remediate effectively.</p>
+        <p></p>
         <div class="case-two-col">
           <article class="stack">
-            <h3>1. Informed Browsing</h3>
-            <p class="muted">Traditional workflows surface security implications only after a component has been adopted, often during CI enforcement or policy checks. Guide reframed this by embedding Trust Score, policy compliance status, and vulnerability signals directly into web browsing and code editors.</p>
-            <p class="muted">Intelligence was exposed during exploration rather than deferred to enforcement. Developers could assess component health while browsing, before integration decisions were made.</p>
+            <h3>"I want to quickly find what I need."</h3>
+            <p class="muted">Guide was structured to support immediate orientation, whether a user arrived with a known component identifier or an exploratory query.</p>
+            <p class="muted">Global search unified components, vulnerabilities, and documentation within a single entry point. Predictive matches, direct routing for exact identifiers, and categorized results allowed developers to validate or investigate without switching contexts.</p>
+          </article>
+          <aside>
+            <figure class="diagram-figure">
+              <figcaption class="diagram-caption">Lorem placeholder</figcaption>
+              <div class="diagram-placeholder" role="img" aria-label="Policy and waiver rule hierarchy">
+                <p>FPO</p>
+              </div>
+              <p class="diagram-callout"><strong>Note:</strong> Lorem callout</p>
+            </figure>
+          </aside>
+        </div>
+        <div class="case-two-col">
+          <article class="stack">
+            <h3>"I want to make informed component choices."</h3>
+            <p class="muted">Browsing and default ranking logic were designed to support risk evaluation prior to integration decisions.</p>
+            <p class="muted">Components surfaced only their latest versions by default, reducing noise and emphasizing current state. Results were sorted by Trust Score, while vulnerabilities defaulted to most recent disclosures. These defaults encouraged safer evaluation patterns without removing user agency.</p>
           </article>
           <aside>
             <figure class="diagram-figure">
@@ -220,9 +236,9 @@
           </div>
           <div class="case-two-col">
           <article class="stack">
-            <h3>2. Explicit Risk Relationships</h3>
-            <p class="muted">Open-source security decisions involve layered relationships between components, vulnerabilities, dependency chains, and policy interpretation. Guide made those relationships visible rather than implicit.</p>
-            <p class="muted">Each record surfaced Trust score indicators, policy compliance status, vulnerability severity and exploitability, and dependencies and dependents through structured tabs. Components and vulnerabilities could be explored independently, but their interdependencies were always navigable.</p>
+            <h3>"I want a comprehensive view of data relationships."</h3>
+            <p class="muted">Guide organized component and vulnerability records as interconnected nodes within a larger decision-making ecosystem.</p>
+            <p class="muted">Each record surfaced Trust Score, compliance status, and severity alongside navigable dependencies, dependents, and version relationships. Users could move across related artifacts without losing orientation, allowing them to assess not just a single record, but its broader impact.</p>
           </article>
           <aside>
             <figure class="diagram-figure">
@@ -234,59 +250,42 @@
             </figure>
           </aside>
           </div>
-          <div class="case-two-col">
-          <article class="stack">
-            <h3>3. Search as the Primary Interface</h3>
-            <p class="muted">Guide treated search as infrastructure rather than utility. For both logged-out and logged-in users, the experience centered on a persistent global search field that unified components, vulnerabilities, and documentation.</p>
-            <p class="muted">Search supported predictive matches, direct routing for exact IDs, categorized result views with tab-level counts, and contextual filtering within each result type. The system balanced precision and discovery without introducing separate modes.</p>
-          </article>
-          <aside>
-            <figure class="diagram-figure">
-              <figcaption class="diagram-caption">Lorem placeholder</figcaption>
-              <div class="diagram-placeholder" role="img" aria-label="Policy and waiver rule hierarchy">
-                <p>FPO</p>
-              </div>
-              <p class="diagram-callout"><strong>Note:</strong> Lorem callout</p>
-            </figure>
-          </aside>
-        </div>
       </div>
     </section>
 
     <section class="section" id="patterns-decisions">
       <div class="container stack">
         <h2>Key Interaction Patterns</h2>
-        <p>Guide relied on a set of structural interaction patterns designed to scale across search, record views, and monetization states.</p>
         <div class="grid grid-2">
           <article class="pattern-card">
             <h4>Trust Score as a Composite Signal</h4>
-            <p class="muted">Trust Score was developed as a first-class metric to provide immediate context at the version level. It synthesized vulnerability severity and prevalence, availability of safe versions, package popularity and maintenance, release cadence, and known malware detection.</p>
-            <p class="muted">The score was version-specific, reinforcing that risk posture can vary between releases of the same component. Each result card surfaced a numerical Trust Score (0-100), paired with a color signal and iconography to communicate sentiment at a glance.</p>
+            <p class="muted">Developed as a first-class metric, Trust Score aims to provide immediate risk context at the component version level. A numerical value (0-100), paired with a color signal and iconography, communicates sentiment at a glance.</p>
+            <p class="muted">Trust Scores appear on all component detail pages, within search results, and while browsing.</p>
           </article>
           <article class="pattern-card">
-            <h4>Binary Policy Compliance with Transparent Criteria</h4>
-            <p class="muted">Policy compliance was intentionally simplified at the browsing level to a binary pass or fail state, represented by a green check or red X.</p>
-            <p class="muted">On detail pages, compliance expanded into explicit criteria including malware detection, CVSS threshold, and copyleft licensing. This preserved simplicity at the surface while maintaining transparency in the underlying logic.</p>
+            <h4>Transparent Policy Compliance</h4>
+            <p class="muted">Policy compliance was simplified at the browsing level to a binary pass or fail state, represented by a green check or red X. On detail pages, compliance expanded into explicit criteria including malware detection, CVSS threshold, and copyleft licensing.</p>
+            <p class="muted">A dedicated Policy page in the UI further explains compliance criteria and related visual indicators.</p>
           </article>
           <article class="pattern-card">
-            <h4>Pivot-Based Record Architecture</h4>
-            <p class="muted">Each record page, whether a component or a vulnerability, functioned as a relational hub rather than a static detail view.</p>
-            <p class="muted">The tab model allowed users to pivot laterally across related records without restarting their search or losing context, encouraging movement through relationships instead of isolated pages.</p>
+            <h4>Tab-Based Relationships</h4>
+            <p class="muted">Record pages were organized into structured tabs that preserved orientation while enabling lateral movement. Users could navigate between versions, dependencies, dependents, and vulnerabilities without resetting search context or losing their place.</p>
+            <p class="muted">This pattern reduced reliance on back navigation, supported deep analysis, and reinforced relational continuity.</p>
           </article>
           <article class="pattern-card">
-            <h4>Global Search as Intent-Aware Navigation</h4>
-            <p class="muted">Search was persistent in the top navigation and served as the primary orientation anchor across the interface.</p>
-            <p class="muted">It supported predictive dropdown results, exact-match routing for component coordinates or vulnerability IDs, categorized result pages with counts, and contextual filtering within each artifact type.</p>
+            <h4>Intent-Sensitive Routing</h4>
+            <p class="muted">Search behavior adapted to user intent. Exact component identifiers and vulnerability IDs routed directly to their respective records, while broader queries surfaced categorized results with tab-level counts and filtering.</p>
+            <p class="muted">Predictive dropdown results while input text is typed accelerated validation without forcing mode changes.</p>
           </article>
           <article class="pattern-card">
             <h4>Progressive Disclosure Through Gated Intelligence</h4>
-            <p class="muted">Guide supported logged out, registered (free), and paid user states while keeping public information discoverable.</p>
-            <p class="muted">Proprietary intelligence including Trust Score, policy indicators, recommended versions, and deeper vulnerability insights was gated with contextual blur, tooltips, and sign-up prompts.</p>
+            <p class="muted">Guide supported logged-out, free, and paid user states, prioritizing usability and usefulness across the board.</p>
+            <p class="muted">Proprietary intelligence (Trust Score, recommendations, insights) was visually gated through blur states, contextual tooltips, and sign-up prompts encouraging anonymous users to register for free.</p>
           </article>
           <article class="pattern-card">
             <h4>Credit Visibility and Tier Signaling</h4>
-            <p class="muted">Free users received a limited monthly credit allotment with persistent usage indicators and proactive notifications as limits approached, while paid tiers received higher allowances.</p>
-            <p class="muted">All users had access to a Usage page displaying current status and historical trends, positioning credit usage as visible infrastructure rather than hidden constraint.</p>
+            <p class="muted">Free users received a limited monthly credit allotment with persistent usage indicators and proactive notifications. Paid tiers received higher allowances.</p>
+            <p class="muted">A dedicated Usage page surfaced current status and historical trends, positioning credit tracking as visible infrastructure rather than hidden constraint.</p>
           </article>
         </div>
       </div>
@@ -296,13 +295,12 @@
       <div class="container">
         <article class="prose-narrow stack">
           <h2>Collaboration</h2>
-          <p>Guide was developed during a period of significant organizational transition, with broad role eliminations scheduled to take effect on the product's fixed December release date. One week after receiving notice, I was selected to lead design for a new executive initiative, working in close partnership with leadership to define and ship a net-new product under that same deadline.</p>
-          <p>With no existing product foundation and a fixed launch date, alignment across leadership, product, and engineering became the primary operating mode. I worked closely with the Director of Design and the Chief Product Development Officer to clarify scope boundaries, navigate tradeoffs, and continuously reconcile requirements against constraints. The UX Lab became central to these conversations, functioning as a shared environment where workflows could be stress-tested against real data rather than debated abstractly.</p>
-          <p>Engineering partnership shaped the product at every stage. As interaction patterns and information models took form inside the UX Lab, engineering leadership and subject matter experts reviewed the experience directly, surfacing feasibility concerns and implementation implications early. This approach allowed implementation sequencing to reflect actual user journeys rather than documentation handoffs, helping maintain momentum despite the compressed timeline.</p>
-          <p>Product Marketing collaboration unfolded in parallel. Naming, visual direction, and launch positioning needed to progress before the product formally existed. Because corporate and product branding systems differed, deliberate coordination ensured Guide felt distinct yet aligned. The UX Lab provided Marketing with a functional, data-rich environment they could reference while developing the landing page and messaging strategy.</p>
-          <p>Rather than initiating new discovery workshops, we synthesized insights from Sonatype's existing research repository, including prior user interviews, design sprints, and workshop outputs. Once the UX Lab reached a stable state, we conducted targeted usability sessions to validate search behavior, signal clarity, and monetization touchpoints before release.</p>
-          <p>Progress and alignment were maintained through weekly team check-ins, bi-weekly engineering demos, monthly product organization updates, and executive reviews as needed. Visibility remained high throughout development, and the release date remained unchanged.</p>
-          <p>Guide was shaped through continuous cross-functional iteration under fixed constraints and sustained executive visibility.</p>
+          <p>Guide was developed during a period of significant organizational transition, with role eliminations scheduled to take effect on the product's December release date. Within days of receiving notice, I was selected to lead design for a new executive initiative and ship a net-new product under that same deadline.</p>
+          <p>With no existing product foundation, alignment across leadership, product, and engineering became essential. I partnered closely with the Director of Design and the Chief Product Development Officer to define scope, navigate tradeoffs, and reconcile requirements against constraints. The UX Lab served as a shared, production-aligned environment where workflows could be evaluated against real data rather than debated abstractly.</p>
+          <p>Engineering collaboration was continuous. Interaction patterns and information models were reviewed directly within the UX Lab, surfacing feasibility considerations early and shaping implementation sequencing around actual user journeys.</p>
+          <p>Product Marketing progressed in parallel. Naming, visual direction, and launch positioning were developed before the product formally existed. The UX Lab provided a functional, data-rich reference that informed landing page development and messaging alignment.</p>
+          <p>Research inputs were synthesized from existing workshops, design sprints, and user interviews. Targeted usability sessions validated search behavior, signal clarity, and monetization touchpoints prior to release.</p>
+          <p>Guide shipped on schedule following sustained cross-functional iteration and executive visibility throughout development.</p>
         </article>
       </div>
     </section>
@@ -321,15 +319,11 @@
           </article>
           <article class="card outcome-highlight">
             <h3>Early customer commitment</h3>
-            <p>External response reinforced demand. Existing enterprise customers responded positively during early demos, and several major organizations committed to subscriptions prior to general availability.</p>
+            <p>Existing enterprise customers responded positively during early demos, and several major organizations committed to subscriptions prior to general availability.</p>
           </article>
           <article class="card outcome-highlight">
             <h3>Code-first delivery gains</h3>
-            <p>Engineering adoption of the UX Lab changed implementation dynamics by grounding workflow sequencing and feasibility discussions in production-aligned behavior rather than static documentation.</p>
-          </article>
-          <article class="card outcome-highlight">
-            <h3>Validated product model</h3>
-            <p>Guide shipped not only as a new product, but as a validated model for proactive open-source intelligence and code-first product design.</p>
+            <p>Adoption of the UX Lab changed implementation dynamics by grounding workflow sequencing and feasibility discussions in production-aligned behavior rather than static documentation.</p>
           </article>
         </div>
       </div>
@@ -339,10 +333,10 @@
       <div class="container">
         <article class="reflection-single stack">
           <h2>Reflection</h2>
-          <p>Designing Guide reinforced that complexity is not the enemy of usability. Fragmentation is.</p>
-          <p>When relationships between components, vulnerabilities, and policy logic are explicit, developers can navigate sophisticated systems without friction. Architectural clarity enables confidence.</p>
-          <p>The project also underscored the practical advantages of designing within environments that mirror real constraints. Modeling workflows in code exposed structural assumptions early and aligned cross-functional stakeholders around a shared, inspectable artifact.</p>
-          <p>Finally, Guide demonstrated the importance of building products that scale across user sophistication. Individual developers and enterprise teams often require the same intelligence, but at different levels of depth. Flexible architecture, rather than isolated screens, makes that scaling possible.</p>
+          <p>Guide clarified that enterprise usability is less about simplification and more about sequencing. Developers do not need fewer signals; they need signals presented at the right moment and in the right order.</p>
+          <p>By restructuring evaluation around orientation, confidence, and impact, the product shifted security from a downstream interruption to an upstream decision surface. Defaults, ranking logic, and visible relationships shaped behavior in ways that documentation alone could not.</p>
+          <p>Designing directly in code strengthened cross-functional alignment. When interaction models are inspectable and grounded in real data, conversations center on implementation and tradeoffs instead of interpretation. Shared artifacts reduce friction, particularly under compressed timelines and executive visibility.</p>
+          <p>The project also reinforced the importance of durable platform architecture. Individual developers and enterprise teams rely on the same intelligence, even as their needs differ in depth and scale. Systems designed with flexibility at their core can expand without structural rework.</p>
         </article>
       </div>
     </section>
