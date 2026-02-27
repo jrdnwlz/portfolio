@@ -66,23 +66,23 @@
             <button class="overview-tab" type="button" role="tab" id="overview-tab-outcome" aria-controls="overview-panel-outcome" aria-selected="false" tabindex="-1">Outcome</button>
           </div>
           <article class="overview-panel" role="tabpanel" id="overview-panel-context" aria-labelledby="overview-tab-context" tabindex="0">
-            <h4>Project Context</h4>
+            <h4>Context</h4>
             <p class="muted">Guide centralized open-source component research and surfaced security intelligence at the moment of selection, combining public ecosystem data with Sonatype's proprietary risk insights inside a unified web interface and MCP server.</p>
           </article>
           <article class="overview-panel" role="tabpanel" id="overview-panel-role" aria-labelledby="overview-tab-role" tabindex="0" hidden>
-            <h4>My Role</h4>
+            <h4>Role</h4>
             <p class="muted">As Senior Product Designer, I led end-to-end product design across problem framing, interaction architecture, and scalable system patterns in close partnership with product and engineering leadership.</p>
           </article>
           <article class="overview-panel" role="tabpanel" id="overview-panel-challenge" aria-labelledby="overview-tab-challenge" tabindex="0" hidden>
-            <h4>Challenge to Address</h4>
+            <h4>Challenge</h4>
             <p class="muted">Developers were forced to interpret vulnerability severity, policy enforcement logic, and component health signals only after enforcement events, often across disconnected systems.</p>
           </article>
           <article class="overview-panel" role="tabpanel" id="overview-panel-objective" aria-labelledby="overview-tab-objective" tabindex="0" hidden>
-            <h4>Overall Objective</h4>
+            <h4>Objective</h4>
             <p class="muted">Make high-stakes security decisions easier by clarifying rule hierarchy, surfacing remediation paths, and improving state visibility across complex workflows.</p>
           </article>
           <article class="overview-panel" role="tabpanel" id="overview-panel-outcome" aria-labelledby="overview-tab-outcome" tabindex="0" hidden>
-            <h4>Desired Outcome</h4>
+            <h4>Outcome</h4>
             <p class="muted">Delivered a unified decision surface that reduced reactive rework, clarified policy intent, and established a scalable foundation for proactive open-source security decisions.</p>
           </article>
         </div>
@@ -92,8 +92,8 @@
     <section class="section" id="problem-context">
       <div class="container stack">
         <h2>Problem Scope</h2>
-        <p>Enterprise organizations are shifting security left, placing greater responsibility for open-source risk decisions directly on developers. While this shift increases velocity and ownership, it also introduces new friction.</p>
-        <p>Developers often discover security or policy violations only after a build fails. Component research happens in a browser. Enforcement happens in CI. Remediation details live in vulnerability reports. Each system provides part of the picture, but none present the full decision context.</p>
+        <p>Enterprise organizations are shifting security left, placing greater responsibility for open-source risk decisions on development teams. From component selection to risk remediation, developers must make decisions in a complex environment where context is fragmented across systems.</p>
+        <p>Component research happens in a browser. Enforcement happens in CI. Remediation details live in vulnerability reports. Each system provides part of the picture, but none present the full decision context.</p>
       </div>
       <div class="container case-two-col">
         <article class="stack">
@@ -102,9 +102,9 @@
             <li>Re-evaluate components reactively after enforcement</li>
             <li>Restart research cycles under time pressure</li>
             <li>Switch between browser, IDE, CI logs, and vulnerability dashboards</li>
-            <li>Interpret policy logic without clear visibility into why a component is blocked</li>
+            <li>Interpret policy logic without visibility into why a component is blocked</li>
           </ul>
-          <p>Guide needed to surface security intelligence at the moment of selection, unifying policy logic, vulnerability severity, dependency context, and remediation guidance within a single decision surface.</p>
+          <p>Guide needed to surface security intelligence by default, unifying policy logic, vulnerability severity, dependency context, and remediation guidance within a single decision surface.</p>
         </article>
         <aside>
           <figure class="diagram-figure">
@@ -122,39 +122,38 @@
     <section class="section section-alt" id="constraints">
       <div class="container stack">
         <h2>Project Constraints</h2>
-        <p>Guide was developed as a new product offering with an accelerated go-to-market timeline. From concept to release, the team had approximately six months to define, design, and ship a developer-facing security intelligence platform. Several structural constraints shaped the solution:</p>
         <div class="grid grid-2" aria-label="Project constraints">
           <article class="constraint">
             <h4>Rapid GTM timeline</h4>
-            <p class="muted">The experience needed to prioritize clarity and usability quickly. Interaction patterns had to be durable enough to scale, but pragmatic enough to ship within a compressed release window.</p>
-          </article>
-          <article class="constraint">
-            <h4>Free-to-paid architecture</h4>
-            <p class="muted">The product required a clear free-to-paid journey from day one. This included gated information, usage limits, tier differentiation, billing flows, and credit visibility within the interface.</p>
-          </article>
-          <article class="constraint">
-            <h4>Design system requirements</h4>
-            <p class="muted">Guide was built using an established third-party design system rather than Sonatype's internal system. Customizations had to remain minimal, requiring thoughtful adaptation rather than reinvention.</p>
-          </article>
-          <article class="constraint">
-            <h4>Generalized policy logic at launch</h4>
-            <p class="muted">Custom enterprise policy configuration was not included in the initial release. The interface needed to communicate generalized risk and policy concepts without misleading users about configurability.</p>
+            <p class="muted">Product definition, monetization strategy, marketing positioning, and engineering execution progressed in parallel, requiring scope discipline and decisions that could support both launch and expansion.</p>
           </article>
           <article class="constraint">
             <h4>Code-first design mandate</h4>
             <p class="muted">Leadership required the product to be designed directly in code rather than through static mockups. The design process itself had to support live prototyping and production-aligned behavior (see Guide UX Lab).</p>
           </article>
           <article class="constraint">
+            <h4>Design system requirements</h4>
+            <p class="muted">Guide was built using an established third-party design system rather than Sonatype's internal system. Customizations had to remain minimal, requiring thoughtful adaptation rather than reinvention.</p>
+          </article>
+          <article class="constraint">
             <h4>Theming and responsive layouts</h4>
-            <p class="muted">Guide was required to support both light and dark modes and adapt fluidly across viewport sizes. Data-heavy interfaces had to preserve hierarchy, contrast, and legibility across themes and breakpoints.</p>
+            <p class="muted">Data-heavy interfaces had to preserve hierarchy, contrast, and legibility across themes and breakpoints. UIs were required to support both light and dark modes and adapt fluidly across viewport sizes.</p>
+          </article>
+          <article class="constraint">
+            <h4>Free-to-paid architecture</h4>
+            <p class="muted">Monetization infrastructure was a launch requirement. The experience needed to support gated proprietary intelligence, tier differentiation, usage limits, billing workflows, and visible credit tracking from the initial release.</p>
+          </article>
+          <article class="constraint">
+            <h4>Generalized policy logic at launch</h4>
+            <p class="muted">Guide is not a policy engine and does not support custom policy configuration. The interface needed to communicate generalized risk and policy concepts without misleading users about configurability.</p>
+          </article>
+          <article class="constraint">
+            <h4>Individual to Enterprise scale</h4>
+            <p class="muted">The product had to serve students and individual developers as effectively as enterprise security teams. The interface needed to scale across levels of expertise and organizational complexity.</p>
           </article>
           <article class="constraint">
             <h4>Dual audience alignment</h4>
-            <p class="muted">Guide needed to feel intuitive for existing Sonatype customers while remaining accessible to net-new developers. Patterns and terminology had to bridge familiarity and approachability.</p>
-          </article>
-          <article class="constraint">
-            <h4>Audience scale variability</h4>
-            <p class="muted">The product had to serve individual developers and students as effectively as enterprise security teams. The interface needed to scale across levels of expertise and organizational complexity.</p>
+            <p class="muted">Experiences needed to feel intuitive and accessible for net-new developers and existing Sonatype customers. Patterns and terminology had to bridge familiarity and approachability.</p>
           </article>
         </div>
       </div>
