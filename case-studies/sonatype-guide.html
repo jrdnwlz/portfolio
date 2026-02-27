@@ -95,7 +95,7 @@
       <div class="container case-two-col">
         <article class="stack">
           <p>As a result, developers are forced to:</p>
-          <ul class="case-list">
+          <ul class="muted case-list">
             <li>Re-evaluate components reactively after enforcement</li>
             <li>Restart research cycles under time pressure</li>
             <li>Switch between browser, IDE, CI logs, and vulnerability dashboards</li>
@@ -160,38 +160,37 @@
     <section class="section" id="approach-strategy">
       <div class="container stack">
         <h2>Design Strategy</h2>
-        <p>Guide required more than visual simplification. The goal was to shift open-source security from reactive enforcement to proactive decision-making, within a compressed release timeline and a monetized product model.</p>
+        <p>Guide required more than visual simplification. The goal was to shift open-source security from reactive enforcement to proactive decision-making, within a compressed release timeline and a monetized product model. Across each decision, the goal was not to eliminate complexity, but to organize and clarify it.</p>
         <div class="research-flow" aria-label="Design strategy principles">
           <article class="research-item">
             <span class="research-number" aria-hidden="true">01</span>
             <div class="research-content">
               <h3>Surface intelligence by default</h3>
-              <p>Security context was surfaced at the browsing stage, making risk signals visible before enforcement events or selection decisions. Developers did not need to trigger enforcement or initiate analysis to understand risk.</p>
+              <p class="muted">Security context was surfaced at the browsing stage, making risk signals visible before enforcement events or selection decisions. Developers did not need to trigger enforcement or initiate analysis to understand risk.</p>
             </div>
           </article>
           <article class="research-item research-item-even">
             <span class="research-number" aria-hidden="true">02</span>
             <div class="research-content">
               <h3>Make policy logic visible</h3>
-              <p>Rather than abstracting enforcement outcomes, the experience prioritized transparency around why a component is risky, how severity is evaluated, and what remediation paths are available. Rule hierarchy and state relationships were treated as first-class UI elements.</p>
+              <p class="muted">Rather than abstracting enforcement outcomes, the experience prioritized transparency around why a component is risky, how severity is evaluated, and what remediation paths are available. Rule hierarchy and state relationships were treated as first-class UI elements.</p>
             </div>
           </article>
           <article class="research-item">
             <span class="research-number" aria-hidden="true">03</span>
             <div class="research-content">
               <h3>Design for scalable interpretation</h3>
-              <p>Guide had to support individual developers and enterprise teams alike. Information architecture emphasized progressive disclosure, allowing rapid triage while preserving depth for deliberate analysis.</p>
+              <p class="muted">Guide had to support individual developers and enterprise teams alike. Information architecture emphasized progressive disclosure, allowing rapid triage while preserving depth for deliberate analysis.</p>
             </div>
           </article>
           <article class="research-item research-item-even">
             <span class="research-number" aria-hidden="true">04</span>
             <div class="research-content">
               <h3>Build durable interaction patterns</h3>
-              <p>Given the accelerated timeline and the need for design-in-code, the solution relied on reusable, system-aligned interaction patterns. Decisions were made at the model level first, ensuring the interface reflected real data relationships rather than visual groupings.</p>
+              <p class="muted">Given the accelerated timeline and the need for design-in-code, the solution relied on reusable, system-aligned interaction patterns. Decisions were made at the model level first, ensuring the interface reflected real data relationships rather than visual groupings.</p>
             </div>
           </article>
         </div>
-        <p>Across each decision, the goal was not to eliminate complexity, but to organize and clarify it.</p>
       </div>
     </section>
 
@@ -204,8 +203,8 @@
         <div class="case-two-col">
           <article class="stack">
             <h3>1. Informed Browsing</h3>
-            <p>Traditional workflows surface security implications only after a component has been adopted, often during CI enforcement or policy checks. Guide reframed this by embedding Trust Score, policy compliance status, and vulnerability signals directly into web browsing and code editors.</p>
-            <p>Intelligence was exposed during exploration rather than deferred to enforcement. Developers could assess component health while browsing, before integration decisions were made.</p>
+            <p class="muted">Traditional workflows surface security implications only after a component has been adopted, often during CI enforcement or policy checks. Guide reframed this by embedding Trust Score, policy compliance status, and vulnerability signals directly into web browsing and code editors.</p>
+            <p class="muted">Intelligence was exposed during exploration rather than deferred to enforcement. Developers could assess component health while browsing, before integration decisions were made.</p>
           </article>
           <aside>
             <figure class="diagram-figure">
@@ -220,8 +219,8 @@
           <div class="case-two-col">
           <article class="stack">
             <h3>2. Explicit Risk Relationships</h3>
-            <p>Open-source security decisions involve layered relationships between components, vulnerabilities, dependency chains, and policy interpretation. Guide made those relationships visible rather than implicit.</p>
-            <p>Each record surfaced Trust score indicators, policy compliance status, vulnerability severity and exploitability, and dependencies and dependents through structured tabs. Components and vulnerabilities could be explored independently, but their interdependencies were always navigable.</p>
+            <p class="muted">Open-source security decisions involve layered relationships between components, vulnerabilities, dependency chains, and policy interpretation. Guide made those relationships visible rather than implicit.</p>
+            <p class="muted">Each record surfaced Trust score indicators, policy compliance status, vulnerability severity and exploitability, and dependencies and dependents through structured tabs. Components and vulnerabilities could be explored independently, but their interdependencies were always navigable.</p>
           </article>
           <aside>
             <figure class="diagram-figure">
@@ -236,8 +235,8 @@
           <div class="case-two-col">
           <article class="stack">
             <h3>3. Search as the Primary Interface</h3>
-            <p>Guide treated search as infrastructure rather than utility. For both logged-out and logged-in users, the experience centered on a persistent global search field that unified components, vulnerabilities, and documentation.</p>
-            <p>Search supported predictive matches, direct routing for exact IDs, categorized result views with tab-level counts, and contextual filtering within each result type. The system balanced precision and discovery without introducing separate modes.</p>
+            <p class="muted">Guide treated search as infrastructure rather than utility. For both logged-out and logged-in users, the experience centered on a persistent global search field that unified components, vulnerabilities, and documentation.</p>
+            <p class="muted">Search supported predictive matches, direct routing for exact IDs, categorized result views with tab-level counts, and contextual filtering within each result type. The system balanced precision and discovery without introducing separate modes.</p>
           </article>
           <aside>
             <figure class="diagram-figure">
