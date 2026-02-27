@@ -875,7 +875,7 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
   gap: 28px;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 16px;
 }
 
@@ -1044,7 +1044,7 @@ main {
   font-size: 56px;
   font-weight: 700;
   color: var(--primary-accent);
-  opacity: 0.12;
+  opacity: 1;
   line-height: 1;
   min-width: 56px;
   text-align: right;

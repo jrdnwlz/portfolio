@@ -14,6 +14,7 @@
   <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
   <link rel="stylesheet" href="../assets/css/style.css"/>
   <link rel="icon" href="/assets/img/favicon.svg"/>
+  <script src="https://unpkg.com/@glyphs/wc-core" type="module"></script>
 
   <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
   <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
@@ -92,11 +93,11 @@
     <section class="section" id="problem-context">
       <div class="container stack">
         <h2>Problem Scope</h2>
-        <p>Enterprise organizations are shifting security left, placing greater responsibility for open-source risk decisions on development teams. From component selection to risk remediation, developers must make decisions in a complex environment where context is fragmented across systems.</p>
-        <p>Component research happens in a browser. Enforcement happens in CI. Remediation details live in vulnerability reports. Each system provides part of the picture, but none present the full decision context.</p>
+        <p>As enterprise organizations are shifting left, greater responsibility for open-source security falls on development teams. From component selection to risk remediation, developers must make decisions in a complex environment where context is fragmented across systems.</p>
       </div>
       <div class="container case-two-col">
         <article class="stack">
+          <p>Component research happens in a browser. Enforcement happens in CI. Remediation details live in vulnerability reports. Each system provides part of the picture, but none present the full decision context.</p>
           <p>As a result, developers are forced to:</p>
           <ul class="muted case-list">
             <li>Re-evaluate components reactively after enforcement</li>
@@ -104,11 +105,10 @@
             <li>Switch between browser, IDE, CI logs, and vulnerability dashboards</li>
             <li>Interpret policy logic without visibility into why a component is blocked</li>
           </ul>
-          <p>Guide needed to surface security intelligence by default, unifying policy logic, vulnerability severity, dependency context, and remediation guidance within a single decision surface.</p>
         </article>
         <aside>
           <figure class="diagram-figure">
-            <figcaption class="diagram-caption">Diagram Headline</figcaption>
+            <figcaption class="diagram-caption">FPO Visual</figcaption>
             <div class="diagram-placeholder" role="img" aria-label="Diagram showing disconnected decision systems before Guide">
               <p>FPO</p>
               <p>FPO height</p>
@@ -165,28 +165,28 @@
         <p>The goal was to shift open-source security from reactive enforcement to proactive decision-making, within a compressed release timeline and a monetized product model. Across each decision, the goal was not to eliminate complexity, but to organize and clarify it.</p>
         <div class="research-flow" aria-label="Design strategy principles">
           <article class="research-item">
-            <span class="research-number" aria-hidden="true">01</span>
+            <core-shapes class="research-number" aria-hidden="true" variant="duo" stroke-width="2.5"></core-shapes>
             <div class="research-content">
               <h3>Surface intelligence by default</h3>
               <p class="muted">Security context was surfaced at the browsing stage, making risk signals visible before enforcement events or selection decisions. Developers did not need to trigger enforcement or initiate analysis to understand risk.</p>
             </div>
           </article>
-          <article class="research-item research-item-even">
-            <span class="research-number" aria-hidden="true">02</span>
+          <article class="research-item">
+            <core-shield class="research-number" aria-hidden="true" variant="path" stroke-width="2.5"></core-shield>
             <div class="research-content">
               <h3>Make risk logic visible</h3>
               <p class="muted">The experience prioritized transparency around why a component is risky, how severity is evaluated, and what remediation paths are available. Rule hierarchy and state relationships were treated as first-class UI elements.</p>
             </div>
           </article>
           <article class="research-item">
-            <span class="research-number" aria-hidden="true">03</span>
+            <core-users class="research-number" aria-hidden="true" variant="path" stroke-width="2.5"></core-users>
             <div class="research-content">
               <h3>Design for scalable interpretation</h3>
               <p class="muted">Guide had to support individual developers and enterprise teams alike. Information architecture emphasized progressive disclosure, allowing rapid triage while preserving depth for deliberate analysis.</p>
             </div>
           </article>
-          <article class="research-item research-item-even">
-            <span class="research-number" aria-hidden="true">04</span>
+          <article class="research-item">
+            <core-cogwheel class="research-number" aria-hidden="true" variant="path" stroke-width="2.5"></core-cogwheel>
             <div class="research-content">
               <h3>Build durable interaction patterns</h3>
               <p class="muted">Given the tight timeline and design-in-code method, reusable, system-aligned interaction patterns were crucial. Decisions were made at the model level first, ensuring the interface reflected real data relationships.</p>
