@@ -73,27 +73,34 @@
     <section class="section" id="executive-summary">
       <div class="container stack">
         <h2>Executive Summary</h2>
-        <div class="grid grid-3" style="margin-top: 8px;">
-          <div class="card">
+        <div class="overview-tabs" data-tabs style="margin-top: 8px;">
+          <div class="overview-tab-list" role="tablist" aria-label="Executive summary highlights">
+            <button class="overview-tab" type="button" role="tab" id="summary-tab-context" aria-controls="summary-panel-context" aria-selected="true" tabindex="0">Context</button>
+            <button class="overview-tab" type="button" role="tab" id="summary-tab-role" aria-controls="summary-panel-role" aria-selected="false" tabindex="-1">Role</button>
+            <button class="overview-tab" type="button" role="tab" id="summary-tab-challenge" aria-controls="summary-panel-challenge" aria-selected="false" tabindex="-1">Challenge</button>
+            <button class="overview-tab" type="button" role="tab" id="summary-tab-objective" aria-controls="summary-panel-objective" aria-selected="false" tabindex="-1">Objective</button>
+            <button class="overview-tab" type="button" role="tab" id="summary-tab-outcome" aria-controls="summary-panel-outcome" aria-selected="false" tabindex="-1">Outcome</button>
+          </div>
+          <article class="card overview-panel" role="tabpanel" id="summary-panel-context" aria-labelledby="summary-tab-context" tabindex="0">
             <h3>Context</h3>
             <p class="muted"><!-- TODO: context -->[What product and environment this work supported.]</p>
-          </div>
-          <div class="card">
+          </article>
+          <article class="card overview-panel" role="tabpanel" id="summary-panel-role" aria-labelledby="summary-tab-role" tabindex="0" hidden>
             <h3>Role</h3>
             <p class="muted"><!-- TODO: role -->[What you owned and who you collaborated with.]</p>
-          </div>
-          <div class="card">
+          </article>
+          <article class="card overview-panel" role="tabpanel" id="summary-panel-challenge" aria-labelledby="summary-tab-challenge" tabindex="0" hidden>
             <h3>Challenge</h3>
             <p class="muted"><!-- TODO: challenge -->[Main complexity, risk, or friction.]</p>
-          </div>
-          <div class="card">
+          </article>
+          <article class="card overview-panel" role="tabpanel" id="summary-panel-objective" aria-labelledby="summary-tab-objective" tabindex="0" hidden>
             <h3>Objective</h3>
             <p class="muted"><!-- TODO: objective -->[Clear project objective and decision focus.]</p>
-          </div>
-          <div class="card">
+          </article>
+          <article class="card overview-panel" role="tabpanel" id="summary-panel-outcome" aria-labelledby="summary-tab-outcome" tabindex="0" hidden>
             <h3>Outcome</h3>
             <p class="muted"><!-- TODO: outcome -->[Qualitative or measurable outcome. Avoid invented metrics.]</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -122,7 +129,36 @@
       <div class="container stack">
         <h2>Approach / Strategy</h2>
         <!-- TODO: summarize strategic choices -->
-        <p>[Explain the strategy used to address complexity and reduce risk.]</p>
+        <div class="research-flow" aria-label="Approach and strategy principles">
+          <article class="research-item">
+            <span class="research-number" aria-hidden="true">01</span>
+            <div class="research-content">
+              <h3>[Strategy principle 1]</h3>
+              <p>[How this principle reduces risk or complexity.]</p>
+            </div>
+          </article>
+          <article class="research-item research-item-even">
+            <span class="research-number" aria-hidden="true">02</span>
+            <div class="research-content">
+              <h3>[Strategy principle 2]</h3>
+              <p>[How this principle improves decision quality or speed.]</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <span class="research-number" aria-hidden="true">03</span>
+            <div class="research-content">
+              <h3>[Strategy principle 3]</h3>
+              <p>[How this principle scales across users or systems.]</p>
+            </div>
+          </article>
+          <article class="research-item research-item-even">
+            <span class="research-number" aria-hidden="true">04</span>
+            <div class="research-content">
+              <h3>[Strategy principle 4]</h3>
+              <p>[How this principle supports implementation durability.]</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 

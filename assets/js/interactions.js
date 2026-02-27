@@ -100,6 +100,62 @@
   }
 
   /**
+   * Generic tabs
+   * Activates any [data-tabs] group with proper keyboard support
+   */
+  function initTabs() {
+    const tabGroups = document.querySelectorAll('[data-tabs]');
+    if (!tabGroups.length) return;
+
+    tabGroups.forEach((group) => {
+      const tabs = Array.from(group.querySelectorAll('[role="tab"]'));
+      const panels = Array.from(group.querySelectorAll('[role="tabpanel"]'));
+      if (!tabs.length || !panels.length) return;
+
+      const getPanelForTab = (tab) => {
+        const panelId = tab.getAttribute('aria-controls');
+        return panelId ? group.querySelector(`#${panelId}`) : null;
+      };
+
+      const setActive = (activeTab) => {
+        tabs.forEach((tab) => {
+          const isActive = tab === activeTab;
+          tab.setAttribute('aria-selected', String(isActive));
+          tab.setAttribute('tabindex', isActive ? '0' : '-1');
+
+          const panel = getPanelForTab(tab);
+          if (panel) panel.hidden = !isActive;
+        });
+      };
+
+      const initialTab = tabs.find((tab) => tab.getAttribute('aria-selected') === 'true') || tabs[0];
+      setActive(initialTab);
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+          setActive(tab);
+          tab.focus();
+        });
+
+        tab.addEventListener('keydown', (e) => {
+          let nextIndex = null;
+
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextIndex = (index + 1) % tabs.length;
+          if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') nextIndex = (index - 1 + tabs.length) % tabs.length;
+          if (e.key === 'Home') nextIndex = 0;
+          if (e.key === 'End') nextIndex = tabs.length - 1;
+
+          if (nextIndex !== null) {
+            e.preventDefault();
+            setActive(tabs[nextIndex]);
+            tabs[nextIndex].focus();
+          }
+        });
+      });
+    });
+  }
+
+  /**
    * Career Timeline
    * Handles node click interactions for expanding/collapsing details
    */
@@ -227,6 +283,8 @@
 
     // Career timeline animations
     initCareerTimeline();
+    // Tabs
+    initTabs();
     // Lightbox for image previews
     initLightbox();
 

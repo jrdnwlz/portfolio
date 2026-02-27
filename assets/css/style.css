@@ -617,9 +617,9 @@ main {
 }
 
 .section h2 {
-  font-size: clamp(20px, 3vw, 28px);
+  font-size: clamp(20px, 3vw, 24px);
   margin-bottom: 16px;
-  font-weight: 700;
+  font-weight: 600;
   position: relative;
   padding-bottom: 12px;
 }
@@ -645,8 +645,8 @@ main {
 }
 
 .section h3 {
-  font-size: clamp(18px, 2.5vw, 22px);
-  font-weight: 650;
+  font-size: clamp(18px, 2.5vw, 20px);
+  font-weight: 600;
 }
 
 /* ============================================
@@ -655,6 +655,7 @@ main {
 .grid {
   display: grid;
   gap: 16px;
+  margin-top: 16px;
 }
 
 .grid-2 {
@@ -712,6 +713,11 @@ main {
 
 .card h3 {
   margin-bottom: 8px;
+  color: var(--text);
+}
+
+.card h4 {
+  margin-bottom: 12px;
   color: var(--text);
 }
 
@@ -798,6 +804,163 @@ main {
   color: var(--muted);
   font-size: 15px;
   line-height: 1.6;
+}
+
+/* Sonatype case study layout refinements */
+.sonatype-case .section {
+  padding: 64px 0;
+}
+
+.section-alt {
+  background: color-mix(in oklab, var(--surface) 85%, transparent);
+}
+
+.overview-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.overview-tab-list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border-bright);
+  gap: 0;
+  padding-top: 2px;
+}
+
+.overview-tab {
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  margin: 0 2px -1px 0;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.overview-tab:hover {
+  background: color-mix(in oklab, var(--surface-2) 72%, transparent);
+}
+
+.overview-tab[aria-selected="true"] {
+  color: var(--text);
+  border-color: var(--border-bright);
+  background: var(--surface);
+  box-shadow: inset 0 2px 0 var(--primary-accent);
+}
+
+.overview-tab:focus-visible {
+  outline: 2px solid var(--primary-accent);
+  outline-offset: -2px;
+}
+
+.overview-panel {
+  margin: 0;
+  padding: 16px;
+}
+
+.overview-panel h4 {
+  margin: 8px 0;
+}
+
+.case-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 28px;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.case-list {
+  margin: 0 0 0 20px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.workflow-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.workflow-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.workflow-block .diagram-figure {
+  margin-top: 6px;
+}
+
+.workflow-block .diagram-placeholder {
+  min-height: 112px;
+}
+
+.pattern-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prose-narrow {
+  max-width: 780px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+
+.outcome-grid {
+  margin-top: 8px;
+}
+
+.outcome-highlight {
+  border-color: color-mix(in oklab, var(--secondary-accent) 28%, var(--border));
+  background: linear-gradient(
+    145deg,
+    color-mix(in oklab, var(--surface) 88%, transparent),
+    color-mix(in oklab, var(--surface-2) 82%, transparent)
+  );
+}
+
+.outcome-highlight h3 {
+  color: var(--secondary-accent);
+}
+
+.reflection-single {
+  max-width: 860px;
+  margin: 0 auto;
+  line-height: 1.8;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .case-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .prose-narrow,
+  .reflection-single {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .sonatype-case .section {
+    padding: 48px 0;
+  }
 }
 
 .stats {
@@ -2270,11 +2433,17 @@ body.no-scroll { overflow: hidden; }
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
 }
 
 .diagram-caption {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text);
+  font-size: 16px;
+    margin-bottom: 8px;
 }
 
 .diagram-placeholder {
@@ -2297,6 +2466,20 @@ body.no-scroll { overflow: hidden; }
   margin: 0;
   color: var(--muted);
   font-size: 14px;
+}
+
+.constraint {
+  background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.constraint h4 {
+  margin-bottom: 12px;
 }
 
 /* ============================================
