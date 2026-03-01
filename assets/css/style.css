@@ -877,6 +877,7 @@ main {
   gap: 28px;
   align-items: flex-start;
   padding-top: 16px;
+  margin-bottom: 12px;
 }
 
 .case-list {
@@ -2428,6 +2429,38 @@ body.no-scroll { overflow: hidden; }
 }
 
 /* Reusable case study diagram placeholder */
+.diagram {
+  width: 100%;
+  height: auto;
+}
+
+.diagram .node-bg {
+  fill: var(--secondary-accent);
+  fill-opacity: 0.35;
+}
+
+.diagram .node-text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  fill: var(--text);
+  text-anchor: middle;
+}
+
+.diagram .decision-bg {
+  fill: var(--primary-accent);
+  fill-opacity: 0.1;
+  stroke: var(--primary-accent);
+  stroke-width: 3;
+}
+
+.diagram .decision-text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--text);
+  text-anchor: middle;
+}
+
 .diagram-figure {
   margin: 0;
   display: flex;
@@ -2436,21 +2469,21 @@ body.no-scroll { overflow: hidden; }
   background: var(--surface);
   border: 2px solid var(--border);
   border-radius: var(--radius);
-  padding: 24px;
+  padding: 16px;
 }
 
 .diagram-caption {
   font-weight: 600;
   color: var(--text);
   font-size: 16px;
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .diagram-placeholder {
   border: 1px dashed var(--border-bright);
   border-radius: 10px;
   background: var(--surface-2);
-  padding: 18px;
+  padding: 16px;
 }
 
 .diagram-placeholder p {
