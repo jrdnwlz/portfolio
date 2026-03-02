@@ -2439,6 +2439,11 @@ body.no-scroll { overflow: hidden; }
   fill-opacity: 0.35;
 }
 
+.diagram .bg-light {
+  fill-opacity: 0.20 !important;
+  stroke-width: 0 !important;
+}
+
 .diagram .node-text {
   font-family: var(--font-sans);
   font-size: 14px;
@@ -2448,7 +2453,7 @@ body.no-scroll { overflow: hidden; }
 
 .diagram .decision-bg {
   fill: var(--primary-accent);
-  fill-opacity: 0.1;
+  fill-opacity: 0.2;
   stroke: var(--primary-accent);
   stroke-width: 3;
 }
@@ -2459,6 +2464,12 @@ body.no-scroll { overflow: hidden; }
   font-weight: 600;
   fill: var(--text);
   text-anchor: middle;
+}
+
+.diagram .list-bg {
+  fill: var(--surface);
+  stroke: var(--border);
+  stroke-width: 1;
 }
 
 .diagram .list-text {
@@ -2473,7 +2484,7 @@ body.no-scroll { overflow: hidden; }
   flex-direction: column;
   gap: 10px;
   background: var(--surface);
-  border: 0px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
 }
