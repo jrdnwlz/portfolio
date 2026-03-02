@@ -928,16 +928,19 @@ main {
 }
 
 .outcome-highlight {
-  border-color: color-mix(in oklab, var(--secondary-accent) 28%, var(--border));
+  border: 2px solid color-mix(in oklab, var(--secondary-accent) 28%, var(--border));
   background: linear-gradient(
     145deg,
     color-mix(in oklab, var(--surface) 88%, transparent),
     color-mix(in oklab, var(--surface-2) 82%, transparent)
   );
+  padding: 24px;
+  border-radius: var(--radius);
 }
 
 .outcome-highlight h3 {
   color: var(--secondary-accent);
+  margin-bottom: 8px;
 }
 
 .reflection-single {
