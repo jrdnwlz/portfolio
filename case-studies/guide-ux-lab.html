@@ -39,14 +39,17 @@
           <div class="hero-copy">
             <p class="kicker mb-16">FEATURED</p>
             <h1>Guide UX Lab</h1>
-            <p class="lead mt-16">A code-first prototyping initiative that replaced click-through mockups with a working product artifact for planning, GTM alignment, and engineering handoff.</p>
+            <p class="lead mt-16">Designing and building a fully functional, code-first prototype to reshape collaboration between design, engineering, and AI in enterprise product development.</p>
 
             <div class="row mt-20">
               <span class="tag">Code-First Design</span>
-              <span class="tag">AI-Assisted Workflow</span>
+              <span class="tag">AI-Assisted PDLC</span>
               <span class="tag">Platform Prototyping</span>
             </div>
           </div>
+          <div class="hero-visual" aria-hidden="false">
+          <img src="/assets/img/ux-lab_hero.png" alt="Sonatype Guide UX Lab screenshots" width="440" height="285" loading="lazy">
+        </div>
         </div>
       </div>
     </section>
@@ -57,30 +60,25 @@
         <div class="overview-tabs" data-tabs>
           <div class="overview-tab-list" role="tablist" aria-label="Overview highlights">
             <button class="overview-tab" type="button" role="tab" id="lab-tab-context" aria-controls="lab-panel-context" aria-selected="true" tabindex="0">Context</button>
-            <button class="overview-tab" type="button" role="tab" id="lab-tab-role" aria-controls="lab-panel-role" aria-selected="false" tabindex="-1">Role</button>
-            <button class="overview-tab" type="button" role="tab" id="lab-tab-challenge" aria-controls="lab-panel-challenge" aria-selected="false" tabindex="-1">Challenge</button>
-            <button class="overview-tab" type="button" role="tab" id="lab-tab-objective" aria-controls="lab-panel-objective" aria-selected="false" tabindex="-1">Objective</button>
-            <button class="overview-tab" type="button" role="tab" id="lab-tab-outcome" aria-controls="lab-panel-outcome" aria-selected="false" tabindex="-1">Outcome</button>
+            <button class="overview-tab" type="button" role="tab" id="lab-tab-role" aria-controls="lab-panel-role" aria-selected="false" tabindex="-1">Intervention</button>
+            <button class="overview-tab" type="button" role="tab" id="lab-tab-challenge" aria-controls="lab-panel-challenge" aria-selected="false" tabindex="-1">Impact</button>
+            <button class="overview-tab" type="button" role="tab" id="lab-tab-objective" aria-controls="lab-panel-objective" aria-selected="false" tabindex="-1">Implication</button>
           </div>
           <article class="overview-panel" role="tabpanel" id="lab-panel-context" aria-labelledby="lab-tab-context" tabindex="0">
             <h4>Context</h4>
-            <p class="muted">Guide's launch required alignment across product, design, engineering, and GTM teams simultaneously. Traditional handoff artifacts were ineffective for validating behavior-level decisions under pressure, creating ambiguity that slowed implementation.</p>
+            <p class="muted">Sonatype Guide was a high-visibility, executive-sponsored initiative with a fixed six-month release timeline. The product introduced a new security intelligence platform for developers and required tight alignment across design, engineering, product, and marketing from day one.</p>
           </article>
           <article class="overview-panel" role="tabpanel" id="lab-panel-role" aria-labelledby="lab-tab-role" tabindex="0" hidden>
-            <h4>Role</h4>
-            <p class="muted">Senior Product Designer leading a code-first design practice. I authored interaction-critical flows and state logic directly in TypeScript/Next.js, while facilitating collaborative review across engineering, product, and GTM partners.</p>
+            <h4>Intervention</h4>
+            <p class="muted">Instead of relying on static mockups, the UX Lab was developed as a fully functional, production-aligned prototype built directly in code. It served as a live environment for modeling workflows, validating interaction patterns, and stress-testing edge cases using realistic data structures. AI-assisted tooling accelerated iteration and supported rapid exploration within real technical constraints.</p>
           </article>
           <article class="overview-panel" role="tabpanel" id="lab-panel-challenge" aria-labelledby="lab-tab-challenge" tabindex="0" hidden>
-            <h4>Challenge</h4>
-            <p class="muted">Click-through mockups communicated layout convincingly but left interaction logic, state transitions, loading states, and edge cases open to engineering interpretation, often surfacing misalignment late in the development cycle.</p>
+            <h4>Impact</h4>
+            <p class="muted">Engineering teams reviewed and interacted with actual workflows rather than interpreting documentation. Sequencing decisions reflected real user journeys. Cross-functional discussions were grounded in inspectable behavior, reducing ambiguity and minimizing traditional design-to-development friction.</p>
           </article>
           <article class="overview-panel" role="tabpanel" id="lab-panel-objective" aria-labelledby="lab-tab-objective" tabindex="0" hidden>
-            <h4>Objective</h4>
-            <p class="muted">Create a working prototype that made interaction behavior, component APIs, and state management explicit, allowing design intent and engineering constraints to be reviewed together before implementation.</p>
-          </article>
-          <article class="overview-panel" role="tabpanel" id="lab-panel-outcome" aria-labelledby="lab-tab-outcome" tabindex="0" hidden>
-            <h4>Outcome</h4>
-            <p class="muted">Reduced handoff ambiguity, improved cross-functional confidence in scope, and established a repeatable code-first design pattern that future PDLC work now uses as standard practice.</p>
+            <h4>Implication</h4>
+            <p class="muted">The UX Lab demonstrated that design artifacts can function as shared infrastructure within enterprise product development. By aligning exploration with implementation realities early, the team established a more integrated, system-aware approach to shipping complex software.</p>
           </article>
         </div>
       </div>
@@ -88,28 +86,27 @@
 
     <section class="section" id="problem-context">
       <div class="container stack">
-        <h2>Problem Scope</h2>
-        <p>Design handoff traditionally separates concerns: designers produce visual layouts and interaction flows, while engineers interpret that documentation and implement behavior. Under typical timelines this works, but with compressed planning cycles and complex state logic, translation gaps increase risk.</p>
+        <h2>The Catalyst</h2>
+        <p>Sonatype Guide needed to progress quickly. The product was executive-sponsored, time-bound, and architecturally complex. Decisions around search behavior, policy visibility, trust scoring, monetization, and cross-surface workflows had to be aligned early. Traditional design artifacts would not be sufficient for this level of coordination.</p>
       </div>
       <div class="container case-two-col">
         <article class="stack">
-          <p>Traditional click-through mockups excel at communicating visual hierarchy and layout. But they struggle with:</p>
+          <p>Static screens require interpretation. Clickable prototypes simulate flows but don't reflect real data behavior, state logic, or implementation constraints. Engineering questions surface late. Edge cases appear during development rather than design.</p>
+          <p>The team needed a shared environment that could:</p>
           <ul class="muted case-list">
-            <li>State transitions and edge cases that emerge only during interaction</li>
-            <li>Loading states, error states, and permission-based UI variations</li>
-            <li>System rules and data relationships that affect component behavior</li>
-            <li>Navigation logic and context preservation across workflows</li>
+            <li>Reflect realistic data structures and conditional states</li>
+            <li>Model full workflows, not isolated screens</li>
+            <li>Support inspection by engineering leadership</li>
+            <li>Adapt quickly as scope evolved</li>
           </ul>
-          <p>Questions about these details surfaced during implementation, creating rework pressure and delaying engineering decisions.</p>
+          <p>The UX Lab emerged as a response to this need: a production-aligned, inspectable prototype built directly in code, capable of modeling both user experience and system behavior in parallel.</p>
         </article>
         <aside>
           <figure class="diagram-figure">
-            <figcaption class="diagram-caption">Traditional Handoff Gap</figcaption>
+            <figcaption class="diagram-caption">Lorem</figcaption>
             <div class="diagram-placeholder" role="img" aria-label="Gap between design intent and implementation interpretation">
-              <p>Design: Visual flow → Mockup artifact → Interpretation</p>
-              <p>Engineering: Questions → Implementation choices → Rework</p>
+              <p>FPO</p>
             </div>
-            <p class="diagram-callout"><strong>Note:</strong> Behavior-level details were documented text-heavy or often missing entirely from visual artifacts.</p>
           </figure>
         </aside>
       </div>
@@ -117,31 +114,27 @@
 
     <section class="section section-alt" id="constraints">
       <div class="container stack">
-        <h2>Project Constraints</h2>
+        <h2>The Experiment</h2>
         <div class="grid grid-2" aria-label="Project constraints">
           <article class="constraint">
-            <h4>Compressed timeline</h4>
-            <p class="muted">Product definition and engineering execution ran in parallel. Planning could not afford iteration cycles between design and engineering artifacts.</p>
+            <h4>Code-First</h4>
+            <p class="muted">Instead of beginning in static design files, the experience was developed directly in code so that workflows could be evaluated within their eventual structural context. Routing, state transitions, and relational movement were modeled as they would behave in production rather than approximated through simulated interactions.</p>
+            <p class="muted">Working in this medium reduced the translation gap between intent and implementation, allowing design decisions and technical constraints to inform one another in real time.</p>
           </article>
           <article class="constraint">
-            <h4>Complex interaction requirements</h4>
-            <p class="muted">Guide's search, filtering, and detail workflows required nuanced state management and conditional rendering that static prototypes could not adequately represent.</p>
+            <h4>Live Prototype</h4>
+            <p class="muted">The UX Lab was structured as a usable environment with consistent data models and fully navigable records, rather than a stitched sequence of screens. Search behavior, tab logic, and cross-record relationships could be exercised end to end, revealing friction that would not surface in a static prototype.</p>
+            <p class="muted">Because the environment behaved coherently, engineering partners were able to evaluate workflows through direct interaction instead of interpretation.</p>
           </article>
           <article class="constraint">
-            <h4>Multi-stakeholder alignment</h4>
-            <p class="muted">Product, engineering, GTM, and design teams needed shared understanding of behavior before resource allocation and messaging decisions were locked.</p>
+            <h4>AI in the PDLC</h4>
+            <p class="muted">AI-assisted tooling was introduced to increase iteration capacity without diluting design judgment. It supported layout scaffolding, component restructuring, and exploratory variations while preserving architectural consistency across the system.</p>
+            <p class="muted">This approach expanded the range of viable paths that could be explored within a fixed timeline, while keeping decision-making grounded in human evaluation and product strategy.</p>
           </article>
           <article class="constraint">
-            <h4>Reusability requirement</h4>
-            <p class="muted">The approach had to establish patterns applicable beyond one release, supporting future platform decisions and reducing handoff friction as standard practice.</p>
-          </article>
-          <article class="constraint">
-            <h4>Production-aligned code</h4>
-            <p class="muted">The prototype stack had to match implementation technologies (TypeScript, Next.js) so engineering could directly reference patterns instead of rewriting from mockups.</p>
-          </article>
-          <article class="constraint">
-            <h4>Designer autonomy with AI support</h4>
-            <p class="muted">I led design and code authorship personally, using AI to accelerate iteration and test coverage rather than relying on engineering to prototype design concepts.</p>
+            <h4>Modern Artifacts</h4>
+            <p class="muted">Traditional design artifacts often describe how something should behave. The UX Lab functioned as an artifact that demonstrated how it did behave within defined constraints.</p>
+            <p class="muted">This shift changed the nature of collaboration. Stakeholders engaged with observable behavior instead of hypothetical flows, which reduced ambiguity and strengthened cross-functional alignment.</p>
           </article>
         </div>
       </div>
@@ -149,150 +142,89 @@
 
     <section class="section" id="approach-strategy">
       <div class="container stack">
-        <h2>Design Strategy</h2>
-        <p>The Lab shifted from artifact-to-artifact handoff to outcome-focused collaboration. By authoring interaction logic directly in code, we made design assumptions explicit and could review them against engineering constraints in real time, not sequentially.</p>
+        <h2>The System</h2>
+        <p>The UX Lab was built as a production-aligned web application designed to model real behavior rather than simulate interface flows. Its purpose was to exercise the system under the same conditions it would eventually support.</p>
         <div class="research-flow" aria-label="Design strategy principles">
           <article class="research-item">
             <span class="research-number">01</span>
             <div class="research-content">
-              <h3>Interaction-first architecture</h3>
-              <p class="muted">State logic and component APIs were designed before visual refinement. This ensured behavior was sound and implementable before designers invested in detailed styling or animations.</p>
+              <h3>Component Foundations</h3>
+              <p class="muted">The interface leveraged modular, accessible primitives, including Radix-based components, to ensure interaction consistency across states, breakpoints, and themes. Using a shared structural foundation allowed behavior to remain predictable as complexity increased.</p>
             </div>
           </article>
           <article class="research-item research-item-even">
             <span class="research-number">02</span>
             <div class="research-content">
-              <h3>Runnable artifact as shared reference</h3>
-              <p class="muted">Product, engineering, and GTM teams reviewed the same prototype. Questions about behavior could be tested directly instead of debated against static mockups.</p>
+              <h3>Routing & Data Modeling</h3>
+              <p class="muted">Navigable routes and representative data structures mirrored the relational nature of components and vulnerabilities. Search queries resolved dynamically, tab transitions preserved context, and cross-record navigation reflected real information architecture.</p>
             </div>
           </article>
           <article class="research-item">
             <span class="research-number">03</span>
             <div class="research-content">
-              <h3>Component API clarity</h3>
-              <p class="muted">Props, state shape, and variant patterns were documented in the prototype itself. Engineering could immediately understand contract requirements instead of inferring them from screen designs.</p>
+              <h3>States & Feature Toggles</h3>
+              <p class="muted">Feature flags were built directly into the prototype to simulate different account tiers, gated intelligence, and credit consumption states. Internal teams could toggle between free and paid experiences, evaluate upgrade prompts, and observe how credit limits affected workflow continuity.</p>
             </div>
           </article>
           <article class="research-item research-item-even">
             <span class="research-number">04</span>
             <div class="research-content">
-              <h3>AI-assisted edge case discovery</h3>
-              <p class="muted">AI support helped identify and prototype error states, loading variants, and permission-based UI changes that would typically surface during implementation, moving discovery left.</p>
+              <h3>MCP Workflows</h3>
+              <p class="muted">The UX Lab also modeled the experience surrounding Sonatype's proprietary MCP server. This included onboarding flows, configuration guidance, and an informational landing surface explaining how the MCP integrated with developer workflows.</p>
+              <p class="muted">By designing these touchpoints within the same prototype environment, the web UI and MCP configuration journey could be evaluated as a cohesive system rather than separate initiatives. The Lab ensured that setup, usage, and contextual guidance remained intuitive regardless of where a developer entered the journey. </p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="architecture-flows">
+    <section class="section section-alt" id="patterns-decisions">
       <div class="container stack">
-        <h2>Code-First Workflow Architecture</h2>
-        <p>The Lab organized design work around a production-ready tech stack. Components were authored as TypeScript/React modules with explicit state management, making interaction models testable and reviewable without separate documentation.</p>
-        <div class="case-two-col">
-          <article class="stack">
-            <h3>Design-in-code iteration cycle</h3>
-            <p class="muted">I authored features directly in VS Code alongside AI assistance. Product and engineering accessed the working prototype via a shared development environment, allowing real-time feedback on interaction behavior rather than markup-to-artifact translation.</p>
-            <p class="muted">This reduced interpretation gaps and allowed scope discussions to center on actual behavior constraints instead of estimated effort from mockups.</p>
-          </article>
-          <aside>
-            <figure class="diagram-figure">
-              <figcaption class="diagram-caption">Code-First Review Loop</figcaption>
-              <div class="diagram-placeholder" role="img" aria-label="Code-first design review flow">
-                <p>Design authorship → Shared environment → Live review → Feedback → Implementation-ready</p>
-              </div>
-              <p class="diagram-callout"><strong>Note:</strong> Prototype and implementation shared the same codebase foundation, eliminating recreation effort.</p>
-            </figure>
-          </aside>
-        </div>
-        <div class="case-two-col">
-          <article class="stack">
-            <h3>Pattern library and handoff clarity</h3>
-            <p class="muted">Reusable component patterns were authored with explicit variants for all supported states (loading, error, permission-gated, empty state). This made the mapping from design decisions to implementation checklist items clear.</p>
-            <p class="muted">Engineering could reference the prototype directly during implementation rather than translating between design documentation and code requirements.</p>
-          </article>
-          <aside>
-            <figure class="diagram-figure">
-              <figcaption class="diagram-caption">Component Variant Coverage</figcaption>
-              <div class="diagram-placeholder" role="img" aria-label="Component states and variant documentation">
-                <p>Parent component → Props interface → Variant states → Documentation</p>
-              </div>
-              <p class="diagram-callout"><strong>Note:</strong> All variants were testable in the prototype, reducing questions during implementation.</p>
-            </figure>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="patterns-decisions">
-      <div class="container stack">
-        <h2>Key Patterns & Decisions</h2>
+        <h2>Alignment Shift</h2>
         <div class="grid grid-2">
           <article class="pattern-card">
-            <h4>Direct code authorship</h4>
-            <p class="muted">Interaction flows and state logic were authored in TypeScript/React, not in separate design tools. This ensured design intent was preserved in implementation-ready code.</p>
-            <p class="muted">Engineering reviewed behavior directly instead of translating from mockups, reducing interpretation drift.</p>
+            <h4>Design-to-Development</h4>
+            <p class="muted">In a typical workflow, design hands off screens and engineering works through the details during implementation. That often means edge cases and structural questions surface late.</p>
+            <p class="muted">With the UX Lab, engineers could navigate real workflows before production work began. They could see how routing behaved, how state changed, and how records connected. Many of the usual clarification cycles simply didn't occur because the behavior was already visible.</p>
           </article>
           <article class="pattern-card">
-            <h4>Explicit state modeling</h4>
-            <p class="muted">Component state was declared upfront with TypeScript interfaces. This made data relationships, permission logic, and conditional rendering visible before implementation.</p>
-            <p class="muted">Product and engineering could discuss state shapes and transitions as concrete models instead of abstract concepts.</p>
+            <h4>Executive Reviews</h4>
+            <p class="muted">Executive reviews also became more straightforward. Instead of presenting slides or static flows, we walked through the system together and encouraged async exploration.</p>
+            <p class="muted">Leaders could search, explore records, and experience transitions directly. Feedback was grounded in observable behavior, which made alignment faster and more concrete.</p>
           </article>
           <article class="pattern-card">
-            <h4>AI-assisted iteration</h4>
-            <p class="muted">AI support accelerated scenario expansion and variant coverage. I could explore edge cases and error states faster, moving discovery earlier and reducing implementation surprises.</p>
-            <p class="muted">AI also helped scale test coverage and documentation, maintaining prototype quality under compressed timelines.</p>
+            <h4>Roadmap Sequencing</h4>
+            <p class="muted">Because workflows were exercised end to end, dependencies became clearer earlier in the process. It was easier to see which structural elements needed to exist before other features could function properly.</p>
+            <p class="muted">This influenced sequencing decisions. The team prioritized foundational behaviors first, which helped protect the release timeline without introducing downstream instability.</p>
           </article>
           <article class="pattern-card">
-            <h4>Shared development environment</h4>
-            <p class="muted">Product, engineering, and GTM accessed the prototype via a live dev server. Questions could be answered immediately by running scenarios instead of debating abstract descriptions.</p>
-            <p class="muted">This transformed feedback cycles from async review to real-time collaboration, improving alignment speed.</p>
-          </article>
-          <article class="pattern-card">
-            <h4>Variant-first component design</h4>
-            <p class="muted">Components were authored with all supported states concurrently (loading, error, success, empty). This made conditional rendering explicit and ensured no edge cases were overlooked.</p>
-            <p class="muted">Engineering inherited a complete state model instead of discovering state requirements during implementation.</p>
-          </article>
-          <article class="pattern-card">
-            <h4>Documentation in code</h4>
-            <p class="muted">Component usage, prop interfaces, and interaction rules were documented as code comments and TypeScript types. This reduced the need for separate documentation artifacts.</p>
-            <p class="muted">Engineers could learn component contracts by reading the prototype directly, treating it as canonical reference.</p>
+            <h4>Feasibility Visibility</h4>
+            <p class="muted">Working in code meant constraints surfaced during exploration. Conditional logic, state complexity, and interaction depth were encountered while shaping the experience rather than during implementation.</p>
+            <p class="muted">That visibility reduced rework and made tradeoffs more explicit. Design and engineering were responding to the same realities from the beginning.</p>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="collaboration">
-      <div class="container">
-        <article class="prose-narrow stack">
-          <h2>Collaboration</h2>
-          <p>The Lab was designed to improve cross-functional collaboration across a compressed timeline. Product, engineering, and GTM teams accessed the same working prototype, allowing discussions to center on actual behavior and real constraints rather than estimated effort or abstract requirements.</p>
-          <p>Weekly reviews included live walkthroughs of interaction patterns, state transitions, and edge cases. This format made misalignment visible immediately and resolvable in the moment.</p>
-          <p>Engineering used the prototype as the implementation reference, reducing translation effort and allowing stricter alignment between design intent and shipped behavior.</p>
-          <p>GTM partners reviewed the prototype to understand user-facing behavior and messaging positioning, improving launch readiness and customer communication.</p>
-          <p>The shared artifact accelerated planning discussions and reduced ambiguity around scope and resource allocation because everyone reviewed the same behavior specification.</p>
-        </article>
       </div>
     </section>
 
     <section class="section" id="outcomes">
       <div class="container stack">
-        <h2>Outcomes</h2>
+        <h2>Delivery Acceleration</h2>
         <div class="grid grid-2 outcome-grid">
           <article class="card outcome-highlight">
-            <h3>Reduced handoff ambiguity</h3>
-            <p>Interaction behavior was explicit and testable, eliminating questions about edge cases and state transitions during implementation.</p>
+            <h3>GTM Compression</h3>
+            <p>Product definition, interaction design, and structural modeling progressed at the same time. There was no extended mockup phase followed by a separate interpretation phase. As workflows took shape inside the UX Lab, they were immediately reviewable and testable.</p>
           </article>
           <article class="card outcome-highlight">
-            <h3>Faster planning alignment</h3>
-            <p>Cross-functional teams reviewed live behavior instead of estimated mockups, improving scope confidence and resource planning.</p>
+            <h3>Engineering Inspection</h3>
+            <p>Engineering did not rely solely on design documentation. They could navigate flows, inspect interaction patterns, and evaluate structural assumptions within the prototype itself.</p>
           </article>
           <article class="card outcome-highlight">
-            <h3>Implementation clarity</h3>
-            <p>Engineering used the prototype as canonical reference, reducing interpretation effort and improving alignment between shipped code and design intent.</p>
+            <h3>Reduced Grooming Cycles</h3>
+            <p>Traditional grooming often centers on clarifying edge cases and resolving interpretive gaps between design and development. Because the UX Lab modeled real state behavior, many of those clarifications happened organically during exploration.</p>
           </article>
           <article class="card outcome-highlight">
-            <h3>Repeatable pattern</h3>
-            <p>Code-first design practice is now standard for future PDLC work, not just this release, improving long-term cross-functional collaboration.</p>
+            <h3>Parallel Marketing Efforts</h3>
+            <p>Product Marketing used the UX Lab as a reference environment while shaping positioning, naming, and launch materials. Because the system was functional, messaging could be developed against real flows rather than anticipated ones.</p>
           </article>
         </div>
       </div>
@@ -302,11 +234,12 @@
       <div class="container">
         <article class="prose-narrow stack">
           <h2>Reflection</h2>
-          <p>Code-first design is not about designers writing production code. It is about designing behavior in the same language that will implement it, eliminating translation layers and ambiguity.</p>
-          <p>The Lab's success came from treating the prototype as a collaboration artifact, not a design exercise in isolation. Early engineering involvement shaped component APIs and state models based on implementation realities, not theoretical ideals.</p>
-          <p>AI assistance proved valuable not for replacing design judgment but for expanding coverage—discovering edge cases, populating variant states, and accelerating iteration when timelines were compressed.</p>
-          <p>The largest opportunity from code-first design is moving behavior discovery left. Questions about state transitions, edge cases, and system rules surfaced during prototype review instead of implementation, when changes are cheaper and faster.</p>
-          <p>This practice scales beyond prototyping. The same approach—shared artifact, explicit state models, multi-stakeholder review—improves collaboration for any complex product decision, regardless of timeline pressure.</p>
+          <p>The UX Lab was not an argument that all design should happen in code. It was a response to a specific class of problem.</p>
+          <p>Designing directly in code is most effective when behavior, state, and relational logic are central to the experience. When decisions depend on routing, permissions, dynamic data, or cross-record relationships, static artifacts struggle to capture the full system.</p>
+          <p>There are still moments when static exploration is appropriate. Early concept work, visual experimentation, and rapid divergence benefit from lower-fidelity tools. The key is choosing the medium that aligns with the complexity of the problem.</p>
+          <p>Introducing AI into the process reinforced this principle. AI increased iteration capacity and reduced repetitive work, but it did not replace judgment. It functioned as acceleration infrastructure rather than authorship.</p>
+          <p>The most durable shift was not technical but structural. Shared, inspectable artifacts reduce reliance on documentation and interpretation. When teams respond to behavior rather than explanation, alignment becomes simpler.</p>
+          <p>The UX Lab demonstrated that under the right conditions, design artifacts can operate as infrastructure within enterprise product development.</p>
         </article>
       </div>
     </section>
