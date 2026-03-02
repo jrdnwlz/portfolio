@@ -873,7 +873,7 @@ main {
 
 .case-two-col {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.7fr);
   gap: 28px;
   align-items: flex-start;
   padding-top: 16px;
@@ -2461,13 +2461,19 @@ body.no-scroll { overflow: hidden; }
   text-anchor: middle;
 }
 
+.diagram .list-text {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  fill: var(--text);
+}
+
 .diagram-figure {
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
   background: var(--surface);
-  border: 2px solid var(--border);
+  border: 0px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
 }
@@ -2483,7 +2489,7 @@ body.no-scroll { overflow: hidden; }
   border: 1px dashed var(--border-bright);
   border-radius: 10px;
   background: var(--surface-2);
-  padding: 16px;
+  padding: 8px;
 }
 
 .diagram-placeholder p {
