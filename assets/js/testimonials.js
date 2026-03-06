@@ -144,10 +144,10 @@
       return;
     }
 
-    // Truncate quote for card display (first 150 characters)
+    // Truncate quote for card display (first 300 characters)
     const truncateQuote = (quote) => {
-      if (quote.length <= 150) return quote;
-      return quote.substring(0, 150) + '...';
+      if (quote.length <= 300) return quote;
+      return quote.substring(0, 300) + '...';
     };
 
     // Add fade-out transition before replacing content

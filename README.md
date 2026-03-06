@@ -72,7 +72,11 @@ portfolio/
 ├── about.html                       # About page
 ├── resume.html                      # Resume page
 ├── contact.html                     # Contact page
-├── case-study-sonatype-guide.html   # Flagship case study
+├── case-study-sonatype-guide.html   # Legacy path with links to split case studies
+├── case-studies/
+│   ├── case-study-template.html     # Reusable case study template
+│   ├── sonatype-guide.html          # Sonatype Guide case study
+│   └── guide-ux-lab.html            # Guide UX Lab case study
 ├── assets/
 │   ├── css/
 │   │   └── style.css               # Main stylesheet with vibrant design

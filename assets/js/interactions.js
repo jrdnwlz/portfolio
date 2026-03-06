@@ -100,6 +100,62 @@
   }
 
   /**
+   * Generic tabs
+   * Activates any [data-tabs] group with proper keyboard support
+   */
+  function initTabs() {
+    const tabGroups = document.querySelectorAll('[data-tabs]');
+    if (!tabGroups.length) return;
+
+    tabGroups.forEach((group) => {
+      const tabs = Array.from(group.querySelectorAll('[role="tab"]'));
+      const panels = Array.from(group.querySelectorAll('[role="tabpanel"]'));
+      if (!tabs.length || !panels.length) return;
+
+      const getPanelForTab = (tab) => {
+        const panelId = tab.getAttribute('aria-controls');
+        return panelId ? group.querySelector(`#${panelId}`) : null;
+      };
+
+      const setActive = (activeTab) => {
+        tabs.forEach((tab) => {
+          const isActive = tab === activeTab;
+          tab.setAttribute('aria-selected', String(isActive));
+          tab.setAttribute('tabindex', isActive ? '0' : '-1');
+
+          const panel = getPanelForTab(tab);
+          if (panel) panel.hidden = !isActive;
+        });
+      };
+
+      const initialTab = tabs.find((tab) => tab.getAttribute('aria-selected') === 'true') || tabs[0];
+      setActive(initialTab);
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+          setActive(tab);
+          tab.focus();
+        });
+
+        tab.addEventListener('keydown', (e) => {
+          let nextIndex = null;
+
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextIndex = (index + 1) % tabs.length;
+          if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') nextIndex = (index - 1 + tabs.length) % tabs.length;
+          if (e.key === 'Home') nextIndex = 0;
+          if (e.key === 'End') nextIndex = tabs.length - 1;
+
+          if (nextIndex !== null) {
+            e.preventDefault();
+            setActive(tabs[nextIndex]);
+            tabs[nextIndex].focus();
+          }
+        });
+      });
+    });
+  }
+
+  /**
    * Career Timeline
    * Handles node click interactions for expanding/collapsing details
    */
@@ -169,19 +225,33 @@
     var overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
 
-    overlay.innerHTML = '\n      <div class="lightbox-content" role="dialog" aria-modal="true">\n        <button class="lightbox-close" aria-label="Close image">\u00d7</button>\n        <img src="" alt="" />\n        <div class="lightbox-caption" aria-hidden="false"></div>\n      </div>';
+    overlay.innerHTML = '\n      <div class="lightbox-content" role="dialog" aria-modal="true">\n        <button class="lightbox-close" aria-label="Close image">\u00d7</button>\n        <div class="lightbox-media"></div>\n        <div class="lightbox-caption" aria-hidden="false"></div>\n      </div>';
 
     document.body.appendChild(overlay);
 
-    var lbImg = overlay.querySelector('img');
+    var lbMedia = overlay.querySelector('.lightbox-media');
     var lbCaption = overlay.querySelector('.lightbox-caption');
     var lbClose = overlay.querySelector('.lightbox-close');
     var lastFocused = null;
 
-    function openLightbox(src, caption) {
+    function openLightbox(content, caption) {
       lastFocused = document.activeElement;
-      lbImg.src = src;
-      lbImg.alt = caption || '';
+      
+      // Clear previous content
+      lbMedia.innerHTML = '';
+      
+      // Handle both image URLs and SVG elements
+      if (typeof content === 'string') {
+        // It's an image source URL
+        var img = document.createElement('img');
+        img.src = content;
+        img.alt = caption || '';
+        lbMedia.appendChild(img);
+      } else if (content instanceof SVGElement) {
+        // It's an SVG element - clone and append
+        lbMedia.appendChild(content.cloneNode(true));
+      }
+      
       lbCaption.textContent = caption || '';
       overlay.classList.add('open');
       document.body.classList.add('no-scroll');
@@ -191,19 +261,33 @@
     function closeLightbox() {
       overlay.classList.remove('open');
       document.body.classList.remove('no-scroll');
-      lbImg.src = '';
+      lbMedia.innerHTML = '';
       if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
     }
 
-    // Delegate clicks on images with preview intent
+    // Delegate clicks on images and SVGs with preview intent
     document.body.addEventListener('click', function(e) {
-      var img = e.target.closest && e.target.closest('.alt-media-img, .figure img');
-      if (!img) return;
+      var element = e.target.closest && e.target.closest('.alt-media-img, .figure img, .figure svg, svg[data-lightbox]');
+      if (!element) return;
       e.preventDefault();
-      var full = img.getAttribute('data-full') || img.src;
-      var captionEl = img.closest('.alt-media') ? img.closest('.alt-media').querySelector('.caption') : img.closest('.figure') ? img.closest('.figure').querySelector('.caption') : null;
-      var caption = captionEl ? captionEl.textContent.trim() : '';
-      openLightbox(full, caption);
+      
+      var caption = '';
+      var captionEl = null;
+      
+      if (element.tagName.toLowerCase() === 'svg') {
+        // It's an SVG element
+        captionEl = element.closest('.alt-media') ? element.closest('.alt-media').querySelector('.caption') : 
+                     element.closest('.figure') ? element.closest('.figure').querySelector('.caption') : null;
+        caption = captionEl ? captionEl.textContent.trim() : '';
+        openLightbox(element, caption);
+      } else {
+        // It's an img element
+        var full = element.getAttribute('data-full') || element.src;
+        captionEl = element.closest('.alt-media') ? element.closest('.alt-media').querySelector('.caption') : 
+                    element.closest('.figure') ? element.closest('.figure').querySelector('.caption') : null;
+        caption = captionEl ? captionEl.textContent.trim() : '';
+        openLightbox(full, caption);
+      }
     });
 
     // Close handlers
@@ -227,6 +311,8 @@
 
     // Career timeline animations
     initCareerTimeline();
+    // Tabs
+    initTabs();
     // Lightbox for image previews
     initLightbox();
 

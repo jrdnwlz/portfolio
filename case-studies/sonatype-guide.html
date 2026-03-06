@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Jordan Walz | Case Study: Sonatype Guide</title>
+  <meta name="description" content="Product design case study for Sonatype Guide, focused on developer-facing security workflows and decision confidence."/>
+
+  <meta property="og:title" content="Sonatype Guide Case Study"/>
+  <meta property="og:description" content="Designing enterprise workflows that improve clarity in open-source security decisions."/>
+  <meta property="og:type" content="article"/>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+  <link rel="icon" href="/assets/img/favicon.svg"/>
+  <script src="https://unpkg.com/@glyphs/wc-core" type="module"></script>
+
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">Jordan Walz</a>
+      <nav class="nav" aria-label="Main">
+        <a href="../work.html">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../resume.html">Resume</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
+    </div>
+  </header>
+
+  <main class="case-study-page sonatype-case">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="kicker mb-16">FEATURED</p>
+            <h1>Sonatype Guide</h1>
+            <p class="lead mt-16">Designing a developer-facing security intelligence platform that shifts open-source security from reactive enforcement to proactive, confident component selection.</p>
+
+            <div class="row mt-20">
+              <span class="tag">Enterprise SaaS</span>
+              <span class="tag">Developer-Facing Platform</span>
+              <span class="tag">Security Intelligence</span>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="false">
+          <img src="/assets/img/guide/sonatype-guide_hero.png" alt="Sonatype Guide UX Lab screenshots" width="440" height="285" loading="lazy">
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-bg" id="executive-summary">
+      <div class="container stack">
+        <h3>Executive Summary</h3>
+        <div class="overview-tabs" data-tabs>
+          <div class="overview-tab-list" role="tablist" aria-label="Overview highlights">
+            <button class="overview-tab" type="button" role="tab" id="overview-tab-context" aria-controls="overview-panel-context" aria-selected="true" tabindex="0">Context</button>
+            <button class="overview-tab" type="button" role="tab" id="overview-tab-role" aria-controls="overview-panel-role" aria-selected="false" tabindex="-1">Role</button>
+            <button class="overview-tab" type="button" role="tab" id="overview-tab-challenge" aria-controls="overview-panel-challenge" aria-selected="false" tabindex="-1">Challenge</button>
+            <button class="overview-tab" type="button" role="tab" id="overview-tab-objective" aria-controls="overview-panel-objective" aria-selected="false" tabindex="-1">Objective</button>
+            <button class="overview-tab" type="button" role="tab" id="overview-tab-outcome" aria-controls="overview-panel-outcome" aria-selected="false" tabindex="-1">Outcome</button>
+          </div>
+          <article class="overview-panel" role="tabpanel" id="overview-panel-context" aria-labelledby="overview-tab-context" tabindex="0">
+            <h4>Context</h4>
+            <p class="muted">Guide centralized open-source component research and surfaced security intelligence at the moment of selection, combining public ecosystem data with Sonatype's proprietary risk insights inside a unified web interface and MCP server.</p>
+          </article>
+          <article class="overview-panel" role="tabpanel" id="overview-panel-role" aria-labelledby="overview-tab-role" tabindex="0" hidden>
+            <h4>Role</h4>
+            <p class="muted">As Senior Product Designer, I led end-to-end product design across problem framing, interaction architecture, and scalable system patterns in close partnership with product and engineering leadership.</p>
+          </article>
+          <article class="overview-panel" role="tabpanel" id="overview-panel-challenge" aria-labelledby="overview-tab-challenge" tabindex="0" hidden>
+            <h4>Challenge</h4>
+            <p class="muted">Developers were forced to interpret vulnerability severity, policy enforcement logic, and component health signals only after enforcement events, often across disconnected systems.</p>
+          </article>
+          <article class="overview-panel" role="tabpanel" id="overview-panel-objective" aria-labelledby="overview-tab-objective" tabindex="0" hidden>
+            <h4>Objective</h4>
+            <p class="muted">Make high-stakes security decisions easier by clarifying rule hierarchy, surfacing remediation paths, and improving state visibility across complex workflows.</p>
+          </article>
+          <article class="overview-panel" role="tabpanel" id="overview-panel-outcome" aria-labelledby="overview-tab-outcome" tabindex="0" hidden>
+            <h4>Outcome</h4>
+            <p class="muted">Delivered a unified decision surface that reduced reactive rework, clarified policy intent, and established a scalable foundation for proactive open-source security decisions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problem-context">
+      <div class="container stack">
+        <h2>Problem Scope</h2>
+        <p>As enterprise organizations are shifting left, greater responsibility for open-source security falls on development teams. From component selection to risk remediation, developers must make decisions in a complex environment where context is fragmented across systems.</p>
+      </div>
+      <div class="container case-two-col">
+        <article class="stack">
+          <p>Component research happens in a browser. Enforcement happens in CI. Remediation details live in vulnerability reports. Each system provides part of the picture, but none present the full decision context.</p>
+          <p>As a result, developers are forced to:</p>
+          <ul class="muted case-list">
+            <li>Re-evaluate components reactively after enforcement</li>
+            <li>Restart research cycles under time pressure</li>
+            <li>Switch between browser, IDE, CI logs, and vulnerability dashboards</li>
+            <li>Interpret policy logic without visibility into why a component is blocked</li>
+          </ul>
+        </article>
+        <aside>
+          <figure class="diagram-figure">
+            <div class="diagram-placeholder" role="img" aria-label="Diagram showing disconnected decision systems before Guide">
+            <svg class="diagram alt-media-img" viewBox="0 0 548 354" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g class="decision-node" transform="translate(279 183)">
+                <circle class="decision-bg" r="50"></circle>
+                  <text class="decision-text">
+                  <tspan x="0" dy="0">Developer</tspan>
+                  <tspan x="0" dy="18">Decision</tspan>
+                  </text>
+              </g>
+<!-- Browser Research (was rect x=57 y=28) -->
+<g class="node" transform="translate(57 28)">
+  <rect class="node-bg" rx="12"></rect>
+  <text class="node-text">
+    <tspan x="0" dy="0">Browser</tspan>
+    <tspan x="0" dy="18">Research</tspan>
+  </text>
+</g>
+
+<!-- IDE Context (was path x=65 y=142) -->
+<g class="node" transform="translate(65 142)">
+  <rect class="node-bg" rx="12"></rect>
+  <text class="node-text">
+    <tspan x="0" dy="0">IDE</tspan>
+    <tspan x="0" dy="18">Context</tspan>
+  </text>
+</g>
+
+<!-- Comments & PR Reviews (was path x=12 y=263) -->
+<g class="node" transform="translate(12 263)">
+  <rect class="node-bg" rx="12"></rect>
+  <text class="node-text">
+    <tspan x="0" dy="0">Comments</tspan>
+    <tspan x="0" dy="18">&amp; PR Reviews</tspan>
+  </text>
+</g>
+
+<!-- AI Assistant (was path x=211 y=13) -->
+<g class="node" transform="translate(211 10)">
+  <rect class="node-bg" rx="12"></rect>
+  <text class="node-text">
+    <tspan x="0" dy="0">AI</tspan>
+    <tspan x="0" dy="18">Assistant</tspan>
+  </text>
+</g>
+
+<!-- AppSec Documentation (was path x=390 y=40) -->
+<g class="node" transform="translate(390 40)">
+  <rect class="node-bg" rx="12"></rect>
+  <text class="node-text">
+    <tspan x="0" dy="0">AppSec</tspan>
+    <tspan x="0" dy="18">Documentation</tspan>
+  </text>
+</g>
+
+<!-- Alert & Ticket Triage (was path x=429 y=151) -->
+<g class="node" transform="translate(429 151)">
+  <rect class="node-bg" rx="12"></rect>
+  <text class="node-text">
+    <tspan x="0" dy="0">Alert &amp;</tspan>
+    <tspan x="0" dy="18">Ticket Triage</tspan>
+  </text>
+</g>
+
+<!-- CI Policy Enforcement (was path x=223 y=293) -->
+<g class="node" transform="translate(223 293)">
+  <rect class="node-bg" rx="12"></rect>
+  <text class="node-text">
+    <tspan x="0" dy="0">CI Policy</tspan>
+    <tspan x="0" dy="18">Enforcement</tspan>
+  </text>
+</g>
+
+<!-- Vulnerability Advisories (was path x=407 y=271) -->
+<g class="node" transform="translate(407 271)">
+  <rect class="node-bg" rx="12"></rect>
+  <text class="node-text">
+    <tspan x="0" dy="0">Vulnerability</tspan>
+    <tspan x="0" dy="18">Advisories</tspan>
+  </text>
+</g>
+<path d="M157.939 74.0019C157.387 74.0358 156.968 74.5102 157.002 75.0614L157.555 84.0444C157.589 84.5957 158.063 85.015 158.614 84.9811C159.165 84.9472 159.585 84.4728 159.551 83.9216L159.06 75.9367L167.044 75.4453C167.596 75.4114 168.015 74.937 167.981 74.3858C167.947 73.8345 167.473 73.4152 166.922 73.4491L157.939 74.0019ZM227 136L227.662 135.251L158.662 74.2508L158 75L157.338 75.7492L226.338 136.749L227 136Z" fill="var(--muted)"/>
+<path d="M390.079 277.997C390.63 277.953 391.041 277.471 390.997 276.921L390.282 267.949C390.238 267.398 389.757 266.988 389.206 267.032C388.656 267.075 388.245 267.557 388.289 268.108L388.924 276.083L380.949 276.718C380.398 276.762 379.988 277.243 380.032 277.794C380.075 278.344 380.557 278.755 381.108 278.711L390.079 277.997ZM329 225L328.351 225.761L389.351 277.761L390 277L390.649 276.239L329.649 224.239L329 225Z" fill="var(--muted)"/>
+<path d="M138.012 283.845C137.927 284.391 138.3 284.903 138.845 284.988L147.737 286.379C148.283 286.465 148.794 286.091 148.88 285.546C148.965 285 148.592 284.489 148.046 284.403L140.143 283.167L141.379 275.263C141.465 274.717 141.091 274.206 140.546 274.12C140 274.035 139.489 274.408 139.403 274.954L138.012 283.845ZM224 222L223.411 221.192L138.411 283.192L139 284L139.589 284.808L224.589 222.808L224 222Z" fill="var(--muted)"/>
+<path d="M376.993 99.1182C377.058 98.5698 376.667 98.0723 376.118 98.007L367.181 96.9431C366.633 96.8778 366.135 97.2695 366.07 97.8179C366.005 98.3663 366.396 98.8638 366.945 98.9291L374.889 99.8748L373.943 107.819C373.878 108.367 374.269 108.865 374.818 108.93C375.366 108.995 375.864 108.604 375.929 108.055L376.993 99.1182ZM329 136L329.619 136.786L376.619 99.7857L376 99L375.381 98.2143L328.381 135.214L329 136Z" fill="var(--muted)"/>
+<path d="M157.388 170.209C156.951 170.547 156.871 171.175 157.209 171.612L162.719 178.729C163.057 179.165 163.685 179.245 164.122 178.907C164.558 178.569 164.638 177.941 164.3 177.504L159.403 171.179L165.729 166.281C166.165 165.943 166.245 165.315 165.907 164.878C165.569 164.442 164.941 164.362 164.504 164.7L157.388 170.209ZM213 178L213.126 177.008L158.126 170.008L158 171L157.874 171.992L212.874 178.992L213 178Z" fill="var(--muted)"/>
+<path d="M414.738 175.675C415.111 175.268 415.083 174.635 414.675 174.262L408.037 168.185C407.63 167.812 406.997 167.84 406.624 168.247C406.251 168.655 406.279 169.287 406.686 169.66L412.587 175.062L407.185 180.963C406.812 181.37 406.84 182.003 407.247 182.376C407.655 182.749 408.287 182.721 408.66 182.314L414.738 175.675ZM346 178L346.044 178.999L414.044 175.999L414 175L413.956 174.001L345.956 177.001L346 178Z" fill="var(--muted)"/>
+<path d="M275.268 277.681C275.644 278.086 276.277 278.108 276.681 277.732L283.268 271.599C283.673 271.223 283.695 270.59 283.319 270.186C282.943 269.782 282.31 269.759 281.906 270.135L276.05 275.587L270.599 269.732C270.223 269.327 269.59 269.305 269.186 269.681C268.782 270.057 268.759 270.69 269.135 271.094L275.268 277.681ZM277 249L276.001 248.964L275.001 276.964L276 277L276.999 277.036L277.999 249.036L277 249Z" fill="var(--muted)"/>
+<path d="M255.459 74.1114C254.968 73.8581 254.365 74.0506 254.111 74.5414L249.984 82.5389C249.73 83.0297 249.923 83.6329 250.414 83.8862C250.904 84.1395 251.508 83.947 251.761 83.4562L255.43 76.3473L262.539 80.0164C263.03 80.2697 263.633 80.0772 263.886 79.5864C264.14 79.0957 263.947 78.4925 263.456 78.2392L255.459 74.1114ZM270 122L270.953 121.696L255.953 74.696L255 75L254.047 75.304L269.047 122.304L270 122Z" fill="var(--muted)"/>
+</svg>
+            </div>
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="constraints">
+      <div class="container stack">
+        <h2>Project Constraints</h2>
+        <div class="grid grid-2" aria-label="Project constraints">
+          <article class="constraint">
+            <h4>Rapid GTM timeline</h4>
+            <p class="muted">Product definition, monetization strategy, marketing positioning, and engineering execution progressed in parallel, requiring scope discipline and decisions that could support both launch and expansion.</p>
+          </article>
+          <article class="constraint">
+            <h4>Code-first design mandate</h4>
+            <p class="muted">Leadership required the product to be designed directly in code rather than through static mockups. The design process itself had to support live prototyping and production-aligned behavior (see Guide UX Lab).</p>
+          </article>
+          <article class="constraint">
+            <h4>Design system requirements</h4>
+            <p class="muted">Guide was built using an established third-party design system rather than Sonatype's internal system. Customizations had to remain minimal, requiring thoughtful adaptation rather than reinvention.</p>
+          </article>
+          <article class="constraint">
+            <h4>Theming and responsive layouts</h4>
+            <p class="muted">Data-heavy interfaces had to preserve hierarchy, contrast, and legibility across themes and breakpoints. UIs were required to support both light and dark modes and adapt fluidly across viewport sizes.</p>
+          </article>
+          <article class="constraint">
+            <h4>Free-to-paid architecture</h4>
+            <p class="muted">Monetization infrastructure was a launch requirement. The experience needed to support gated proprietary intelligence, tier differentiation, usage limits, billing workflows, and visible credit tracking from the initial release.</p>
+          </article>
+          <article class="constraint">
+            <h4>Generalized policy logic at launch</h4>
+            <p class="muted">Guide is not a policy engine and does not support custom policy configuration. The interface needed to communicate generalized risk and policy concepts without misleading users about configurability.</p>
+          </article>
+          <article class="constraint">
+            <h4>Individual to Enterprise scale</h4>
+            <p class="muted">The product had to serve students and individual developers as effectively as enterprise security teams. The interface needed to scale across levels of expertise and organizational complexity.</p>
+          </article>
+          <article class="constraint">
+            <h4>Dual audience alignment</h4>
+            <p class="muted">Experiences needed to feel intuitive and accessible for net-new developers and existing Sonatype customers. Patterns and terminology had to bridge familiarity and approachability.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="approach-strategy">
+      <div class="container stack">
+        <h2>Design Strategy</h2>
+        <p>The goal was to shift open-source security from reactive enforcement to proactive decision-making, within a compressed release timeline and a monetized product model. Across each decision, the goal was not to eliminate complexity, but to organize and clarify it.</p>
+        <div class="research-flow" aria-label="Design strategy principles">
+          <article class="research-item">
+            <svg class="research-number" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.9966 11L22.3402 11.0755L23.6668 11.3009L24.9599 11.6734L26.2032 12.1884L27.381 12.8393L28.4785 13.618L29.4819 14.5147L30.3786 15.5181L31.1573 16.6156L31.8082 17.7934L32.3232 19.0367L32.6957 20.3298L32.9211 21.6564L32.9966 23L32.9211 24.3436L32.6957 25.6703L32.3232 26.9634L31.8082 28.2066L31.1573 29.3844L30.3786 30.4819L29.4819 31.4853L28.4785 32.382L27.381 33.1607L26.2032 33.8116L24.9599 34.3266L23.6668 34.6991L22.3402 34.9245L20.9966 35L19.653 34.9245L18.3263 34.6991L17.0332 34.3266L15.79 33.8116L14.6122 33.1607L13.5147 32.382L12.5113 31.4853L11.6146 30.4819L10.8359 29.3844L10.185 28.2066L9.66998 26.9634L9.29745 25.6703L9.07204 24.3436L8.99658 23L9.07204 21.6564L9.29745 20.3298L9.66998 19.0367L10.185 17.7934L10.8359 16.6156L11.6146 15.5181L12.5113 14.5147L13.5147 13.618L14.6122 12.8393L15.79 12.1884L17.0332 11.6734L18.3263 11.3009L19.653 11.0755L20.9966 11Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M32.5178 56.1374C33.1784 56.5227 33.1784 57.4773 32.5178 57.8626L11.4984 70.1239C10.8327 70.5123 9.99658 70.0321 9.99658 69.2613L9.99658 44.7387C9.99658 43.9679 10.8327 43.4877 11.4984 43.8761L32.5178 56.1374Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M44.9966 46C44.9966 45.4477 45.4443 45 45.9966 45H67.9966C68.5489 45 68.9966 45.4477 68.9966 46V68C68.9966 68.5523 68.5489 69 67.9966 69H45.9966C45.4443 69 44.9966 68.5523 44.9966 68V46Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M66.896 32.9712L47.097 13.1722M47.0971 32.9712L66.8961 13.1722M20.9966 11L22.3402 11.0755L23.6668 11.3009L24.9599 11.6734L26.2032 12.1884L27.381 12.8393L28.4785 13.618L29.4819 14.5147L30.3786 15.5181L31.1573 16.6156L31.8082 17.7934L32.3232 19.0367L32.6957 20.3298L32.9211 21.6564L32.9966 23L32.9211 24.3436L32.6957 25.6703L32.3232 26.9634L31.8082 28.2066L31.1573 29.3844L30.3786 30.4819L29.4819 31.4853L28.4785 32.382L27.381 33.1607L26.2032 33.8116L24.9599 34.3266L23.6668 34.6991L22.3402 34.9245L20.9966 35L19.653 34.9245L18.3263 34.6991L17.0332 34.3266L15.79 33.8116L14.6122 33.1607L13.5147 32.382L12.5113 31.4853L11.6146 30.4819L10.8359 29.3844L10.185 28.2066L9.66998 26.9634L9.29745 25.6703L9.07204 24.3436L8.99658 23L9.07204 21.6564L9.29745 20.3298L9.66998 19.0367L10.185 17.7934L10.8359 16.6156L11.6146 15.5181L12.5113 14.5147L13.5147 13.618L14.6122 12.8393L15.79 12.1884L17.0332 11.6734L18.3263 11.3009L19.653 11.0755L20.9966 11ZM9.99658 44.7387L9.99658 69.2613C9.99658 70.0321 10.8327 70.5123 11.4984 70.1239L32.5178 57.8626C33.1784 57.4773 33.1784 56.5227 32.5178 56.1374L11.4984 43.8761C10.8327 43.4877 9.99658 43.9679 9.99658 44.7387ZM45.9966 69H67.9966C68.5489 69 68.9966 68.5523 68.9966 68V46C68.9966 45.4477 68.5489 45 67.9966 45H45.9966C45.4443 45 44.9966 45.4477 44.9966 46V68C44.9966 68.5523 45.4443 69 45.9966 69Z" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+            </svg>
+            <div class="research-content">
+              <h3>Surface intelligence by default</h3>
+              <p class="muted">Security context was surfaced at the browsing stage, making risk signals visible before enforcement events or selection decisions. Developers did not need to trigger enforcement or initiate analysis to understand risk.</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <svg class="research-number" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M60.0001 31.757V16.2423C60.0001 14.6767 61.8931 13.8926 63.0001 14.9997L70.4092 22.4087C71.2878 23.2874 71.2878 24.712 70.4092 25.5907L63.0001 32.9997C61.8931 34.1068 60.0001 33.3227 60.0001 31.757Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M20.0001 31.757L20.0001 16.2423C20.0001 14.6767 18.1072 13.8926 17.0001 14.9997L9.59114 22.4087C8.71246 23.2874 8.71246 24.712 9.59114 25.5907L17.0002 32.9997C18.1072 34.1068 20.0001 33.3227 20.0001 31.757Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M40.0001 44.9997V67.9997M40.0001 44.9997C40.0001 33.737 48.8665 24.5451 60 24.0231M40.0001 44.9997C40.0001 33.737 31.1338 24.5451 20.0003 24.0231M60.0001 16.2423V31.757C60.0001 33.3227 61.8931 34.1068 63.0001 32.9997L70.4092 25.5907C71.2878 24.712 71.2878 23.2874 70.4092 22.4087L63.0001 14.9997C61.8931 13.8926 60.0001 14.6767 60.0001 16.2423ZM20.0001 16.2423L20.0001 31.757C20.0001 33.3227 18.1072 34.1068 17.0002 32.9997L9.59114 25.5907C8.71246 24.712 8.71246 23.2874 9.59114 22.4087L17.0001 14.9997C18.1072 13.8926 20.0001 14.6767 20.0001 16.2423Z" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+            </svg>
+            <div class="research-content">
+              <h3>Make risk logic visible</h3>
+              <p class="muted">The experience prioritized transparency around why a component is risky, how severity is evaluated, and what remediation paths are available. Rule hierarchy and state relationships were treated as first-class UI elements.</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <svg class="research-number" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24.9668 39.3064C24.5921 41.0891 23.44 42.6109 21.8258 43.4552C20.0557 44.381 17.9443 44.381 16.1742 43.4552C14.56 42.611 13.4079 41.0891 13.0332 39.3064L12.9033 38.6883C12.5177 36.8535 12.9315 34.9414 14.0412 33.4301L14.2516 33.1436C15.3615 31.6321 17.1247 30.7392 19 30.7392C20.8753 30.7392 22.6385 31.6321 23.7484 33.1436L23.9588 33.4301C25.0685 34.9414 25.4823 36.8535 25.0967 38.6883L24.9668 39.3064Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M8 56.1331C8 57.1641 8.83574 57.9998 9.86667 57.9998H21.3107C22.0465 54.7308 24.0484 51.8728 26.8751 50.0649C26.3663 49.702 25.8065 49.3995 25.204 49.1696L24.7822 49.0086C21.0584 47.5876 16.9416 47.5876 13.2178 49.0086L12.796 49.1696C9.908 50.2717 8 53.042 8 56.1331Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M70.1333 58H58.6894C57.9536 54.7309 55.9518 51.873 53.1251 50.065C53.6338 49.7022 54.1936 49.3997 54.796 49.1698L55.2178 49.0088C58.9416 47.5878 63.0584 47.5878 66.7822 49.0088L67.204 49.1698C70.092 50.2719 72 53.0422 72 56.1333C72 57.1643 71.1643 58 70.1333 58Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M55.0332 39.3066C55.4079 41.0893 56.56 42.6112 58.1742 43.4554C59.9443 44.3812 62.0557 44.3812 63.8258 43.4554C65.44 42.6112 66.5921 41.0893 66.9668 39.3066L67.0967 38.6885C67.4823 36.8537 67.0685 34.9416 65.9588 33.4304L65.7484 33.1438C64.6385 31.6323 62.8753 30.7395 61 30.7395C59.1247 30.7395 57.3615 31.6323 56.2516 33.1438L56.0412 33.4304C54.9315 34.9416 54.5177 36.8537 54.9033 38.6885L55.0332 39.3066Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M55.8 64H24.2C22.4327 64 21 62.5673 21 60.8C21 55.5034 24.2763 50.7591 29.2295 48.8831L30.0611 48.5682C36.4651 46.1427 43.5349 46.1427 49.9389 48.5682L50.7705 48.8831C55.7237 50.7591 59 55.5034 59 60.8C59 62.5673 57.5673 64 55.8 64Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M35.1413 39.0779C38.1875 40.6591 41.8125 40.6591 44.8587 39.0779C47.6604 37.6236 49.6633 34.9907 50.3172 31.9025L50.5219 30.936C51.1931 27.7662 50.4742 24.4607 48.5471 21.856L48.2168 21.4096C46.2894 18.8044 43.2407 17.2676 40 17.2676C36.7593 17.2676 33.7106 18.8044 31.7832 21.4096L31.4529 21.856C29.5258 24.4607 28.8069 27.7662 29.4781 30.936L29.6828 31.9025C30.3367 34.9907 32.3396 37.6236 35.1413 39.0779Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M24.9668 39.3064C24.5921 41.0891 23.44 42.6109 21.8258 43.4552C20.0557 44.381 17.9443 44.381 16.1742 43.4552C14.56 42.611 13.4079 41.0891 13.0332 39.3064L12.9033 38.6883C12.5177 36.8535 12.9315 34.9414 14.0412 33.4301L14.2516 33.1436C15.3615 31.6321 17.1247 30.7392 19 30.7392C20.8753 30.7392 22.6385 31.6321 23.7484 33.1436L23.9588 33.4301C25.0685 34.9414 25.4823 36.8535 25.0967 38.6883L24.9668 39.3064Z" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+              <path d="M8 56.1331C8 57.1641 8.83574 57.9998 9.86667 57.9998H21.3107C22.0465 54.7308 24.0484 51.8728 26.8751 50.0649C26.3663 49.702 25.8065 49.3995 25.204 49.1696L24.7822 49.0086C21.0584 47.5876 16.9416 47.5876 13.2178 49.0086L12.796 49.1696C9.908 50.2717 8 53.042 8 56.1331Z" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+              <path d="M70.1333 58H58.6894C57.9536 54.7309 55.9518 51.873 53.1251 50.065C53.6338 49.7022 54.1936 49.3997 54.796 49.1698L55.2178 49.0088C58.9416 47.5878 63.0584 47.5878 66.7822 49.0088L67.204 49.1698C70.092 50.2719 72 53.0422 72 56.1333C72 57.1643 71.1643 58 70.1333 58Z" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+              <path d="M55.0332 39.3066C55.4079 41.0893 56.56 42.6112 58.1742 43.4554C59.9443 44.3812 62.0557 44.3812 63.8258 43.4554C65.44 42.6112 66.5921 41.0893 66.9668 39.3066L67.0967 38.6885C67.4823 36.8537 67.0685 34.9416 65.9588 33.4304L65.7484 33.1438C64.6385 31.6323 62.8753 30.7395 61 30.7395C59.1247 30.7395 57.3615 31.6323 56.2516 33.1438L56.0412 33.4304C54.9315 34.9416 54.5177 36.8537 54.9033 38.6885L55.0332 39.3066Z" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+              <path d="M55.8 64H24.2C22.4327 64 21 62.5673 21 60.8C21 55.5034 24.2763 50.7591 29.2295 48.8831L30.0611 48.5682C36.4651 46.1427 43.5349 46.1427 49.9389 48.5682L50.7705 48.8831C55.7237 50.7591 59 55.5034 59 60.8C59 62.5673 57.5673 64 55.8 64Z" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+              <path d="M35.1413 39.0779C38.1875 40.6591 41.8125 40.6591 44.8587 39.0779C47.6604 37.6236 49.6633 34.9907 50.3172 31.9025L50.5219 30.936C51.1931 27.7662 50.4742 24.4607 48.5471 21.856L48.2168 21.4096C46.2894 18.8044 43.2407 17.2676 40 17.2676C36.7593 17.2676 33.7106 18.8044 31.7832 21.4096L31.4529 21.856C29.5258 24.4607 28.8069 27.7662 29.4781 30.936L29.6828 31.9025C30.3367 34.9907 32.3396 37.6236 35.1413 39.0779Z" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+            </svg>
+            <div class="research-content">
+              <h3>Design for scalable interpretation</h3>
+              <p class="muted">Guide had to support individual developers and enterprise teams alike. Information architecture emphasized progressive disclosure, allowing rapid triage while preserving depth for deliberate analysis.</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <svg class="research-number" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 16C12 13.7909 13.7909 12 16 12H32C34.2091 12 36 13.7909 36 16V32C36 34.2091 34.2091 36 32 36H16C13.7909 36 12 34.2091 12 32V16Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M44 16C44 13.7909 45.7909 12 48 12H64C66.2091 12 68 13.7909 68 16V32C68 34.2091 66.2091 36 64 36H48C45.7909 36 44 34.2091 44 32V16Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M12 48C12 45.7909 13.7909 44 16 44H32C34.2091 44 36 45.7909 36 48V64C36 66.2091 34.2091 68 32 68H16C13.7909 68 12 66.2091 12 64V48Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M44 48C44 45.7909 45.7909 44 48 44H64C66.2091 44 68 45.7909 68 48V64C68 66.2091 66.2091 68 64 68H48C45.7909 68 44 66.2091 44 64V48Z" fill="var(--primary-accent)" fill-opacity="0.25" />
+              <path d="M12 16C12 13.7909 13.7909 12 16 12H32C34.2091 12 36 13.7909 36 16V32C36 34.2091 34.2091 36 32 36H16C13.7909 36 12 34.2091 12 32V16Z" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+              <path d="M44 16C44 13.7909 45.7909 12 48 12H64C66.2091 12 68 13.7909 68 16V32C68 34.2091 66.2091 36 64 36H48C45.7909 36 44 34.2091 44 32V16Z" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+              <path d="M12 48C12 45.7909 13.7909 44 16 44H32C34.2091 44 36 45.7909 36 48V64C36 66.2091 34.2091 68 32 68H16C13.7909 68 12 66.2091 12 64V48Z" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+              <path d="M44 48C44 45.7909 45.7909 44 48 44H64C66.2091 44 68 45.7909 68 48V64C68 66.2091 66.2091 68 64 68H48C45.7909 68 44 66.2091 44 64V48Z" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+            </svg>
+            <div class="research-content">
+              <h3>Build durable interaction patterns</h3>
+              <p class="muted">Given the tight timeline and design-in-code method, reusable, system-aligned interaction patterns were crucial. Decisions were made at the model level first, ensuring the interface reflected real data relationships.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="architecture-flows">
+      <div class="container stack">
+        <h2>Workflow Architecture</h2>
+        <p>Guide was designed as a relational security intelligence system, more than a package lookup tool. Components and vulnerabilities could be searched independently, but their records were interlinked, allowing developers to move between artifacts without losing context.</p>
+        <p>From the moment a user lands, search unifies discovery, validation, and navigation across artifact types. The product architecture was organized around three core developer jobs: search quickly, choose confidently, and remediate effectively.</p>
+        <p></p>
+        <div class="case-two-col">
+          <article class="stack">
+            <h3>"I want to quickly find what I need."</h3>
+            <p class="muted">Guide was structured to support immediate orientation, whether a user arrived with a known component identifier or an exploratory query.</p>
+            <p class="muted">Global search unified components, vulnerabilities, and documentation within a single entry point. Predictive matches, direct routing for exact identifiers, and categorized results allowed developers to validate or investigate without switching contexts.</p>
+          </article>
+          <aside>
+            <figure class="diagram-figure">
+              <div class="diagram-placeholder" role="img" aria-label="Search architecture diagram">
+                <svg class="diagram alt-media-img" viewBox="0 0 491 223" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g class="node" transform="translate(32 161)">
+                    <rect class="node-bg" rx="12"></rect>
+                    <text class="node-text"><tspan x="48.0156" y="181.364">1:1 Routing</tspan></text>
+                  </g>
+                  <g class="decision-node" transform="translate(24 32)">
+                    <rect class="decision-bg" rx="12"></rect>
+                    <text class="decision-text"><tspan x="48.2441" y="59.3636">Search Input</tspan></text>
+                  </g>
+                  <g transform="translate(0 8)">
+                  <text class="list-text"><tspan x="384.35" y="99">Components</tspan></text>
+                  <text class="list-text"><tspan x="384.009" y="135">Vulnerabilities</tspan></text>
+                  <text class="list-text"><tspan x="384.362" y="171">Product Docs</tspan></text>
+                  <path d="M360 167.5L359.5 167.5L359.5 168L360 168L360 167.5ZM373.354 167.854C373.549 167.658 373.549 167.342 373.354 167.146L370.172 163.964C369.976 163.769 369.66 163.769 369.464 163.964C369.269 164.16 369.269 164.476 369.464 164.672L372.293 167.5L369.464 170.328C369.269 170.524 369.269 170.84 369.464 171.036C369.66 171.231 369.976 171.231 370.172 171.036L373.354 167.854ZM360 131L359.5 131V131L360 131ZM360 94.5L360.5 94.5V94.5L360 94.5ZM360 81L359.5 81L359.5 82.125L360 82.125L360.5 82.125L360.5 81L360 81ZM360 84.375L359.5 84.375L359.5 86.625L360 86.625L360.5 86.625L360.5 84.375L360 84.375ZM360 88.875L359.5 88.875L359.5 91.125L360 91.125L360.5 91.125L360.5 88.875L360 88.875ZM360 93.375L359.5 93.375L359.5 94.5L360 94.5L360.5 94.5L360.5 93.375L360 93.375ZM360 94.5L359.5 94.5L359.5 95.5139L360 95.5139L360.5 95.5139L360.5 94.5L360 94.5ZM360 97.5417L359.5 97.5417L359.5 99.5694L360 99.5694L360.5 99.5694L360.5 97.5417L360 97.5417ZM360 101.597L359.5 101.597L359.5 103.625L360 103.625L360.5 103.625L360.5 101.597L360 101.597ZM360 105.653L359.5 105.653L359.5 107.681L360 107.681L360.5 107.681L360.5 105.653L360 105.653ZM360 109.708L359.5 109.708L359.5 111.736L360 111.736L360.5 111.736L360.5 109.708L360 109.708ZM360 113.764L359.5 113.764L359.5 115.792L360 115.792L360.5 115.792L360.5 113.764L360 113.764ZM360 117.819L359.5 117.819L359.5 119.847L360 119.847L360.5 119.847L360.5 117.819L360 117.819ZM360 121.875L359.5 121.875L359.5 123.903L360 123.903L360.5 123.903L360.5 121.875L360 121.875ZM360 125.931L359.5 125.931L359.5 127.958L360 127.958L360.5 127.958L360.5 125.931L360 125.931ZM360 129.986L359.5 129.986L359.5 131L360 131L360.5 131L360.5 129.986L360 129.986ZM360 131L359.5 131L359.5 132.014L360 132.014L360.5 132.014L360.5 131L360 131ZM360 134.042L359.5 134.042L359.5 136.069L360 136.069L360.5 136.069L360.5 134.042L360 134.042ZM360 138.097L359.5 138.097L359.5 140.125L360 140.125L360.5 140.125L360.5 138.097L360 138.097ZM360 142.153L359.5 142.153L359.5 144.181L360 144.181L360.5 144.181L360.5 142.153L360 142.153ZM360 146.208L359.5 146.208L359.5 148.236L360 148.236L360.5 148.236L360.5 146.208L360 146.208ZM360 150.264L359.5 150.264L359.5 152.292L360 152.292L360.5 152.292L360.5 150.264L360 150.264ZM360 154.319L359.5 154.319L359.5 156.347L360 156.347L360.5 156.347L360.5 154.319L360 154.319ZM360 158.375L359.5 158.375L359.5 160.403L360 160.403L360.5 160.403L360.5 158.375L360 158.375ZM360 162.431L359.5 162.431L359.5 164.458L360 164.458L360.5 164.458L360.5 162.431L360 162.431ZM360 166.486L359.5 166.486L359.5 167.5L360 167.5L360.5 167.5L360.5 166.486L360 166.486ZM360 167.5L360 168L361.083 168L361.083 167.5L361.083 167L360 167L360 167.5ZM363.25 167.5L363.25 168L365.417 168L365.417 167.5L365.417 167L363.25 167L363.25 167.5ZM367.583 167.5L367.583 168L369.75 168L369.75 167.5L369.75 167L367.583 167L367.583 167.5ZM371.917 167.5L371.917 168L373 168L373 167.5L373 167L371.917 167L371.917 167.5ZM360 167.5L359.5 167.5L359.5 168L360 168L360 167.5ZM373.354 167.854C373.549 167.658 373.549 167.342 373.354 167.146L370.172 163.964C369.976 163.769 369.66 163.769 369.464 163.964C369.269 164.16 369.269 164.476 369.464 164.672L372.293 167.5L369.464 170.328C369.269 170.524 369.269 170.84 369.464 171.036C369.66 171.231 369.976 171.231 370.172 171.036L373.354 167.854ZM360 131L359.5 131V131L360 131ZM360 94.5L360.5 94.5V94.5L360 94.5ZM360 81L359.5 81L359.5 82.125L360 82.125L360.5 82.125L360.5 81L360 81ZM360 84.375L359.5 84.375L359.5 86.625L360 86.625L360.5 86.625L360.5 84.375L360 84.375ZM360 88.875L359.5 88.875L359.5 91.125L360 91.125L360.5 91.125L360.5 88.875L360 88.875ZM360 93.375L359.5 93.375L359.5 94.5L360 94.5L360.5 94.5L360.5 93.375L360 93.375ZM360 94.5L359.5 94.5L359.5 95.5139L360 95.5139L360.5 95.5139L360.5 94.5L360 94.5ZM360 97.5417L359.5 97.5417L359.5 99.5694L360 99.5694L360.5 99.5694L360.5 97.5417L360 97.5417ZM360 101.597L359.5 101.597L359.5 103.625L360 103.625L360.5 103.625L360.5 101.597L360 101.597ZM360 105.653L359.5 105.653L359.5 107.681L360 107.681L360.5 107.681L360.5 105.653L360 105.653ZM360 109.708L359.5 109.708L359.5 111.736L360 111.736L360.5 111.736L360.5 109.708L360 109.708ZM360 113.764L359.5 113.764L359.5 115.792L360 115.792L360.5 115.792L360.5 113.764L360 113.764ZM360 117.819L359.5 117.819L359.5 119.847L360 119.847L360.5 119.847L360.5 117.819L360 117.819ZM360 121.875L359.5 121.875L359.5 123.903L360 123.903L360.5 123.903L360.5 121.875L360 121.875ZM360 125.931L359.5 125.931L359.5 127.958L360 127.958L360.5 127.958L360.5 125.931L360 125.931ZM360 129.986L359.5 129.986L359.5 131L360 131L360.5 131L360.5 129.986L360 129.986ZM360 131L359.5 131L359.5 132.014L360 132.014L360.5 132.014L360.5 131L360 131ZM360 134.042L359.5 134.042L359.5 136.069L360 136.069L360.5 136.069L360.5 134.042L360 134.042ZM360 138.097L359.5 138.097L359.5 140.125L360 140.125L360.5 140.125L360.5 138.097L360 138.097ZM360 142.153L359.5 142.153L359.5 144.181L360 144.181L360.5 144.181L360.5 142.153L360 142.153ZM360 146.208L359.5 146.208L359.5 148.236L360 148.236L360.5 148.236L360.5 146.208L360 146.208ZM360 150.264L359.5 150.264L359.5 152.292L360 152.292L360.5 152.292L360.5 150.264L360 150.264ZM360 154.319L359.5 154.319L359.5 156.347L360 156.347L360.5 156.347L360.5 154.319L360 154.319ZM360 158.375L359.5 158.375L359.5 160.403L360 160.403L360.5 160.403L360.5 158.375L360 158.375ZM360 162.431L359.5 162.431L359.5 164.458L360 164.458L360.5 164.458L360.5 162.431L360 162.431ZM360 166.486L359.5 166.486L359.5 167.5L360 167.5L360.5 167.5L360.5 166.486L360 166.486ZM360 167.5L360 168L361.083 168L361.083 167.5L361.083 167L360 167L360 167.5ZM363.25 167.5L363.25 168L365.417 168L365.417 167.5L365.417 167L363.25 167L363.25 167.5ZM367.583 167.5L367.583 168L369.75 168L369.75 167.5L369.75 167L367.583 167L367.583 167.5ZM371.917 167.5L371.917 168L373 168L373 167.5L373 167L371.917 167L371.917 167.5Z" fill="var(--muted)"/>
+                  <path d="M373.354 131.354C373.549 131.158 373.549 130.842 373.354 130.646L370.172 127.464C369.976 127.269 369.66 127.269 369.464 127.464C369.269 127.66 369.269 127.976 369.464 128.172L372.293 131L369.464 133.828C369.269 134.024 369.269 134.34 369.464 134.536C369.66 134.731 369.976 134.731 370.172 134.536L373.354 131.354ZM360 131V131.5H361.083V131V130.5H360V131ZM363.25 131V131.5H365.417V131V130.5H363.25V131ZM367.583 131V131.5H369.75V131V130.5H367.583V131ZM371.917 131V131.5H373V131V130.5H371.917V131ZM373.354 131.354C373.549 131.158 373.549 130.842 373.354 130.646L370.172 127.464C369.976 127.269 369.66 127.269 369.464 127.464C369.269 127.66 369.269 127.976 369.464 128.172L372.293 131L369.464 133.828C369.269 134.024 369.269 134.34 369.464 134.536C369.66 134.731 369.976 134.731 370.172 134.536L373.354 131.354ZM360 131V131.5H361.083V131V130.5H360V131ZM363.25 131V131.5H365.417V131V130.5H363.25V131ZM367.583 131V131.5H369.75V131V130.5H367.583V131ZM371.917 131V131.5H373V131V130.5H371.917V131Z" fill="var(--muted)"/>
+                  <path d="M373.354 95.3536C373.549 95.1583 373.549 94.8417 373.354 94.6464L370.172 91.4645C369.976 91.2692 369.66 91.2692 369.464 91.4645C369.269 91.6597 369.269 91.9763 369.464 92.1716L372.293 95L369.464 97.8284C369.269 98.0237 369.269 98.3403 369.464 98.5355C369.66 98.7308 369.976 98.7308 370.172 98.5355L373.354 95.3536ZM360 95V95.5H361.083V95V94.5H360V95ZM363.25 95V95.5H365.417V95V94.5H363.25V95ZM367.583 95V95.5H369.75V95V94.5H367.583V95ZM371.917 95V95.5H373V95V94.5H371.917V95ZM373.354 95.3536C373.549 95.1583 373.549 94.8417 373.354 94.6464L370.172 91.4645C369.976 91.2692 369.66 91.2692 369.464 91.4645C369.269 91.6597 369.269 91.9763 369.464 92.1716L372.293 95L369.464 97.8284C369.269 98.0237 369.269 98.3403 369.464 98.5355C369.66 98.7308 369.976 98.7308 370.172 98.5355L373.354 95.3536ZM360 95V95.5H361.083V95V94.5H360V95ZM363.25 95V95.5H365.417V95V94.5H363.25V95ZM367.583 95V95.5H369.75V95V94.5H367.583V95ZM371.917 95V95.5H373V95V94.5H371.917V95Z" fill="var(--muted)"/>
+                  </g>
+                  <g class="node" transform="translate(332 39)">
+                    <rect class="node-bg" rx="12"></rect>
+                    <text class="node-text"><tspan x="348.021" y="59.3636">Results List Page</tspan></text>
+                  </g>
+                  <g class="node" transform="translate(186 115)">
+                    <rect class="node-bg" rx="12"></rect>
+                    <text class="node-text"><tspan x="202.246" y="135.364">Results Dropdown</tspan></text>
+                  </g>
+                  <path d="M317.707 55.7071C318.098 55.3166 318.098 54.6834 317.707 54.2929L311.343 47.9289C310.953 47.5384 310.319 47.5384 309.929 47.9289C309.538 48.3195 309.538 48.9526 309.929 49.3431L315.586 55L309.929 60.6569C309.538 61.0474 309.538 61.6805 309.929 62.0711C310.319 62.4616 310.953 62.4616 311.343 62.0711L317.707 55.7071ZM170 55V56L317 56V55V54L170 54V55Z" fill="var(--muted)"/>
+                  <path d="M68.2929 148.707C68.6834 149.098 69.3166 149.098 69.7071 148.707L76.0711 142.343C76.4616 141.953 76.4616 141.319 76.0711 140.929C75.6805 140.538 75.0474 140.538 74.6569 140.929L69 146.586L63.3431 140.929C62.9526 140.538 62.3195 140.538 61.9289 140.929C61.5384 141.319 61.5384 141.953 61.9289 142.343L68.2929 148.707ZM69 84L68 84L68 148L69 148L70 148L70 84L69 84Z" fill="var(--muted)"/>
+                  <path d="M129 131L128 131L128 132L129 132L129 131ZM173.707 131.707C174.098 131.317 174.098 130.683 173.707 130.293L167.343 123.929C166.953 123.538 166.319 123.538 165.929 123.929C165.538 124.319 165.538 124.953 165.929 125.343L171.586 131L165.929 136.657C165.538 137.047 165.538 137.681 165.929 138.071C166.319 138.462 166.953 138.462 167.343 138.071L173.707 131.707ZM129 84L128 84L128 131L129 131L130 131L130 84L129 84ZM129 131L129 132L173 132L173 131L173 130L129 130L129 131Z" fill="var(--muted)"/>
+                </svg>
+              </div>
+            </figure>
+          </aside>
+        </div>
+        <div class="case-two-col">
+          <article class="stack">
+            <h3>"I want to make informed component choices."</h3>
+            <p class="muted">Browsing and default ranking logic were designed to support risk evaluation prior to integration decisions.</p>
+            <p class="muted">Components surfaced only their latest versions by default, reducing noise and emphasizing current state. Results were sorted by Trust Score, while vulnerabilities defaulted to most recent disclosures. These defaults encouraged safer evaluation patterns without removing user agency.</p>
+          </article>
+          <aside>
+            <figure class="diagram-figure">
+              <div class="diagram-placeholder" role="img" aria-label="Browsing architecture diagram">
+                <svg class="diagram alt-media-img" viewBox="0 0 491 223" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g class="decision-node" transform="translate(40 60)">
+                    <rect class="decision-bg" rx="12"></rect>
+                    <text class="decision-text"><tspan x="48.2441" y="59.3636">Component C</tspan></text>
+                  </g>
+                  <g class="decision-node" transform="translate(40 108)">
+                    <rect class="decision-bg bg-light" rx="12"></rect>
+                    <text class="decision-text"><tspan x="48.2441" y="59.3636">Component A</tspan></text>
+                  </g>
+                  <g class="decision-node" transform="translate(40 156)">
+                    <rect class="decision-bg bg-light" rx="12"></rect>
+                    <text class="decision-text"><tspan x="48.2441" y="59.3636">Component B</tspan></text>
+                  </g>
+                  <g>
+                    <path d="M220.354 35.6464C220.158 35.4512 219.842 35.4512 219.646 35.6464L216.464 38.8284C216.269 39.0237 216.269 39.3403 216.464 39.5355C216.66 39.7308 216.976 39.7308 217.172 39.5355L220 36.7071L222.828 39.5355C223.024 39.7308 223.34 39.7308 223.536 39.5355C223.731 39.3403 223.731 39.0237 223.536 38.8284L220.354 35.6464ZM220 52L220.5 52L220.5 36L220 36L219.5 36L219.5 52L220 52Z" fill="var(--text)"/>
+                    <path d="M231.354 52.3536C231.158 52.5488 230.842 52.5488 230.646 52.3536L227.464 49.1716C227.269 48.9763 227.269 48.6597 227.464 48.4645C227.66 48.2692 227.976 48.2692 228.172 48.4645L231 51.2929L233.828 48.4645C234.024 48.2692 234.34 48.2692 234.536 48.4645C234.731 48.6597 234.731 48.9763 234.536 49.1716L231.354 52.3536ZM231 36L231.5 36L231.5 52L231 52L230.5 52L230.5 36L231 36Z" fill="var(--text)"/>
+                  </g>
+                  <g class="node" transform="translate(193 60)">
+                    <rect class="node-bg" rx="12"></rect>
+                    <text class="node-text"><tspan x="348.021" y="59.3636">TS 90</tspan></text>
+                  </g>
+                  <g class="node" transform="translate(193 108)">
+                    <rect class="node-bg bg-light" rx="12"></rect>
+                    <text class="node-text"><tspan x="202.246" y="135.364">TS 88</tspan></text>
+                  </g>
+                  <g class="node" transform="translate(193 156)">
+                    <rect class="node-bg bg-light" rx="12"></rect>
+                    <text class="node-text"><tspan x="202.246" y="135.364">TS 75</tspan></text>
+                  </g>
+                  <g>
+                    <path d="M364.354 32.6464C364.158 32.4512 363.842 32.4512 363.646 32.6464L360.464 35.8284C360.269 36.0237 360.269 36.3403 360.464 36.5355C360.66 36.7308 360.976 36.7308 361.172 36.5355L364 33.7071L366.828 36.5355C367.024 36.7308 367.34 36.7308 367.536 36.5355C367.731 36.3403 367.731 36.0237 367.536 35.8284L364.354 32.6464ZM364 49L364.5 49L364.5 48L364 48L363.5 48L363.5 49L364 49ZM364 46L364.5 46L364.5 44L364 44L363.5 44L363.5 46L364 46ZM364 42L364.5 42L364.5 40L364 40L363.5 40L363.5 42L364 42ZM364 38L364.5 38L364.5 36L364 36L363.5 36L363.5 38L364 38ZM364 34L364.5 34L364.5 33L364 33L363.5 33L363.5 34L364 34ZM364.354 32.6464C364.158 32.4512 363.842 32.4512 363.646 32.6464L360.464 35.8284C360.269 36.0237 360.269 36.3403 360.464 36.5355C360.66 36.7308 360.976 36.7308 361.172 36.5355L364 33.7071L366.828 36.5355C367.024 36.7308 367.34 36.7308 367.536 36.5355C367.731 36.3403 367.731 36.0237 367.536 35.8284L364.354 32.6464ZM364 49L364.5 49L364.5 48L364 48L363.5 48L363.5 49L364 49ZM364 46L364.5 46L364.5 44L364 44L363.5 44L363.5 46L364 46ZM364 42L364.5 42L364.5 40L364 40L363.5 40L363.5 42L364 42ZM364 38L364.5 38L364.5 36L364 36L363.5 36L363.5 38L364 38ZM364 34L364.5 34L364.5 33L364 33L363.5 33L363.5 34L364 34Z" fill="var(--muted)"/>
+                    <path d="M375.354 49.3536C375.158 49.5488 374.842 49.5488 374.646 49.3536L371.464 46.1716C371.269 45.9763 371.269 45.6597 371.464 45.4645C371.66 45.2692 371.976 45.2692 372.172 45.4645L375 48.2929L377.828 45.4645C378.024 45.2692 378.34 45.2692 378.536 45.4645C378.731 45.6597 378.731 45.9763 378.536 46.1716L375.354 49.3536ZM375 33L375.5 33L375.5 34L375 34L374.5 34L374.5 33L375 33ZM375 36L375.5 36L375.5 38L375 38L374.5 38L374.5 36L375 36ZM375 40L375.5 40L375.5 42L375 42L374.5 42L374.5 40L375 40ZM375 44L375.5 44L375.5 46L375 46L374.5 46L374.5 44L375 44ZM375 48L375.5 48L375.5 49L375 49L374.5 49L374.5 48L375 48ZM375.354 49.3536C375.158 49.5488 374.842 49.5488 374.646 49.3536L371.464 46.1716C371.269 45.9763 371.269 45.6597 371.464 45.4645C371.66 45.2692 371.976 45.2692 372.172 45.4645L375 48.2929L377.828 45.4645C378.024 45.2692 378.34 45.2692 378.536 45.4645C378.731 45.6597 378.731 45.9763 378.536 46.1716L375.354 49.3536ZM375 33L375.5 33L375.5 34L375 34L374.5 34L374.5 33L375 33ZM375 36L375.5 36L375.5 38L375 38L374.5 38L374.5 36L375 36ZM375 40L375.5 40L375.5 42L375 42L374.5 42L374.5 40L375 40ZM375 44L375.5 44L375.5 46L375 46L374.5 46L374.5 44L375 44ZM375 48L375.5 48L375.5 49L375 49L374.5 49L374.5 48L375 48Z" fill="var(--muted)"/>
+                  </g>
+                  <g class="list-node" transform="translate(328 60)">
+                    <rect class="list-bg" rx="12"></rect>
+                    <text class="list-text"><tspan x="348.021" y="59.3636">V. 1.6.0</tspan></text>
+                  </g>
+                  <g class="list-node" transform="translate(328 108)">
+                    <rect class="list-bg" rx="12"></rect>
+                    <text class="list-text"><tspan x="202.246" y="135.364">V. 1.4.9</tspan></text>
+                  </g>
+                  <g class="list-node" transform="translate(328 156)">
+                    <rect class="list-bg" rx="12"></rect>
+                    <text class="list-text"><tspan x="202.246" y="135.364">V. 1.4.5</tspan></text>
+                  </g>
+                  <line x1="175" x2="193" y1="80" y2="80" stroke="var(--text)" stroke-width="2"/>
+                  <line x1="259" x2="305" y1="80" y2="80" stroke="var(--text)" stroke-width="2"/>
+                  <line x1="297" x2="305" y1="72" y2="80" stroke="var(--text)" stroke-width="2"/>
+                  <line x1="297" x2="305" y1="88" y2="80" stroke="var(--text)" stroke-width="2"/>
+                  <g>
+                    <path d="M426.354 33.6464C426.158 33.4512 425.842 33.4512 425.646 33.6464L422.464 36.8284C422.269 37.0237 422.269 37.3403 422.464 37.5355C422.66 37.7308 422.976 37.7308 423.172 37.5355L426 34.7071L428.828 37.5355C429.024 37.7308 429.34 37.7308 429.536 37.5355C429.731 37.3403 429.731 37.0237 429.536 36.8284L426.354 33.6464ZM426 47L426.5 47L426.5 45.9167L426 45.9167L425.5 45.9167L425.5 47L426 47ZM426 43.75L426.5 43.75L426.5 41.5833L426 41.5833L425.5 41.5833L425.5 43.75L426 43.75ZM426 39.4167L426.5 39.4167L426.5 37.25L426 37.25L425.5 37.25L425.5 39.4167L426 39.4167ZM426 35.0833L426.5 35.0833L426.5 34L426 34L425.5 34L425.5 35.0833L426 35.0833ZM426.354 33.6464C426.158 33.4512 425.842 33.4512 425.646 33.6464L422.464 36.8284C422.269 37.0237 422.269 37.3403 422.464 37.5355C422.66 37.7308 422.976 37.7308 423.172 37.5355L426 34.7071L428.828 37.5355C429.024 37.7308 429.34 37.7308 429.536 37.5355C429.731 37.3403 429.731 37.0237 429.536 36.8284L426.354 33.6464ZM426 47L426.5 47L426.5 45.9167L426 45.9167L425.5 45.9167L425.5 47L426 47ZM426 43.75L426.5 43.75L426.5 41.5833L426 41.5833L425.5 41.5833L425.5 43.75L426 43.75ZM426 39.4167L426.5 39.4167L426.5 37.25L426 37.25L425.5 37.25L425.5 39.4167L426 39.4167ZM426 35.0833L426.5 35.0833L426.5 34L426 34L425.5 34L425.5 35.0833L426 35.0833Z" fill="var(--muted)"/>
+                    <path d="M435.354 47.3536C435.158 47.5488 434.842 47.5488 434.646 47.3536L431.464 44.1716C431.269 43.9763 431.269 43.6597 431.464 43.4645C431.66 43.2692 431.976 43.2692 432.172 43.4645L435 46.2929L437.828 43.4645C438.024 43.2692 438.34 43.2692 438.536 43.4645C438.731 43.6597 438.731 43.9763 438.536 44.1716L435.354 47.3536ZM435 34L435.5 34L435.5 35.0833L435 35.0833L434.5 35.0833L434.5 34L435 34ZM435 37.25L435.5 37.25L435.5 39.4167L435 39.4167L434.5 39.4167L434.5 37.25L435 37.25ZM435 41.5833L435.5 41.5833L435.5 43.75L435 43.75L434.5 43.75L434.5 41.5833L435 41.5833ZM435 45.9167L435.5 45.9167L435.5 47L435 47L434.5 47L434.5 45.9167L435 45.9167ZM435.354 47.3536C435.158 47.5488 434.842 47.5488 434.646 47.3536L431.464 44.1716C431.269 43.9763 431.269 43.6597 431.464 43.4645C431.66 43.2692 431.976 43.2692 432.172 43.4645L435 46.2929L437.828 43.4645C438.024 43.2692 438.34 43.2692 438.536 43.4645C438.731 43.6597 438.731 43.9763 438.536 44.1716L435.354 47.3536ZM435 34L435.5 34L435.5 35.0833L435 35.0833L434.5 35.0833L434.5 34L435 34ZM435 37.25L435.5 37.25L435.5 39.4167L435 39.4167L434.5 39.4167L434.5 37.25L435 37.25ZM435 41.5833L435.5 41.5833L435.5 43.75L435 43.75L434.5 43.75L434.5 41.5833L435 41.5833ZM435 45.9167L435.5 45.9167L435.5 47L435 47L434.5 47L434.5 45.9167L435 45.9167Z" fill="var(--muted)"/>
+                  </g>
+                  <circle class="node-bg bg-light" cx="433" cy="78" r="9"></circle>
+                  <circle class="node-bg" cx="433" cy="126" r="9"></circle>
+                  <circle class="node-bg bg-light" cx="433" cy="172" r="9"></circle>
+                </svg>
+              </div>
+            </figure>
+          </aside>
+          </div>
+          <div class="case-two-col">
+          <article class="stack">
+            <h3>"I want a comprehensive view of data relationships."</h3>
+            <p class="muted">Guide organized component and vulnerability records as interconnected nodes within a larger decision-making ecosystem.</p>
+            <p class="muted">Each record surfaced Trust Score, compliance status, and severity alongside navigable dependencies, dependents, and version relationships. Users could move across related artifacts without losing orientation, allowing them to assess not just a single record, but its broader impact.</p>
+          </article>
+          <aside>
+            <figure class="diagram-figure">
+              <div class="diagram-placeholder" role="img" aria-label="Data architecture diagram">
+                <svg class="diagram alt-media-img" viewBox="0 0 491 329" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g class="decision-node" transform="translate(246 165)">
+                    <circle class="decision-bg" r="50"></circle>
+                    <text class="decision-text">
+                      <tspan x="0" dy="0">package</tspan>
+                      <tspan x="0" dy="18">5.4.39</tspan>
+                    </text>
+                  </g>
+                  <g class="node" transform="translate(90 10)">
+                    <rect class="node-bg" rx="12"></rect>
+                    <text class="node-text">
+                      <tspan x="348.021" y="59.3636">Metadata</tspan>
+                      <tspan x="348.021" y="79.3636">&amp; README</tspan>
+                    </text>
+                  </g>
+                  <g class="node" transform="translate(26 110)">
+                    <rect class="node-bg" rx="12"></rect>
+                    <text class="node-text"><tspan x="202.246" y="135.364">Versions</tspan></text>
+                  </g>
+                  <g class="node" transform="translate(59 243)">
+                    <rect class="node-bg" rx="12"></rect>
+                    <text class="node-text"><tspan x="202.246" y="135.364">Dependencies</tspan></text>
+                  </g>
+                  <g class="node" transform="translate(316 228)">
+                    <rect class="node-bg" rx="12"></rect>
+                    <text class="node-text"><tspan x="202.246" y="135.364">Dependents</tspan></text>
+                  </g>
+                  <g class="node" transform="translate(294 30)">
+                    <rect class="node-bg" rx="12"></rect>
+                    <text class="node-text"><tspan x="202.246" y="135.364">Vulnerabilities</tspan></text>
+                  </g>
+                  <g>
+                    <text class="list-text">
+                      <tspan x="323" y="118">Components</tspan>
+                      <tspan x="424" y="118">Advisories</tspan>
+                      <tspan x="13" y="195">Vulnerabilities</tspan>
+                      <tspan x="412" y="194">Versions</tspan>
+                      <tspan x="255" y="315">Vulnerabilities</tspan>
+                      <tspan x="412" y="315">Metadata</tspan>
+                    </text>
+                  </g>
+                  <g>
+                    <path d="M174.122 76.0075C173.574 75.9399 173.075 76.3295 173.008 76.8776L171.906 85.81C171.839 86.3581 172.228 86.8573 172.776 86.9249C173.325 86.9924 173.824 86.6029 173.891 86.0547L174.87 78.1148L182.81 79.0937C183.358 79.1613 183.857 78.7717 183.925 78.2236C183.992 77.6755 183.603 77.1763 183.055 77.1088L174.122 76.0075ZM206 118L206.788 117.385L174.788 76.3847L174 77L173.212 77.6153L205.212 118.615L206 118Z" fill="var(--text)"/>
+                    <path d="M160.012 228.844C159.926 229.39 160.299 229.902 160.844 229.988L169.734 231.391C170.279 231.478 170.791 231.105 170.878 230.56C170.964 230.014 170.591 229.502 170.046 229.416L162.144 228.168L163.391 220.266C163.478 219.721 163.105 219.209 162.56 219.122C162.014 219.036 161.502 219.409 161.416 219.954L160.012 228.844ZM194 205L193.412 204.191L160.412 228.191L161 229L161.588 229.809L194.588 205.809L194 205Z" fill="var(--text)"/>
+                    <path d="M316.997 80.9256C316.956 80.3748 316.476 79.9617 315.926 80.0028L306.951 80.6726C306.4 80.7137 305.987 81.1934 306.028 81.7442C306.069 82.295 306.549 82.7081 307.099 82.667L315.077 82.0716L315.673 90.0495C315.714 90.6002 316.193 91.0134 316.744 90.9723C317.295 90.9312 317.708 90.4514 317.667 89.9006L316.997 80.9256ZM285 117L285.758 117.653L316.758 81.6525L316 81L315.242 80.3475L284.242 116.347L285 117Z" fill="var(--text)"/>
+                    <path d="M122.44 144.171C121.983 144.481 121.862 145.102 122.171 145.56L127.21 153.017C127.519 153.475 128.141 153.595 128.599 153.286C129.056 152.977 129.177 152.355 128.867 151.897L124.388 145.269L131.017 140.79C131.475 140.481 131.595 139.859 131.286 139.401C130.977 138.944 130.355 138.823 129.897 139.133L122.44 144.171ZM185 157L185.19 156.018L123.19 144.018L123 145L122.81 145.982L184.81 157.982L185 157Z" fill="var(--text)"/>
+                    <path d="M336.233 209.972C336.77 209.843 337.101 209.304 336.972 208.767L334.872 200.015C334.743 199.478 334.203 199.147 333.666 199.276C333.129 199.405 332.798 199.945 332.927 200.482L334.794 208.261L327.015 210.128C326.478 210.257 326.147 210.797 326.276 211.334C326.405 211.871 326.945 212.202 327.482 212.073L336.233 209.972ZM305 190L304.477 190.853L335.477 209.853L336 209L336.523 208.147L305.523 189.147L305 190Z" fill="var(--text)"/>
+                  </g>
+                  <g>
+                    <path d="M418 99.5C418.276 99.5 418.5 99.2761 418.5 99L418.5 94.5C418.5 94.2239 418.276 94 418 94C417.724 94 417.5 94.2239 417.5 94.5L417.5 98.5L413.5 98.5C413.224 98.5 413 98.7239 413 99C413 99.2761 413.224 99.5 413.5 99.5L418 99.5ZM399 80L398.646 80.3536L399.325 81.0321L399.679 80.6786L400.032 80.325L399.354 79.6464L399 80ZM401.036 82.0357L400.682 82.3893L402.039 83.7464L402.393 83.3929L402.746 83.0393L401.389 81.6822L401.036 82.0357ZM403.75 84.75L403.396 85.1036L404.754 86.4607L405.107 86.1071L405.461 85.7536L404.104 84.3964L403.75 84.75ZM406.464 87.4643L406.111 87.8178L407.468 89.175L407.821 88.8214L408.175 88.4679L406.818 87.1107L406.464 87.4643ZM409.179 90.1786L408.825 90.5321L410.182 91.8893L410.536 91.5357L410.889 91.1822L409.532 89.825L409.179 90.1786ZM411.893 92.8929L411.539 93.2464L412.896 94.6036L413.25 94.25L413.604 93.8964L412.246 92.5393L411.893 92.8929ZM414.607 95.6071L414.254 95.9607L415.611 97.3178L415.964 96.9643L416.318 96.6107L414.961 95.2536L414.607 95.6071ZM417.321 98.3214L416.968 98.675L417.646 99.3536L418 99L418.354 98.6464L417.675 97.9679L417.321 98.3214ZM418 99.5C418.276 99.5 418.5 99.2761 418.5 99L418.5 94.5C418.5 94.2239 418.276 94 418 94C417.724 94 417.5 94.2239 417.5 94.5L417.5 98.5L413.5 98.5C413.224 98.5 413 98.7239 413 99C413 99.2761 413.224 99.5 413.5 99.5L418 99.5ZM399 80L398.646 80.3536L399.325 81.0321L399.679 80.6786L400.032 80.325L399.354 79.6464L399 80ZM401.036 82.0357L400.682 82.3893L402.039 83.7464L402.393 83.3929L402.746 83.0393L401.389 81.6822L401.036 82.0357ZM403.75 84.75L403.396 85.1036L404.754 86.4607L405.107 86.1071L405.461 85.7536L404.104 84.3964L403.75 84.75ZM406.464 87.4643L406.111 87.8178L407.468 89.175L407.821 88.8214L408.175 88.4679L406.818 87.1107L406.464 87.4643ZM409.179 90.1786L408.825 90.5321L410.182 91.8893L410.536 91.5357L410.889 91.1822L409.532 89.825L409.179 90.1786ZM411.893 92.8929L411.539 93.2464L412.896 94.6036L413.25 94.25L413.604 93.8964L412.246 92.5393L411.893 92.8929ZM414.607 95.6071L414.254 95.9607L415.611 97.3178L415.964 96.9643L416.318 96.6107L414.961 95.2536L414.607 95.6071ZM417.321 98.3214L416.968 98.675L417.646 99.3536L418 99L418.354 98.6464L417.675 97.9679L417.321 98.3214Z" fill="var(--muted)"/>
+                    <path d="M368 99.5C367.724 99.5 367.5 99.2761 367.5 99L367.5 94.5C367.5 94.2239 367.724 94 368 94C368.276 94 368.5 94.2239 368.5 94.5L368.5 98.5L372.5 98.5C372.776 98.5 373 98.7239 373 99C373 99.2761 372.776 99.5 372.5 99.5L368 99.5ZM387 80L387.354 80.3536L386.675 81.0321L386.321 80.6786L385.968 80.325L386.646 79.6464L387 80ZM384.964 82.0357L385.318 82.3893L383.961 83.7464L383.607 83.3929L383.254 83.0393L384.611 81.6822L384.964 82.0357ZM382.25 84.75L382.604 85.1036L381.246 86.4607L380.893 86.1071L380.539 85.7536L381.896 84.3964L382.25 84.75ZM379.536 87.4643L379.889 87.8178L378.532 89.175L378.179 88.8214L377.825 88.4679L379.182 87.1107L379.536 87.4643ZM376.821 90.1786L377.175 90.5321L375.818 91.8893L375.464 91.5357L375.111 91.1822L376.468 89.825L376.821 90.1786ZM374.107 92.8929L374.461 93.2464L373.104 94.6036L372.75 94.25L372.396 93.8964L373.754 92.5393L374.107 92.8929ZM371.393 95.6071L371.746 95.9607L370.389 97.3178L370.036 96.9643L369.682 96.6107L371.039 95.2536L371.393 95.6071ZM368.679 98.3214L369.032 98.675L368.354 99.3536L368 99L367.646 98.6464L368.325 97.9679L368.679 98.3214ZM368 99.5C367.724 99.5 367.5 99.2761 367.5 99L367.5 94.5C367.5 94.2239 367.724 94 368 94C368.276 94 368.5 94.2239 368.5 94.5L368.5 98.5L372.5 98.5C372.776 98.5 373 98.7239 373 99C373 99.2761 372.776 99.5 372.5 99.5L368 99.5ZM387 80L387.354 80.3536L386.675 81.0321L386.321 80.6786L385.968 80.325L386.646 79.6464L387 80ZM384.964 82.0357L385.318 82.3893L383.961 83.7464L383.607 83.3929L383.254 83.0393L384.611 81.6822L384.964 82.0357ZM382.25 84.75L382.604 85.1036L381.246 86.4607L380.893 86.1071L380.539 85.7536L381.896 84.3964L382.25 84.75ZM379.536 87.4643L379.889 87.8178L378.532 89.175L378.179 88.8214L377.825 88.4679L379.182 87.1107L379.536 87.4643ZM376.821 90.1786L377.175 90.5321L375.818 91.8893L375.464 91.5357L375.111 91.1822L376.468 89.825L376.821 90.1786ZM374.107 92.8929L374.461 93.2464L373.104 94.6036L372.75 94.25L372.396 93.8964L373.754 92.5393L374.107 92.8929ZM371.393 95.6071L371.746 95.9607L370.389 97.3178L370.036 96.9643L369.682 96.6107L371.039 95.2536L371.393 95.6071ZM368.679 98.3214L369.032 98.675L368.354 99.3536L368 99L367.646 98.6464L368.325 97.9679L368.679 98.3214Z" fill="var(--muted)"/>
+                    <path d="M397 291.5C397.276 291.5 397.5 291.276 397.5 291L397.5 286.5C397.5 286.224 397.276 286 397 286C396.724 286 396.5 286.224 396.5 286.5L396.5 290.5L392.5 290.5C392.224 290.5 392 290.724 392 291C392 291.276 392.224 291.5 392.5 291.5L397 291.5ZM378 272L377.646 272.354L378.325 273.032L378.679 272.679L379.032 272.325L378.354 271.646L378 272ZM380.036 274.036L379.682 274.389L381.039 275.746L381.393 275.393L381.746 275.039L380.389 273.682L380.036 274.036ZM382.75 276.75L382.396 277.104L383.754 278.461L384.107 278.107L384.461 277.754L383.104 276.396L382.75 276.75ZM385.464 279.464L385.111 279.818L386.468 281.175L386.821 280.821L387.175 280.468L385.818 279.111L385.464 279.464ZM388.179 282.179L387.825 282.532L389.182 283.889L389.536 283.536L389.889 283.182L388.532 281.825L388.179 282.179ZM390.893 284.893L390.539 285.246L391.896 286.604L392.25 286.25L392.604 285.896L391.246 284.539L390.893 284.893ZM393.607 287.607L393.254 287.961L394.611 289.318L394.964 288.964L395.318 288.611L393.961 287.254L393.607 287.607ZM396.321 290.321L395.968 290.675L396.646 291.354L397 291L397.354 290.646L396.675 289.968L396.321 290.321ZM397 291.5C397.276 291.5 397.5 291.276 397.5 291L397.5 286.5C397.5 286.224 397.276 286 397 286C396.724 286 396.5 286.224 396.5 286.5L396.5 290.5L392.5 290.5C392.224 290.5 392 290.724 392 291C392 291.276 392.224 291.5 392.5 291.5L397 291.5ZM378 272L377.646 272.354L378.325 273.032L378.679 272.679L379.032 272.325L378.354 271.646L378 272ZM380.036 274.036L379.682 274.389L381.039 275.746L381.393 275.393L381.746 275.039L380.389 273.682L380.036 274.036ZM382.75 276.75L382.396 277.104L383.754 278.461L384.107 278.107L384.461 277.754L383.104 276.396L382.75 276.75ZM385.464 279.464L385.111 279.818L386.468 281.175L386.821 280.821L387.175 280.468L385.818 279.111L385.464 279.464ZM388.179 282.179L387.825 282.532L389.182 283.889L389.536 283.536L389.889 283.182L388.532 281.825L388.179 282.179ZM390.893 284.893L390.539 285.246L391.896 286.604L392.25 286.25L392.604 285.896L391.246 284.539L390.893 284.893ZM393.607 287.607L393.254 287.961L394.611 289.318L394.964 288.964L395.318 288.611L393.961 287.254L393.607 287.607ZM396.321 290.321L395.968 290.675L396.646 291.354L397 291L397.354 290.646L396.675 289.968L396.321 290.321Z" fill="var(--muted)"/>
+                    <path d="M397 203.5C397.276 203.5 397.5 203.724 397.5 204L397.5 208.5C397.5 208.776 397.276 209 397 209C396.724 209 396.5 208.776 396.5 208.5L396.5 204.5L392.5 204.5C392.224 204.5 392 204.276 392 204C392 203.724 392.224 203.5 392.5 203.5L397 203.5ZM378 223L377.646 222.646L378.325 221.968L378.679 222.321L379.032 222.675L378.354 223.354L378 223ZM380.036 220.964L379.682 220.611L381.039 219.254L381.393 219.607L381.746 219.961L380.389 221.318L380.036 220.964ZM382.75 218.25L382.396 217.896L383.754 216.539L384.107 216.893L384.461 217.246L383.104 218.604L382.75 218.25ZM385.464 215.536L385.111 215.182L386.468 213.825L386.821 214.179L387.175 214.532L385.818 215.889L385.464 215.536ZM388.179 212.821L387.825 212.468L389.182 211.111L389.536 211.464L389.889 211.818L388.532 213.175L388.179 212.821ZM390.893 210.107L390.539 209.754L391.896 208.396L392.25 208.75L392.604 209.104L391.246 210.461L390.893 210.107ZM393.607 207.393L393.254 207.039L394.611 205.682L394.964 206.036L395.318 206.389L393.961 207.746L393.607 207.393ZM396.321 204.679L395.968 204.325L396.646 203.646L397 204L397.354 204.354L396.675 205.032L396.321 204.679ZM397 203.5C397.276 203.5 397.5 203.724 397.5 204L397.5 208.5C397.5 208.776 397.276 209 397 209C396.724 209 396.5 208.776 396.5 208.5L396.5 204.5L392.5 204.5C392.224 204.5 392 204.276 392 204C392 203.724 392.224 203.5 392.5 203.5L397 203.5ZM378 223L377.646 222.646L378.325 221.968L378.679 222.321L379.032 222.675L378.354 223.354L378 223ZM380.036 220.964L379.682 220.611L381.039 219.254L381.393 219.607L381.746 219.961L380.389 221.318L380.036 220.964ZM382.75 218.25L382.396 217.896L383.754 216.539L384.107 216.893L384.461 217.246L383.104 218.604L382.75 218.25ZM385.464 215.536L385.111 215.182L386.468 213.825L386.821 214.179L387.175 214.532L385.818 215.889L385.464 215.536ZM388.179 212.821L387.825 212.468L389.182 211.111L389.536 211.464L389.889 211.818L388.532 213.175L388.179 212.821ZM390.893 210.107L390.539 209.754L391.896 208.396L392.25 208.75L392.604 209.104L391.246 210.461L390.893 210.107ZM393.607 207.393L393.254 207.039L394.611 205.682L394.964 206.036L395.318 206.389L393.961 207.746L393.607 207.393ZM396.321 204.679L395.968 204.325L396.646 203.646L397 204L397.354 204.354L396.675 205.032L396.321 204.679Z" fill="var(--muted)"/>
+                    <path d="M336 291.5C335.724 291.5 335.5 291.276 335.5 291L335.5 286.5C335.5 286.224 335.724 286 336 286C336.276 286 336.5 286.224 336.5 286.5L336.5 290.5L340.5 290.5C340.776 290.5 341 290.724 341 291C341 291.276 340.776 291.5 340.5 291.5L336 291.5ZM355 272L355.354 272.354L354.675 273.032L354.321 272.679L353.968 272.325L354.646 271.646L355 272ZM352.964 274.036L353.318 274.389L351.961 275.746L351.607 275.393L351.254 275.039L352.611 273.682L352.964 274.036ZM350.25 276.75L350.604 277.104L349.246 278.461L348.893 278.107L348.539 277.754L349.896 276.396L350.25 276.75ZM347.536 279.464L347.889 279.818L346.532 281.175L346.179 280.821L345.825 280.468L347.182 279.111L347.536 279.464ZM344.821 282.179L345.175 282.532L343.818 283.889L343.464 283.536L343.111 283.182L344.468 281.825L344.821 282.179ZM342.107 284.893L342.461 285.246L341.104 286.604L340.75 286.25L340.396 285.896L341.754 284.539L342.107 284.893ZM339.393 287.607L339.746 287.961L338.389 289.318L338.036 288.964L337.682 288.611L339.039 287.254L339.393 287.607ZM336.679 290.321L337.032 290.675L336.354 291.354L336 291L335.646 290.646L336.325 289.968L336.679 290.321ZM336 291.5C335.724 291.5 335.5 291.276 335.5 291L335.5 286.5C335.5 286.224 335.724 286 336 286C336.276 286 336.5 286.224 336.5 286.5L336.5 290.5L340.5 290.5C340.776 290.5 341 290.724 341 291C341 291.276 340.776 291.5 340.5 291.5L336 291.5ZM355 272L355.354 272.354L354.675 273.032L354.321 272.679L353.968 272.325L354.646 271.646L355 272ZM352.964 274.036L353.318 274.389L351.961 275.746L351.607 275.393L351.254 275.039L352.611 273.682L352.964 274.036ZM350.25 276.75L350.604 277.104L349.246 278.461L348.893 278.107L348.539 277.754L349.896 276.396L350.25 276.75ZM347.536 279.464L347.889 279.818L346.532 281.175L346.179 280.821L345.825 280.468L347.182 279.111L347.536 279.464ZM344.821 282.179L345.175 282.532L343.818 283.889L343.464 283.536L343.111 283.182L344.468 281.825L344.821 282.179ZM342.107 284.893L342.461 285.246L341.104 286.604L340.75 286.25L340.396 285.896L341.754 284.539L342.107 284.893ZM339.393 287.607L339.746 287.961L338.389 289.318L338.036 288.964L337.682 288.611L339.039 287.254L339.393 287.607ZM336.679 290.321L337.032 290.675L336.354 291.354L336 291L335.646 290.646L336.325 289.968L336.679 290.321Z" fill="var(--muted)"/>
+                    <path d="M35 172.5C34.7239 172.5 34.5 172.276 34.5 172L34.5 167.5C34.5 167.224 34.7239 167 35 167C35.2761 167 35.5 167.224 35.5 167.5L35.5 171.5L39.5 171.5C39.7761 171.5 40 171.724 40 172C40 172.276 39.7761 172.5 39.5 172.5L35 172.5ZM54 153L54.3536 153.354L53.675 154.032L53.3214 153.679L52.9679 153.325L53.6464 152.646L54 153ZM51.9643 155.036L52.3178 155.389L50.9607 156.746L50.6071 156.393L50.2536 156.039L51.6107 154.682L51.9643 155.036ZM49.25 157.75L49.6036 158.104L48.2464 159.461L47.8929 159.107L47.5393 158.754L48.8964 157.396L49.25 157.75ZM46.5357 160.464L46.8893 160.818L45.5321 162.175L45.1786 161.821L44.825 161.468L46.1822 160.111L46.5357 160.464ZM43.8214 163.179L44.175 163.532L42.8178 164.889L42.4643 164.536L42.1107 164.182L43.4679 162.825L43.8214 163.179ZM41.1071 165.893L41.4607 166.246L40.1036 167.604L39.75 167.25L39.3964 166.896L40.7536 165.539L41.1071 165.893ZM38.3929 168.607L38.7464 168.961L37.3893 170.318L37.0357 169.964L36.6822 169.611L38.0393 168.254L38.3929 168.607ZM35.6786 171.321L36.0321 171.675L35.3536 172.354L35 172L34.6464 171.646L35.325 170.968L35.6786 171.321ZM35 172.5C34.7239 172.5 34.5 172.276 34.5 172L34.5 167.5C34.5 167.224 34.7239 167 35 167C35.2761 167 35.5 167.224 35.5 167.5L35.5 171.5L39.5 171.5C39.7761 171.5 40 171.724 40 172C40 172.276 39.7761 172.5 39.5 172.5L35 172.5ZM54 153L54.3536 153.354L53.675 154.032L53.3214 153.679L52.9679 153.325L53.6464 152.646L54 153ZM51.9643 155.036L52.3178 155.389L50.9607 156.746L50.6071 156.393L50.2536 156.039L51.6107 154.682L51.9643 155.036ZM49.25 157.75L49.6036 158.104L48.2464 159.461L47.8929 159.107L47.5393 158.754L48.8964 157.396L49.25 157.75ZM46.5357 160.464L46.8893 160.818L45.5321 162.175L45.1786 161.821L44.825 161.468L46.1822 160.111L46.5357 160.464ZM43.8214 163.179L44.175 163.532L42.8178 164.889L42.4643 164.536L42.1107 164.182L43.4679 162.825L43.8214 163.179ZM41.1071 165.893L41.4607 166.246L40.1036 167.604L39.75 167.25L39.3964 166.896L40.7536 165.539L41.1071 165.893ZM38.3929 168.607L38.7464 168.961L37.3893 170.318L37.0357 169.964L36.6822 169.611L38.0393 168.254L38.3929 168.607ZM35.6786 171.321L36.0321 171.675L35.3536 172.354L35 172L34.6464 171.646L35.325 170.968L35.6786 171.321Z" fill="var(--muted)"/>
+                  </g>
+                </svg>
+              </div>
+            </figure>
+          </aside>
+          </div>
+      </div>
+    </section>
+
+    <section class="section" id="patterns-decisions">
+      <div class="container stack">
+        <h2>Key Interaction Patterns</h2>
+        <div class="grid grid-2">
+          <article class="pattern-card">
+            <h4>Trust Score as a Composite Signal</h4>
+            <p class="muted">Developed as a first-class metric, Trust Score aims to provide immediate risk context at the component version level. A numerical value (0-100), paired with a color signal and iconography, communicates sentiment at a glance.</p>
+            <p class="muted">Trust Scores appear on all component detail pages, within search results, and while browsing.</p>
+          </article>
+          <article class="pattern-card">
+            <h4>Transparent Policy Compliance</h4>
+            <p class="muted">Policy compliance was simplified at the browsing level to a binary pass or fail state, represented by a green check or red X. On detail pages, compliance expanded into explicit criteria including malware detection, CVSS threshold, and copyleft licensing.</p>
+            <p class="muted">A dedicated Policy page in the UI further explains compliance criteria and related visual indicators.</p>
+          </article>
+          <article class="pattern-card">
+            <h4>Tab-Based Relationships</h4>
+            <p class="muted">Record pages were organized into structured tabs that preserved orientation while enabling lateral movement. Users could navigate between versions, dependencies, dependents, and vulnerabilities without resetting search context or losing their place.</p>
+            <p class="muted">This pattern reduced reliance on back navigation, supported deep analysis, and reinforced relational continuity.</p>
+          </article>
+          <article class="pattern-card">
+            <h4>Intent-Sensitive Routing</h4>
+            <p class="muted">Search behavior adapted to user intent. Exact component identifiers and vulnerability IDs routed directly to their respective records, while broader queries surfaced categorized results with tab-level counts and filtering.</p>
+            <p class="muted">Predictive dropdown results while input text is typed accelerated validation without forcing mode changes.</p>
+          </article>
+          <article class="pattern-card">
+            <h4>Progressive Disclosure Through Gated Intelligence</h4>
+            <p class="muted">Guide supported logged-out, free, and paid user states, prioritizing usability and usefulness across the board.</p>
+            <p class="muted">Proprietary intelligence (Trust Score, recommendations, insights) was visually gated through blur states, contextual tooltips, and sign-up prompts encouraging anonymous users to register for free.</p>
+          </article>
+          <article class="pattern-card">
+            <h4>Credit Visibility and Tier Signaling</h4>
+            <p class="muted">Free users received a limited monthly credit allotment with persistent usage indicators and proactive notifications. Paid tiers received higher allowances.</p>
+            <p class="muted">A dedicated Usage page surfaced current status and historical trends, positioning credit tracking as visible infrastructure rather than hidden constraint.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="collaboration">
+      <div class="container">
+        <article class="prose-narrow stack">
+          <h2>Collaboration</h2>
+          <p>Guide was developed during a period of significant organizational transition, with role eliminations scheduled to take effect on the product's December release date. Within days of receiving notice, I was selected to lead design for a new executive initiative and ship a net-new product under that same deadline.</p>
+          <p>With no existing product foundation, alignment across leadership, product, and engineering became essential. I partnered closely with the Director of Design and the Chief Product Development Officer to define scope, navigate tradeoffs, and reconcile requirements against constraints. The UX Lab served as a shared, production-aligned environment where workflows could be evaluated against real data rather than debated abstractly.</p>
+          <p>Engineering collaboration was continuous. Interaction patterns and information models were reviewed directly within the UX Lab, surfacing feasibility considerations early and shaping implementation sequencing around actual user journeys.</p>
+          <p>Product Marketing progressed in parallel. Naming, visual direction, and launch positioning were developed before the product formally existed. The UX Lab provided a functional, data-rich reference that informed landing page development and messaging alignment.</p>
+          <p>Research inputs were synthesized from existing workshops, design sprints, and user interviews. Targeted usability sessions validated search behavior, signal clarity, and monetization touchpoints prior to release.</p>
+          <p>Guide shipped on schedule following sustained cross-functional iteration and executive visibility throughout development.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="outcomes">
+      <div class="container stack">
+        <h2>Outcomes</h2>
+        <div class="grid grid-2 outcome-grid">
+          <article class="outcome-highlight">
+            <h3>On-time launch</h3>
+            <p>Guide launched on its scheduled release date as a fully functional security intelligence platform, establishing a new entry point into Sonatype's ecosystem.</p>
+          </article>
+          <article class="outcome-highlight">
+            <h3>Strong internal alignment</h3>
+            <p>Internal reception was strong across product, engineering, and executive leadership, with Trust Score and policy transparency resonating as a clear, differentiated evaluation model.</p>
+          </article>
+          <article class="outcome-highlight">
+            <h3>Early customer commitment</h3>
+            <p>Existing enterprise customers responded positively during early demos, and several major organizations committed to subscriptions prior to general availability.</p>
+          </article>
+          <article class="outcome-highlight">
+            <h3>Code-first delivery gains</h3>
+            <p>Adoption of the UX Lab changed implementation dynamics by grounding workflow sequencing and feasibility discussions in production-aligned behavior rather than static documentation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="reflection">
+      <div class="container">
+        <article class="reflection-single stack">
+          <h2>Reflection</h2>
+          <p>Guide clarified that enterprise usability is less about simplification and more about sequencing. Developers do not need fewer signals; they need signals presented at the right moment and in the right order.</p>
+          <p>By restructuring evaluation around orientation, confidence, and impact, the product shifted security from a downstream interruption to an upstream decision surface. Defaults, ranking logic, and visible relationships shaped behavior in ways that documentation alone could not.</p>
+          <p>Designing directly in code strengthened cross-functional alignment. When interaction models are inspectable and grounded in real data, conversations center on implementation and tradeoffs instead of interpretation. Shared artifacts reduce friction, particularly under compressed timelines and executive visibility.</p>
+          <p>The project also reinforced the importance of durable platform architecture. Individual developers and enterprise teams rely on the same intelligence, even as their needs differ in depth and scale. Systems designed with flexibility at their core can expand without structural rework.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Jordan Walz</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="../assets/js/interactions.js"></script>
+ <script>
+  function layoutSvgNodes(svg) {
+    const PAD_X = 14;
+    const PAD_Y = 10;
+
+    svg.querySelectorAll("g.node").forEach((node) => {
+      const text = node.querySelector("text.node-text");
+      const rect = node.querySelector("rect.node-bg");
+      if (!text || !rect) return;
+
+      // Remove prior transforms so bbox is accurate
+      text.removeAttribute("transform");
+
+      // Measure the text block
+      const bb = text.getBBox();
+
+      // Compute pill size (text + padding)
+      const w = bb.width + PAD_X * 2;
+      const h = bb.height + PAD_Y * 2;
+
+      // Anchor pill to top-left of the group
+      rect.setAttribute("x", 0);
+      rect.setAttribute("y", 0);
+      rect.setAttribute("width", w);
+      rect.setAttribute("height", h);
+
+      // Center the text inside the pill
+      const textCx = bb.x + bb.width / 2;
+      const textCy = bb.y + bb.height / 2;
+
+      const dx = (w / 2) - textCx;
+      const dy = (h / 2) - textCy;
+
+      text.setAttribute("transform", `translate(${dx} ${dy})`);
+    });
+
+    svg.querySelectorAll("g.decision-node").forEach(node => {
+      const text = node.querySelector("text.decision-text");
+      const rect = node.querySelector("rect.decision-bg");
+      if (!text || !rect) return;
+
+      // Remove prior transforms so bbox is accurate
+      text.removeAttribute("transform");
+
+      // Measure the text block
+      const bb = text.getBBox();
+
+      // Compute pill size (text + padding)
+      const w = bb.width + PAD_X * 3;
+      const h = bb.height + PAD_Y * 2;
+
+      // Anchor pill to center of the group
+      rect.setAttribute("x", 0);
+      rect.setAttribute("y", 0);
+      rect.setAttribute("width", w);
+      rect.setAttribute("height", h);
+
+      // Center the text inside the pill
+      const textCx = bb.x + bb.width / 2;
+      const textCy = bb.y + bb.height / 2;
+
+      const dx = (w / 2) - textCx;
+      const dy = (h / 2) - textCy;
+      
+      text.setAttribute("transform", `translate(${dx} ${dy})`);
+    });
+
+    svg.querySelectorAll("g.list-node").forEach(node => {
+      const text = node.querySelector("text.list-text");
+      const rect = node.querySelector("rect.list-bg");
+      if (!text || !rect) return;
+
+      // Remove prior transforms so bbox is accurate
+      text.removeAttribute("transform");
+
+      // Measure the text block
+      const bb = text.getBBox();
+
+      // Compute pill size (text + padding)
+      const w = bb.width + PAD_X * 3;
+      const h = bb.height + PAD_Y * 2;
+
+      // Anchor pill to center of the group
+      rect.setAttribute("x", 0);
+      rect.setAttribute("y", 0);
+      rect.setAttribute("width", w);
+      rect.setAttribute("height", h);
+
+      // Center the text inside the pill
+      const textCx = bb.x + bb.width / 2;
+      const textCy = bb.y + bb.height / 2;
+
+      const dx = (w / 2) - textCx;
+      const dy = (h / 2) - textCy;
+      
+      text.setAttribute("transform", `translate(${dx} ${dy})`);
+    });
+  }
+
+  window.addEventListener("load", () => {
+    document.querySelectorAll("svg.diagram").forEach(layoutSvgNodes);
+  });
+</script>
+</body>
+</html>
