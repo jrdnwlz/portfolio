@@ -1525,54 +1525,11 @@ body.no-scroll { overflow: hidden; }
   margin: 0;
 }
 
-.ai-focus-box {
-  margin-top: 48px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 900px;
-  padding: 48px;
-  background: var(--surface-2);
-  border-radius: var(--radius-lg);
+.open-to-work {
+  max-width: 90%;
+  margin: 0 auto 16px;
   text-align: center;
-  border: 2px solid var(--secondary-accent);
-}
-
-.ai-focus-box h3 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: var(--text);
-}
-
-.ai-focus-box p {
-  color: var(--muted);
   line-height: 1.7;
-  max-width: 800px;
-  margin: 0 auto 32px;
-  font-size: 16px;
-}
-
-.ai-focus-links {
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-  margin-top: 32px;
-}
-
-.ai-focus-links a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  padding-bottom: 4px;
-  border-bottom: 2px solid var(--border-bright);
-  transition: all 0.3s ease;
-}
-
-.ai-focus-links a:hover {
-  border-bottom-color: var(--secondary-accent);
-  color: var(--secondary-accent);
-  transform: translateY(-2px);
 }
 
 @media (max-width: 900px) {
