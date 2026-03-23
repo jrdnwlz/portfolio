@@ -7,13 +7,16 @@
   <meta name="description" content="[Short case study summary]."/>
 
   <meta property="og:title" content="[Title] Case Study"/>
-  <meta property="og:description" content="[Short case study summary]"/>
+  <meta property="og:description" content="[Short case study summary]."/>
   <meta property="og:type" content="article"/>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
   <link rel="stylesheet" href="../assets/css/style.css"/>
   <link rel="icon" href="/assets/img/favicon.svg"/>
+
+  <!-- Optional: include only if the page uses a web component dependency. -->
+  <!-- <script src="https://unpkg.com/@glyphs/wc-core" type="module"></script> -->
 
   <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
   <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
@@ -32,74 +35,58 @@
     </div>
   </header>
 
-  <main>
+  <main class="case-study-page">
     <section class="hero">
       <div class="container">
         <div class="hero-inner">
           <div class="hero-copy">
-            <!-- TODO: update case study label -->
-            <p class="kicker mb-16">CASE STUDY</p>
-            <!-- TODO: update title -->
+            <p class="kicker mb-16">[FEATURED or &nbsp;]</p>
             <h1>[Case Study Title]</h1>
-            <!-- TODO: update subtitle -->
-            <p class="lead mt-16">[One sentence summary about the problem, approach, and outcome.]</p>
+            <p class="lead mt-16">[One-sentence description of the product, decision space, and design outcome.]</p>
 
             <div class="row mt-20">
-              <!-- TODO: update role, timeframe, and tools -->
-              <span class="tag">Role: [Role]</span>
-              <span class="tag">Timeframe: [Timeframe]</span>
-              <span class="tag">Tools: [Tools]</span>
+              <span class="tag">[Category 1]</span>
+              <span class="tag">[Category 2]</span>
+              <span class="tag">[Category 3]</span>
             </div>
+          </div>
+          <div class="hero-visual" aria-hidden="false">
+            <img src="/assets/img/[case-study-hero].png" alt="[Hero image description]" width="440" height="285" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-bg" id="featured-work-summary">
-      <div class="container">
-        <!-- TODO: optional featured work summary card -->
-        <article class="case-study-card featured">
-          <h3 class="case-study-title">Featured Work Summary</h3>
-          <p class="case-study-description">Designing to: [insert concise design intent statement].</p>
-          <div class="case-study-highlights">
-            <span class="highlight">[Highlight 1]</span>
-            <span class="highlight">[Highlight 2]</span>
-            <span class="highlight">[Highlight 3]</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="executive-summary">
+    <section class="section section-bg" id="executive-summary">
       <div class="container stack">
-        <h2>Executive Summary</h2>
-        <div class="overview-tabs" data-tabs style="margin-top: 8px;">
-          <div class="overview-tab-list" role="tablist" aria-label="Executive summary highlights">
-            <button class="overview-tab" type="button" role="tab" id="summary-tab-context" aria-controls="summary-panel-context" aria-selected="true" tabindex="0">Context</button>
-            <button class="overview-tab" type="button" role="tab" id="summary-tab-role" aria-controls="summary-panel-role" aria-selected="false" tabindex="-1">Role</button>
-            <button class="overview-tab" type="button" role="tab" id="summary-tab-challenge" aria-controls="summary-panel-challenge" aria-selected="false" tabindex="-1">Challenge</button>
-            <button class="overview-tab" type="button" role="tab" id="summary-tab-objective" aria-controls="summary-panel-objective" aria-selected="false" tabindex="-1">Objective</button>
-            <button class="overview-tab" type="button" role="tab" id="summary-tab-outcome" aria-controls="summary-panel-outcome" aria-selected="false" tabindex="-1">Outcome</button>
+        <h3>Executive Summary</h3>
+        <div class="overview-tabs" data-tabs>
+          <div class="overview-tab-list" role="tablist" aria-label="Overview highlights">
+            <button class="overview-tab" type="button" role="tab" id="overview-tab-context" aria-controls="overview-panel-context" aria-selected="true" tabindex="0">Context</button>
+            <button class="overview-tab" type="button" role="tab" id="overview-tab-role" aria-controls="overview-panel-role" aria-selected="false" tabindex="-1">Role</button>
+            <button class="overview-tab" type="button" role="tab" id="overview-tab-challenge" aria-controls="overview-panel-challenge" aria-selected="false" tabindex="-1">Challenge</button>
+            <button class="overview-tab" type="button" role="tab" id="overview-tab-objective" aria-controls="overview-panel-objective" aria-selected="false" tabindex="-1">Objective</button>
+            <button class="overview-tab" type="button" role="tab" id="overview-tab-outcome" aria-controls="overview-panel-outcome" aria-selected="false" tabindex="-1">Outcome</button>
           </div>
-          <article class="card overview-panel" role="tabpanel" id="summary-panel-context" aria-labelledby="summary-tab-context" tabindex="0">
-            <h3>Context</h3>
-            <p class="muted"><!-- TODO: context -->[What product and environment this work supported.]</p>
+          <article class="overview-panel" role="tabpanel" id="overview-panel-context" aria-labelledby="overview-tab-context" tabindex="0">
+            <h4>Context</h4>
+            <p class="muted">[What product, initiative, or environment this work supported.]</p>
           </article>
-          <article class="card overview-panel" role="tabpanel" id="summary-panel-role" aria-labelledby="summary-tab-role" tabindex="0" hidden>
-            <h3>Role</h3>
-            <p class="muted"><!-- TODO: role -->[What you owned and who you collaborated with.]</p>
+          <article class="overview-panel" role="tabpanel" id="overview-panel-role" aria-labelledby="overview-tab-role" tabindex="0" hidden>
+            <h4>Role</h4>
+            <p class="muted">[What you owned and how you partnered across product, engineering, leadership, or GTM.]</p>
           </article>
-          <article class="card overview-panel" role="tabpanel" id="summary-panel-challenge" aria-labelledby="summary-tab-challenge" tabindex="0" hidden>
-            <h3>Challenge</h3>
-            <p class="muted"><!-- TODO: challenge -->[Main complexity, risk, or friction.]</p>
+          <article class="overview-panel" role="tabpanel" id="overview-panel-challenge" aria-labelledby="overview-tab-challenge" tabindex="0" hidden>
+            <h4>Challenge</h4>
+            <p class="muted">[What was difficult, fragmented, risky, or time-constrained.]</p>
           </article>
-          <article class="card overview-panel" role="tabpanel" id="summary-panel-objective" aria-labelledby="summary-tab-objective" tabindex="0" hidden>
-            <h3>Objective</h3>
-            <p class="muted"><!-- TODO: objective -->[Clear project objective and decision focus.]</p>
+          <article class="overview-panel" role="tabpanel" id="overview-panel-objective" aria-labelledby="overview-tab-objective" tabindex="0" hidden>
+            <h4>Objective</h4>
+            <p class="muted">[What the design needed to clarify, enable, or improve.]</p>
           </article>
-          <article class="card overview-panel" role="tabpanel" id="summary-panel-outcome" aria-labelledby="summary-tab-outcome" tabindex="0" hidden>
-            <h3>Outcome</h3>
-            <p class="muted"><!-- TODO: outcome -->[Qualitative or measurable outcome. Avoid invented metrics.]</p>
+          <article class="overview-panel" role="tabpanel" id="overview-panel-outcome" aria-labelledby="overview-tab-outcome" tabindex="0" hidden>
+            <h4>Outcome</h4>
+            <p class="muted">[What changed as a result. Keep metrics defensible.]</p>
           </article>
         </div>
       </div>
@@ -107,114 +94,236 @@
 
     <section class="section" id="problem-context">
       <div class="container stack">
-        <h2>Problem / Context</h2>
-        <!-- TODO: add specific problem framing -->
-        <p>[Describe the existing workflow and where users lose time or confidence.]</p>
+        <h2>[Problem framing section title]</h2>
+        <p>[Introduce the problem space, user context, and why the work mattered.]</p>
+      </div>
+      <div class="container case-two-col">
+        <article class="stack">
+          <p>[Describe where the current experience broke down.]</p>
+          <p>[Explain what users or stakeholders were forced to do instead.]</p>
+          <ul class="muted case-list">
+            <li>[Pain point or consequence 1]</li>
+            <li>[Pain point or consequence 2]</li>
+            <li>[Pain point or consequence 3]</li>
+            <li>[Pain point or consequence 4]</li>
+          </ul>
+          <p>[Optional closing line that sets up the design response.]</p>
+        </article>
+        <aside>
+          <figure class="diagram-figure">
+            <div class="diagram-placeholder" role="img" aria-label="[Diagram or artifact description]">
+              <p>[Replace with SVG, image, or another artifact.]</p>
+            </div>
+          </figure>
+        </aside>
       </div>
     </section>
 
-    <section class="section" id="constraints">
+    <section class="section section-alt" id="constraints">
       <div class="container stack">
-        <h2>Constraints</h2>
-        <!-- TODO: add key constraints -->
-        <ul>
-          <li>[Constraint 1]</li>
-          <li>[Constraint 2]</li>
-          <li>[Constraint 3]</li>
-        </ul>
+        <h2>[Constraints or framing section title]</h2>
+        <!-- Use `grid grid-2` with `constraint` cards, or swap to `research-flow` with `research-item` blocks if the section is more process-driven. -->
+        <div class="grid grid-2" aria-label="[Section label]">
+          <article class="constraint">
+            <h4>[Constraint or principle 1]</h4>
+            <p class="muted">[Why this mattered and how it shaped decisions.]</p>
+          </article>
+          <article class="constraint">
+            <h4>[Constraint or principle 2]</h4>
+            <p class="muted">[Why this mattered and how it shaped decisions.]</p>
+          </article>
+          <article class="constraint">
+            <h4>[Constraint or principle 3]</h4>
+            <p class="muted">[Why this mattered and how it shaped decisions.]</p>
+          </article>
+          <article class="constraint">
+            <h4>[Constraint or principle 4]</h4>
+            <p class="muted">[Why this mattered and how it shaped decisions.]</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="section" id="approach-strategy">
       <div class="container stack">
-        <h2>Approach / Strategy</h2>
-        <!-- TODO: summarize strategic choices -->
-        <div class="research-flow" aria-label="Approach and strategy principles">
+        <h2>[Strategy or system section title]</h2>
+        <p>[Summarize the high-level design response and decision logic.]</p>
+        <div class="research-flow" aria-label="[Design strategy principles]">
           <article class="research-item">
-            <span class="research-number" aria-hidden="true">01</span>
+            <svg class="research-number" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="40" r="28" fill="var(--primary-accent)" fill-opacity="0.25"/>
+              <circle cx="40" cy="40" r="28" stroke="var(--primary-accent)" stroke-width="3"/>
+              <path d="M34 40H46" stroke="var(--primary-accent)" stroke-linecap="round" stroke-width="3"/>
+            </svg>
             <div class="research-content">
-              <h3>[Strategy principle 1]</h3>
-              <p>[How this principle reduces risk or complexity.]</p>
-            </div>
-          </article>
-          <article class="research-item research-item-even">
-            <span class="research-number" aria-hidden="true">02</span>
-            <div class="research-content">
-              <h3>[Strategy principle 2]</h3>
-              <p>[How this principle improves decision quality or speed.]</p>
+              <h3>[Strategic principle 1]</h3>
+              <p class="muted">[How this principle reduced ambiguity, risk, or friction.]</p>
             </div>
           </article>
           <article class="research-item">
-            <span class="research-number" aria-hidden="true">03</span>
+            <svg class="research-number" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="40" r="28" fill="var(--primary-accent)" fill-opacity="0.25"/>
+              <circle cx="40" cy="40" r="28" stroke="var(--primary-accent)" stroke-width="3"/>
+              <path d="M40 34V46" stroke="var(--primary-accent)" stroke-linecap="round" stroke-width="3"/>
+              <path d="M34 40H46" stroke="var(--primary-accent)" stroke-linecap="round" stroke-width="3"/>
+            </svg>
             <div class="research-content">
-              <h3>[Strategy principle 3]</h3>
-              <p>[How this principle scales across users or systems.]</p>
+              <h3>[Strategic principle 2]</h3>
+              <p class="muted">[How this principle improved navigation, interpretation, or decision quality.]</p>
             </div>
           </article>
-          <article class="research-item research-item-even">
-            <span class="research-number" aria-hidden="true">04</span>
+          <article class="research-item">
+            <svg class="research-number" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="40" r="28" fill="var(--primary-accent)" fill-opacity="0.25"/>
+              <circle cx="40" cy="40" r="28" stroke="var(--primary-accent)" stroke-width="3"/>
+              <path d="M32 40L38 46L48 34" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+            </svg>
             <div class="research-content">
-              <h3>[Strategy principle 4]</h3>
-              <p>[How this principle supports implementation durability.]</p>
+              <h3>[Strategic principle 3]</h3>
+              <p class="muted">[How this principle scaled across edge cases, users, or system states.]</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <svg class="research-number" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="40" r="28" fill="var(--primary-accent)" fill-opacity="0.25"/>
+              <circle cx="40" cy="40" r="28" stroke="var(--primary-accent)" stroke-width="3"/>
+              <path d="M30 50L50 30" stroke="var(--primary-accent)" stroke-linecap="round" stroke-width="3"/>
+              <path d="M30 30H50V50" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+            </svg>
+            <div class="research-content">
+              <h3>[Strategic principle 4]</h3>
+              <p class="muted">[How this principle supported execution durability or implementation alignment.]</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="architecture-flows">
+    <section class="section section-alt" id="architecture-flows">
       <div class="container stack">
-        <h2>Architecture / Flows</h2>
-        <p class="muted">Use this section for structure-level decisions and workflow diagrams when product screenshots are unavailable.</p>
+        <h2>[Workflow or system architecture section title]</h2>
+        <p>[Use this section for key flows, structural decisions, and representative artifacts.]</p>
 
-        <!-- TODO: duplicate this figure block as needed -->
-        <figure class="diagram-figure">
-          <figcaption class="diagram-caption">[Diagram title]</figcaption>
-          <div class="diagram-placeholder" role="img" aria-label="Placeholder diagram for [diagram title]">
-            <p>[Simple diagram placeholder. Replace with SVG, image, or real artifact.]</p>
-          </div>
-          <p class="diagram-callout"><strong>Note:</strong> [Optional callout for reviewers, dependencies, or open questions.]</p>
-        </figure>
+        <div class="case-two-col">
+          <article class="stack">
+            <h3>[Flow or decision area 1]</h3>
+            <p>[Describe the flow, decision model, or system behavior.]</p>
+            <p>[Explain why the structure mattered.]</p>
+          </article>
+          <aside>
+            <figure class="diagram-figure">
+              <div class="diagram-placeholder" role="img" aria-label="[Artifact 1 description]">
+                <p>[Replace with an image, SVG, or embedded artifact.]</p>
+              </div>
+            </figure>
+          </aside>
+        </div>
+
+        <div class="case-two-col">
+          <article class="stack">
+            <h3>[Flow or decision area 2]</h3>
+            <p>[Describe the next structural or workflow decision.]</p>
+            <p>[Explain how this supported comprehension, movement, or confidence.]</p>
+          </article>
+          <aside>
+            <figure class="diagram-figure">
+              <div class="diagram-placeholder" role="img" aria-label="[Artifact 2 description]">
+                <p>[Replace with an image, SVG, or embedded artifact.]</p>
+              </div>
+            </figure>
+          </aside>
+        </div>
+
+        <div class="case-two-col">
+          <article class="stack">
+            <h3>[Flow or decision area 3]</h3>
+            <p>[Describe another major interaction pattern, content model, or system dependency.]</p>
+            <p>[Explain the user or business impact.]</p>
+          </article>
+          <aside>
+            <figure class="diagram-figure">
+              <div class="diagram-placeholder" role="img" aria-label="[Artifact 3 description]">
+                <p>[Replace with an image, SVG, or embedded artifact.]</p>
+              </div>
+            </figure>
+          </aside>
+        </div>
       </div>
     </section>
 
     <section class="section" id="patterns-decisions">
       <div class="container stack">
-        <h2>Key Patterns / Decisions</h2>
-        <!-- TODO: add key patterns -->
-        <ul>
-          <li>[Pattern or decision 1]</li>
-          <li>[Pattern or decision 2]</li>
-          <li>[Pattern or decision 3]</li>
-        </ul>
+        <h2>[Patterns, alignment shifts, or key decisions section title]</h2>
+        <div class="grid grid-2">
+          <article class="pattern-card">
+            <h4>[Pattern or decision 1]</h4>
+            <p class="muted">[What the pattern was.]</p>
+            <p class="muted">[Why it mattered in practice.]</p>
+          </article>
+          <article class="pattern-card">
+            <h4>[Pattern or decision 2]</h4>
+            <p class="muted">[What the pattern was.]</p>
+            <p class="muted">[Why it mattered in practice.]</p>
+          </article>
+          <article class="pattern-card">
+            <h4>[Pattern or decision 3]</h4>
+            <p class="muted">[What the pattern was.]</p>
+            <p class="muted">[Why it mattered in practice.]</p>
+          </article>
+          <article class="pattern-card">
+            <h4>[Pattern or decision 4]</h4>
+            <p class="muted">[What the pattern was.]</p>
+            <p class="muted">[Why it mattered in practice.]</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="collaboration">
-      <div class="container stack">
-        <h2>Collaboration</h2>
-        <!-- TODO: describe collaboration model -->
-        <p>[How design, product, engineering, and GTM worked together.]</p>
+    <!-- Optional: remove this entire section if the story does not need a dedicated collaboration chapter. -->
+    <section class="section section-alt" id="collaboration">
+      <div class="container">
+        <article class="prose-narrow stack">
+          <h2>Collaboration</h2>
+          <p>[Explain how design, product, engineering, leadership, and GTM interacted.]</p>
+          <p>[Describe how decisions were reviewed, validated, or sequenced.]</p>
+          <p>[Note research, testing, or executive visibility if relevant.]</p>
+        </article>
       </div>
     </section>
 
     <section class="section" id="outcomes">
       <div class="container stack">
-        <h2>Outcomes</h2>
-        <!-- TODO: list outcomes with safe language -->
-        <ul>
-          <li>[Outcome 1]</li>
-          <li>[Outcome 2]</li>
-          <li>[Outcome 3]</li>
-        </ul>
+        <h2>[Outcomes section title]</h2>
+        <div class="grid grid-2 outcome-grid">
+          <article class="outcome-highlight">
+            <h3>[Outcome 1]</h3>
+            <p>[Concrete outcome with defensible wording.]</p>
+          </article>
+          <article class="outcome-highlight">
+            <h3>[Outcome 2]</h3>
+            <p>[Concrete outcome with defensible wording.]</p>
+          </article>
+          <article class="outcome-highlight">
+            <h3>[Outcome 3]</h3>
+            <p>[Concrete outcome with defensible wording.]</p>
+          </article>
+          <article class="outcome-highlight">
+            <h3>[Outcome 4]</h3>
+            <p>[Concrete outcome with defensible wording.]</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="reflection">
-      <div class="container stack">
-        <h2>Reflection / Learnings</h2>
-        <!-- TODO: capture what changed and what you would do next -->
-        <p>[Brief reflection and next-step perspective.]</p>
+    <section class="section section-alt" id="reflection">
+      <div class="container">
+        <!-- Use `reflection-single` or `prose-narrow` depending on the width and tone you want. -->
+        <article class="reflection-single stack">
+          <h2>Reflection</h2>
+          <p>[What the project clarified about the problem space.]</p>
+          <p>[What you learned about sequencing, systems, collaboration, or medium.]</p>
+          <p>[What made the solution durable or what you would carry forward.]</p>
+        </article>
       </div>
     </section>
   </main>
@@ -225,5 +334,87 @@
 
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   <script src="../assets/js/interactions.js"></script>
+  <script>
+  function layoutSvgNodes(svg) {
+    const PAD_X = 14;
+    const PAD_Y = 10;
+
+    svg.querySelectorAll("g.node").forEach((node) => {
+      const text = node.querySelector("text.node-text");
+      const rect = node.querySelector("rect.node-bg");
+      if (!text || !rect) return;
+
+      text.removeAttribute("transform");
+
+      const bb = text.getBBox();
+      const w = bb.width + PAD_X * 2;
+      const h = bb.height + PAD_Y * 2;
+
+      rect.setAttribute("x", bb.x - PAD_X);
+      rect.setAttribute("y", bb.y - PAD_Y);
+      rect.setAttribute("width", w);
+      rect.setAttribute("height", h);
+
+      const textCx = bb.x + bb.width / 2;
+      const textCy = bb.y + bb.height / 2;
+      const dx = (w / 2) - textCx;
+      const dy = (h / 2) - textCy;
+
+      text.setAttribute("transform", `translate(${dx} ${dy})`);
+    });
+
+    svg.querySelectorAll("g.decision-node").forEach((node) => {
+      const text = node.querySelector("text.decision-text");
+      const rect = node.querySelector("rect.decision-bg");
+      if (!text || !rect) return;
+
+      text.removeAttribute("transform");
+
+      const bb = text.getBBox();
+      const w = bb.width + PAD_X * 3;
+      const h = bb.height + PAD_Y * 2;
+
+      rect.setAttribute("x", 0);
+      rect.setAttribute("y", 0);
+      rect.setAttribute("width", w);
+      rect.setAttribute("height", h);
+
+      const textCx = bb.x + bb.width / 2;
+      const textCy = bb.y + bb.height / 2;
+      const dx = (w / 2) - textCx;
+      const dy = (h / 2) - textCy;
+
+      text.setAttribute("transform", `translate(${dx} ${dy})`);
+    });
+
+    svg.querySelectorAll("g.list-node").forEach((node) => {
+      const text = node.querySelector("text.list-text");
+      const rect = node.querySelector("rect.list-bg");
+      if (!text || !rect) return;
+
+      text.removeAttribute("transform");
+
+      const bb = text.getBBox();
+      const w = bb.width + PAD_X * 3;
+      const h = bb.height + PAD_Y * 2;
+
+      rect.setAttribute("x", 0);
+      rect.setAttribute("y", 0);
+      rect.setAttribute("width", w);
+      rect.setAttribute("height", h);
+
+      const textCx = bb.x + bb.width / 2;
+      const textCy = bb.y + bb.height / 2;
+      const dx = (w / 2) - textCx;
+      const dy = (h / 2) - textCy;
+
+      text.setAttribute("transform", `translate(${dx} ${dy})`);
+    });
+  }
+
+  window.addEventListener("load", () => {
+    document.querySelectorAll("svg.diagram").forEach(layoutSvgNodes);
+  });
+  </script>
 </body>
 </html>

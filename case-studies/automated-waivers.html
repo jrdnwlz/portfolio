@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Jordan Walz | Case Study: Automated Waivers</title>
+  <meta name="description" content="Designing Automated Waivers to reduce manual exception handling in enterprise application security workflows."/>
+
+  <meta property="og:title" content="Automated Waivers Case Study"/>
+  <meta property="og:description" content="Reducing waiver noise by automating low-risk exception handling in application security workflows."/>
+  <meta property="og:type" content="article"/>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+  <link rel="icon" href="/assets/img/favicon.svg"/>
+
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)"/>
+  <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">Jordan Walz</a>
+      <nav class="nav" aria-label="Main">
+        <a href="../work.html">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../resume.html">Resume</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">Menu</button>
+    </div>
+  </header>
+
+  <main class="case-study-page">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="kicker mb-16">&nbsp;</p>
+            <h1>Automated Waivers</h1>
+            <p class="lead mt-16">Designing a feature that reduces manual waiver churn in enterprise application security while preserving trust, auditability, and administrative control.</p>
+
+            <div class="row mt-20">
+              <span class="tag">Application Security</span>
+              <span class="tag">Feature Design</span>
+              <span class="tag">Enterprise Governance</span>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="false">
+            <div class="diagram-placeholder" role="img" aria-label="Placeholder for Automated Waivers hero visual">
+              <p>Hero visual placeholder</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-bg" id="executive-summary">
+      <div class="container stack">
+        <h3>Executive Summary</h3>
+        <div class="overview-tabs" data-tabs>
+          <div class="overview-tab-list" role="tablist" aria-label="Overview highlights">
+            <button class="overview-tab" type="button" role="tab" id="waivers-tab-context" aria-controls="waivers-panel-context" aria-selected="true" tabindex="0">Context</button>
+            <button class="overview-tab" type="button" role="tab" id="waivers-tab-role" aria-controls="waivers-panel-role" aria-selected="false" tabindex="-1">Role</button>
+            <button class="overview-tab" type="button" role="tab" id="waivers-tab-challenge" aria-controls="waivers-panel-challenge" aria-selected="false" tabindex="-1">Challenge</button>
+            <button class="overview-tab" type="button" role="tab" id="waivers-tab-objective" aria-controls="waivers-panel-objective" aria-selected="false" tabindex="-1">Objective</button>
+            <button class="overview-tab" type="button" role="tab" id="waivers-tab-outcome" aria-controls="waivers-panel-outcome" aria-selected="false" tabindex="-1">Outcome</button>
+          </div>
+          <article class="overview-panel" role="tabpanel" id="waivers-panel-context" aria-labelledby="waivers-tab-context" tabindex="0">
+            <h4>Context</h4>
+            <p class="muted">AutoWaivers was a feature within Sonatype's application security workflow designed to reduce repetitive exception handling for low-value policy violations.</p>
+          </article>
+          <article class="overview-panel" role="tabpanel" id="waivers-panel-role" aria-labelledby="waivers-tab-role" tabindex="0" hidden>
+            <h4>Role</h4>
+            <p class="muted">As Senior Product Designer, I led the product design for the feature's rules model, admin experience, and status communication in collaboration with product, engineering, and security stakeholders.</p>
+          </article>
+          <article class="overview-panel" role="tabpanel" id="waivers-panel-challenge" aria-labelledby="waivers-tab-challenge" tabindex="0" hidden>
+            <h4>Challenge</h4>
+            <p class="muted">The challenge was to automate repetitive waiver decisions without making the system feel opaque, overly permissive, or difficult to govern.</p>
+          </article>
+          <article class="overview-panel" role="tabpanel" id="waivers-panel-objective" aria-labelledby="waivers-tab-objective" tabindex="0" hidden>
+            <h4>Objective</h4>
+            <p class="muted">Create a conservative automation model that suppresses low-value findings when predefined conditions are met, while keeping rationale and override paths visible.</p>
+          </article>
+          <article class="overview-panel" role="tabpanel" id="waivers-panel-outcome" aria-labelledby="waivers-tab-outcome" tabindex="0" hidden>
+            <h4>Outcome</h4>
+            <p class="muted">The feature reframed waivers as a governed system behavior, reducing exception noise and helping teams focus attention on findings that required action.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problem-context">
+      <div class="container stack">
+        <h2>Problem</h2>
+        <p>Application security tools surfaced a high volume of violations, but many did not merit the same level of manual review. Findings with no safe upgrade path or no reachable runtime impact still created the same waiver overhead as more urgent issues.</p>
+      </div>
+      <div class="container case-two-col">
+        <article class="stack">
+          <p>That created friction on both sides: developers were interrupted by low-value workflow noise, and security teams spent time reviewing exceptions that were often predictable and repeatable.</p>
+          <p>The design problem was to reduce this overhead without weakening policy intent.</p>
+          <ul class="muted case-list">
+            <li>Developers needed clearer signal on whether a finding required action</li>
+            <li>Security teams needed fewer repetitive waiver reviews</li>
+            <li>Automation needed to remain inspectable and reversible</li>
+            <li>Configuration needed to scale across enterprise governance models</li>
+          </ul>
+          <p>The opportunity was to automate only the bounded decisions that were already policy-safe.</p>
+        </article>
+        <aside>
+          <figure class="diagram-figure">
+            <div class="diagram-placeholder" role="img" aria-label="Placeholder for manual waiver workflow diagram">
+              <p>Manual waiver workflow placeholder</p>
+            </div>
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="constraints">
+      <div class="container stack">
+        <h2>Design Constraints</h2>
+        <div class="grid grid-2" aria-label="Project constraints">
+          <article class="constraint">
+            <h4>Trust over breadth</h4>
+            <p class="muted">Automation had to be intentionally narrow. Broad or opaque logic would have undermined confidence in the feature.</p>
+          </article>
+          <article class="constraint">
+            <h4>Visible rationale</h4>
+            <p class="muted">Users needed to understand why a waiver was applied and what would cause it to be removed.</p>
+          </article>
+          <article class="constraint">
+            <h4>Administrative flexibility</h4>
+            <p class="muted">The feature needed to support enterprise governance through scoped configuration and override paths.</p>
+          </article>
+          <article class="constraint">
+            <h4>Dynamic state</h4>
+            <p class="muted">Waivers needed to be reevaluated as underlying conditions changed so automation did not become a permanent exception bucket.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="approach-strategy">
+      <div class="container stack">
+        <h2>Approach</h2>
+        <p>I framed AutoWaivers as governed automation, not silent suppression. The feature needed to reduce noise while still communicating clear system behavior.</p>
+        <div class="research-flow" aria-label="Design strategy principles">
+          <article class="research-item">
+            <svg class="research-number" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="40" r="28" fill="var(--primary-accent)" fill-opacity="0.25"/>
+              <circle cx="40" cy="40" r="28" stroke="var(--primary-accent)" stroke-width="3"/>
+              <path d="M34 40H46" stroke="var(--primary-accent)" stroke-linecap="round" stroke-width="3"/>
+            </svg>
+            <div class="research-content">
+              <h3>Narrow the decision model</h3>
+              <p class="muted">Automation targeted only conditions with clear policy logic, such as no safe upgrade path or no reachable runtime impact.</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <svg class="research-number" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="40" r="28" fill="var(--primary-accent)" fill-opacity="0.25"/>
+              <circle cx="40" cy="40" r="28" stroke="var(--primary-accent)" stroke-width="3"/>
+              <path d="M40 34V46" stroke="var(--primary-accent)" stroke-linecap="round" stroke-width="3"/>
+              <path d="M34 40H46" stroke="var(--primary-accent)" stroke-linecap="round" stroke-width="3"/>
+            </svg>
+            <div class="research-content">
+              <h3>Make system reasoning visible</h3>
+              <p class="muted">The experience exposed why a waiver applied, what rule triggered it, and when reevaluation would occur.</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <svg class="research-number" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="40" r="28" fill="var(--primary-accent)" fill-opacity="0.25"/>
+              <circle cx="40" cy="40" r="28" stroke="var(--primary-accent)" stroke-width="3"/>
+              <path d="M32 40L38 46L48 34" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+            </svg>
+            <div class="research-content">
+              <h3>Separate admin setup from developer impact</h3>
+              <p class="muted">Configuration lived with administrators and security teams, while developers experienced the feature primarily as reduced friction.</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <svg class="research-number" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="40" r="28" fill="var(--primary-accent)" fill-opacity="0.25"/>
+              <circle cx="40" cy="40" r="28" stroke="var(--primary-accent)" stroke-width="3"/>
+              <path d="M30 50L50 30" stroke="var(--primary-accent)" stroke-linecap="round" stroke-width="3"/>
+              <path d="M30 30H50V50" stroke="var(--primary-accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+            </svg>
+            <div class="research-content">
+              <h3>Design for reversibility</h3>
+              <p class="muted">Waivers were treated as conditional state, not permanent approval, so issues could reappear when conditions changed.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="architecture-flows">
+      <div class="container stack">
+        <h2>What I Designed</h2>
+        <p>The feature hinged on two product design decisions: where the rules lived and how the automation behaved over time.</p>
+
+        <div class="case-two-col">
+          <article class="stack">
+            <h3>Configuration as policy</h3>
+            <p>Automation rules were modeled as policy configuration rather than one-off exceptions, making the feature scalable for enterprise teams.</p>
+            <p>This shifted waiver handling from reactive admin work to a more durable system behavior.</p>
+          </article>
+          <aside>
+            <figure class="diagram-figure">
+              <div class="diagram-placeholder" role="img" aria-label="Placeholder for policy configuration diagram">
+                <p>Policy configuration placeholder</p>
+              </div>
+            </figure>
+          </aside>
+        </div>
+
+        <div class="case-two-col">
+          <article class="stack">
+            <h3>Conditional automation lifecycle</h3>
+            <p>Findings were evaluated against policy criteria and application context, then rechecked as conditions changed.</p>
+            <p>This made the automation feel controlled rather than permanent.</p>
+          </article>
+          <aside>
+            <figure class="diagram-figure">
+              <div class="diagram-placeholder" role="img" aria-label="Placeholder for automated waiver lifecycle diagram">
+                <p>Automation lifecycle placeholder</p>
+              </div>
+            </figure>
+          </aside>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="patterns-decisions">
+      <div class="container stack">
+        <h2>What This Demonstrates</h2>
+        <div class="grid grid-2">
+          <article class="pattern-card">
+            <h4>Systems Thinking</h4>
+            <p class="muted">The feature connected policy configuration, application context, and issue state into a coherent workflow rather than treating waivers as isolated UI actions.</p>
+            <p class="muted">That structure made the solution durable beyond a single screen or interaction.</p>
+          </article>
+          <article class="pattern-card">
+            <h4>Trust-Centered Automation</h4>
+            <p class="muted">The design prioritized explanation, conservative logic, and reversibility so automation could be adopted without undermining governance confidence.</p>
+            <p class="muted">This is often the difference between a clever feature and a usable enterprise capability.</p>
+          </article>
+          <article class="pattern-card">
+            <h4>Cross-Functional Product Design</h4>
+            <p class="muted">The work required balancing developer experience, security governance, and implementation feasibility at the same time.</p>
+            <p class="muted">The value came from clarifying tradeoffs, not just polishing interface states.</p>
+          </article>
+          <article class="pattern-card">
+            <h4>Outcome-Oriented Feature Scope</h4>
+            <p class="muted">Rather than expanding the feature into broad exception automation, the scope stayed focused on repeatable, high-confidence cases.</p>
+            <p class="muted">That restraint made the solution stronger and more shippable.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="outcomes">
+      <div class="container stack">
+        <h2>Outcomes</h2>
+        <div class="grid grid-2 outcome-grid">
+          <article class="outcome-highlight">
+            <h3>Lower operational noise</h3>
+            <p>The feature reduced repetitive waiver handling for cases that followed predictable, policy-safe patterns.</p>
+          </article>
+          <article class="outcome-highlight">
+            <h3>Better prioritization</h3>
+            <p>Teams could spend more attention on findings that required remediation rather than paperwork-driven exception flow.</p>
+          </article>
+          <article class="outcome-highlight">
+            <h3>Stronger admin trust</h3>
+            <p>Visible rationale, scoped controls, and reevaluation logic made the automation understandable and governable.</p>
+          </article>
+          <article class="outcome-highlight">
+            <h3>Feature-level leverage</h3>
+            <p>A relatively focused feature solved a recurring workflow problem by combining product thinking, policy logic, and systems design.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="reflection">
+      <div class="container">
+        <article class="reflection-single stack">
+          <h2>Reflection</h2>
+          <p>This project reinforced that strong enterprise product design is often about judgment more than surface area. The challenge was identifying where automation created real leverage without weakening trust.</p>
+          <p>The most meaningful design contribution was defining a bounded problem, shaping a durable decision model, and translating competing stakeholder needs into a feature that was both usable and governable.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Jordan Walz</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="../assets/js/interactions.js"></script>
+</body>
+</html>
